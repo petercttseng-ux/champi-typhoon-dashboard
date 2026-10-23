@@ -101,14 +101,14 @@
   "tc_id": "TC2636",
   "number": "2630",
   "name_jp": "チャンパー",
-  "issue_jst": "2026-10-23T21:40:00+09:00",
+  "issue_jst": "2026-10-23T23:45:00+09:00",
   "points": [
    {
     "hours": 0,
-    "valid_jst": "2026-10-23T21:00:00+09:00",
-    "valid_utc": "2026-10-23T12:00:00Z",
-    "lat": 24.9,
-    "lon": 122.8,
+    "valid_jst": "2026-10-23T23:00:00+09:00",
+    "valid_utc": "2026-10-23T14:00:00Z",
+    "lat": 25.0,
+    "lon": 122.5,
     "pressure": 945,
     "wind_ms": 45,
     "gust_ms": 60,
@@ -116,17 +116,17 @@
     "intensity": "非常に強い",
     "scale": "大型",
     "course": "北北西",
-    "location": "与那国島の北北西約50km",
+    "location": "与那国島の北西約80km",
     "storm_km": 330,
     "gale_km": 850,
     "prob_km": null
    },
    {
     "hours": 1,
-    "valid_jst": "2026-10-23T22:00:00+09:00",
-    "valid_utc": "2026-10-23T13:00:00Z",
-    "lat": 25.0,
-    "lon": 122.8,
+    "valid_jst": "2026-10-24T00:00:00+09:00",
+    "valid_utc": "2026-10-23T15:00:00Z",
+    "lat": 25.1,
+    "lon": 122.4,
     "pressure": 945,
     "wind_ms": 45,
     "gust_ms": 60,
@@ -134,31 +134,13 @@
     "intensity": "非常に強い",
     "scale": "大型",
     "course": "北北西",
-    "location": "与那国島の北北西約60km",
+    "location": "与那国島の北西約90km",
     "storm_km": 330,
     "gale_km": 850,
     "prob_km": null
    },
    {
-    "hours": 3,
-    "valid_jst": "2026-10-24T00:00:00+09:00",
-    "valid_utc": "2026-10-23T15:00:00Z",
-    "lat": 25.1,
-    "lon": 122.9,
-    "pressure": 945,
-    "wind_ms": 45,
-    "gust_ms": 60,
-    "category": "TY",
-    "intensity": "非常に強い",
-    "scale": null,
-    "course": "北",
-    "location": null,
-    "storm_km": 360,
-    "gale_km": null,
-    "prob_km": 45
-   },
-   {
-    "hours": 6,
+    "hours": 4,
     "valid_jst": "2026-10-24T03:00:00+09:00",
     "valid_utc": "2026-10-23T18:00:00Z",
     "lat": 25.2,
@@ -176,7 +158,7 @@
     "prob_km": 50
    },
    {
-    "hours": 9,
+    "hours": 7,
     "valid_jst": "2026-10-24T06:00:00+09:00",
     "valid_utc": "2026-10-23T21:00:00Z",
     "lat": 25.3,
@@ -194,7 +176,7 @@
     "prob_km": 55
    },
    {
-    "hours": 12,
+    "hours": 10,
     "valid_jst": "2026-10-24T09:00:00+09:00",
     "valid_utc": "2026-10-24T00:00:00Z",
     "lat": 25.4,
@@ -212,7 +194,7 @@
     "prob_km": 65
    },
    {
-    "hours": 15,
+    "hours": 13,
     "valid_jst": "2026-10-24T12:00:00+09:00",
     "valid_utc": "2026-10-24T03:00:00Z",
     "lat": 25.8,
@@ -230,7 +212,7 @@
     "prob_km": 70
    },
    {
-    "hours": 18,
+    "hours": 16,
     "valid_jst": "2026-10-24T15:00:00+09:00",
     "valid_utc": "2026-10-24T06:00:00Z",
     "lat": 26.3,
@@ -248,7 +230,7 @@
     "prob_km": 80
    },
    {
-    "hours": 21,
+    "hours": 19,
     "valid_jst": "2026-10-24T18:00:00+09:00",
     "valid_utc": "2026-10-24T09:00:00Z",
     "lat": 26.7,
@@ -266,7 +248,7 @@
     "prob_km": 85
    },
    {
-    "hours": 24,
+    "hours": 22,
     "valid_jst": "2026-10-24T21:00:00+09:00",
     "valid_utc": "2026-10-24T12:00:00Z",
     "lat": 27.1,
@@ -284,7 +266,7 @@
     "prob_km": 105
    },
    {
-    "hours": 48,
+    "hours": 46,
     "valid_jst": "2026-10-25T21:00:00+09:00",
     "valid_utc": "2026-10-25T12:00:00Z",
     "lat": 30.4,
@@ -302,7 +284,7 @@
     "prob_km": 210
    },
    {
-    "hours": 72,
+    "hours": 70,
     "valid_jst": "2026-10-26T21:00:00+09:00",
     "valid_utc": "2026-10-26T12:00:00Z",
     "lat": 32.6,
@@ -1083,10 +1065,10 @@
    }
   ]
  },
- "updated": "2026-10-23T21:39:56+08:00",
+ "updated": "2026-10-23T22:59:08+08:00",
  "status": {
   "cwa": "ok",
   "jma": "ok",
-  "news": "ok"
+  "news": "empty"
  }
 }
