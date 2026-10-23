@@ -2,7 +2,8 @@ name: 更新薔琵颱風資料
 
 on:
   schedule:
-    - cron: '*/20 * * * *'   # 每 20 分鐘（GitHub 排程可能延遲數分鐘）
+    - cron: '7,27,47 * * * *'   # 每 20 分鐘，避開整點尖峰
+    - cron: '13 */2 * * *'      # 備援排程
   workflow_dispatch:
 
 permissions:
