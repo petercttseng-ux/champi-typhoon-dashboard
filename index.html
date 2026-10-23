@@ -366,7 +366,7 @@ function loadBuoy(){
     L.forEach(function(l){ var id=(l.Station||{}).StationID; if(!BUOYS[id]) return;
       var obs=((l.StationObsTimes||{}).StationObsTime||[]).filter(function(t){return t.WeatherElements&&num(t.WeatherElements.WaveHeight)!=null;});
       obs.sort(function(a,b){return new Date(b.DateTime)-new Date(a.DateTime);});
-      if(!obs.length) return;
+      if(!obs.length || Date.now()-new Date(obs[0].DateTime).getTime()>6*3600e3) return;
       var o=obs[0].WeatherElements, mx=Math.max.apply(null,obs.slice(0,24).map(function(t){return num(t.WeatherElements.WaveHeight);}));
       out.push({id:id,n:BUOYS[id].n,lat:BUOYS[id].lat,lon:BUOYS[id].lon,t:new Date(obs[0].DateTime),h:num(o.WaveHeight),per:num(o.WavePeriod),dir:o.WaveDirectionDescription,sst:num(o.SeaTemperature),mx24:mx});
     });
@@ -621,7 +621,8 @@ function renderExpert(){
   else if(A.length) Q.push(li('雨量','各養殖區 72 小時雨量皆低於 80 mm（最多為'+byRain[0].n+' '+byRain[0].rain.toFixed(0)+' mm），淡化風險較低。'));
   var windy=A.filter(function(s){return s.gust>=24.5;}).sort(function(a,b){return b.gust-a.gust;});
   if(windy.length) Q.push(li('強風・停電・缺氧','陣風達 10 級以上的養殖區：'+windy.slice(0,5).map(function(s){return s.n+' '+beaufort(s.gust)+' 級';}).join('、')+'。強風易致停電，增氧機停擺時夜間至清晨最易缺氧翻池；魚塭防逃網、棚架也可能受損。'));
-  var ph=SEA.filter(function(s){return s.n==='澎湖海域';})[0], phA=A.filter(function(s){return s.n==='澎湖馬公';})[0], dg=SEA.filter(function(s){return s.n==='屏東東港外海';})[0];
+  var phB=(S.buoy||[]).filter(function(b){return b.id==='46735A';})[0], ph=SEA.filter(function(s){return s.n==='澎湖海域';})[0], phA=A.filter(function(s){return s.n==='澎湖馬公';})[0], dg=SEA.filter(function(s){return s.n==='屏東東港外海';})[0];
+  if(ph&&phB&&phB.h!=null&&(ph.mx==null||phB.h>ph.mx)) ph={n:ph.n,mx:phB.h};
   var cages=[]; if(ph&&ph.mx!=null) cages.push('澎湖浪高 '+ph.mx.toFixed(1)+' m'+(phA?'、陣風 '+beaufort(phA.gust)+' 級':'')); if(dg&&dg.mx!=null) cages.push('東港・小琉球浪高 '+dg.mx.toFixed(1)+' m');
   var oys=SEA.filter(function(s){return /雲嘉|七股|彰化/.test(s.n)&&s.mx!=null;}).map(function(s){return s.mx;});
   if(cages.length||oys.length) Q.push(li('海上設施','箱網區：'+cages.join('；')+(oys.length?'；彰雲嘉南牡蠣棚架區浪高最大約 '+Math.max.apply(null,oys).toFixed(1)+' m':'')+'。'+((ph&&ph.mx>=4)||(oys.length&&Math.max.apply(null,oys)>=4)?'纜繩斷裂、浮具流失、蚵串脫落風險高。':'風浪尚屬可控，仍應加固纜繩與浮具。')));
@@ -659,7 +660,7 @@ function renderTimeline(){
     if(S.warn&&S.warn.active) L.push([S.warn.effective,'中央氣象署最新發布：'+esc(S.warn.headline)+'。','']);
     var cur=c.cur, cnr=nearest(cur.lat,cur.lon);
     L.push([cur.t,'最新位置 '+cur.lat+'°N '+cur.lon+'°E，'+catZh(cur.w)+' '+cur.p+' hPa，距'+cnr[0]+'約 '+Math.round(cnr[1])+' km。','now']);
-    c.fcs.forEach(function(f,i){ if(i===0||i===c.fcs.length-1||f.tau===24||f.tau===48){ var n=nearest(f.lat,f.lon); L.push([f.t,'［預報 +'+f.tau+'h］'+f.lat+'°N '+f.lon+'°E，'+(f.w?catZh(f.w)+' '+f.w+' m/s':'')+'，距'+n[0]+'約 '+Math.round(n[1])+' km。','fc']); } });
+    c.fcs.forEach(function(f,i){ if(i===0||i===c.fcs.length-1||f.tau===24||f.tau===48){ var n=nearest(f.lat,f.lon); L.push([f.t,'［預報 +'+f.tau+'h］'+f.lat+'°N '+f.lon+'°E，'+(f.w?catZh(f.w)+' '+f.w+' m/s，':'')+'距'+n[0]+'約 '+Math.round(n[1])+' km。','fc']); } });
   }
   if(S.jma){ var lp=S.jma.pts[S.jma.pts.length-1]; if(lp.cat==='LOW') L.push([lp.t,'［JMA 預報］轉為溫帶氣旋（'+(lp.location||'')+'）。','fc']); }
   L.sort(function(a,b){return a[0]-b[0];});
