@@ -1,0 +1,40 @@
+name: 更新薔琵颱風資料
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'   # 每 20 分鐘（GitHub 排程可能延遲數分鐘）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 抓取 CWA / JMA / 新聞
+        run: python scripts/update.py
+
+      - name: 提交更新
+        run: |
+          git config user.name  "typhoon-bot"
+          git config user.email "typhoon-bot@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "data: auto update $(TZ=Asia/Taipei date '+%Y-%m-%d %H:%M')"
+            git pull --rebase --autostash || true
+            git push
+          fi
