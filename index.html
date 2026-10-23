@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>薔琵颱風即時儀表板｜漁業與養殖影響</title>
+<title>薔琵颱風即時儀表板｜漁業與養殖影響｜水試所 AI 應用小組</title>
 <meta name="description" content="2026 年第 29 號颱風薔琵（CHAMPI）即時路徑、強度、海況與對海洋漁業及水產養殖影響之儀表板">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -85,6 +85,7 @@ footer{margin-top:30px;font-size:12.5px;color:var(--muted);border-top:1px solid 
 .lb img{max-width:96vw;max-height:94vh;background:#fff}
 .leaflet-container{font-family:inherit}
 .leaflet-popup-content{font-size:13px;line-height:1.5}
+.org{font-size:13px;color:#bae6fd;margin:2px 0 6px;letter-spacing:.06em}
 .btn{background:#0a1a29;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font:inherit;font-size:12px;cursor:pointer}
 </style>
 </head>
@@ -93,6 +94,7 @@ footer{margin-top:30px;font-size:12.5px;color:var(--muted);border-top:1px solid 
   <div class="hdr">
     <div>
       <h1>🌀 薔琵颱風 CHAMPI 即時儀表板<small>海洋漁業・水產養殖影響</small></h1>
+      <div class="org">農業部水產試驗所 AI 應用小組</div>
       <div class="badges">
         <span class="badge hot" id="b-cat">中度颱風</span>
         <span class="badge">CWA 第 29 號</span>
@@ -266,7 +268,7 @@ footer{margin-top:30px;font-size:12.5px;color:var(--muted);border-top:1px solid 
   <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo（Marine / Forecast API, CC BY 4.0）</a>、
   <a href="https://www.fa.gov.tw/" target="_blank" rel="noopener">農業部漁業署</a>、
   <a href="https://news.google.com/" target="_blank" rel="noopener">Google News</a>（新聞標題與連結由 GitHub Actions 每 20 分鐘彙整）。
-  <br>本頁為農業部水產試驗所內部參考用儀表板，非官方警報發布管道；颱風警報、停班停課及災情請以中央氣象署、行政院人事行政總處及中央災害應變中心公布為準。
+  <br>本頁由<b>農業部水產試驗所 AI 應用小組</b>製作，為內部參考用儀表板，非官方警報發布管道；颱風警報、停班停課及災情請以中央氣象署、行政院人事行政總處及中央災害應變中心公布為準。
   <br>相關監測：<a href="https://petercttseng-ux.github.io/taiwan-sst-dashboard/" target="_blank" rel="noopener">臺灣海表溫儀表板</a>・<a href="https://petercttseng-ux.github.io/fri-cwa-weather-dashboard/" target="_blank" rel="noopener">水試所氣象儀表板</a>・<a href="https://petercttseng-ux.github.io/budai-salinity-dashboard/" target="_blank" rel="noopener">布袋鹽度儀表板</a>
 </footer>
 </div>
