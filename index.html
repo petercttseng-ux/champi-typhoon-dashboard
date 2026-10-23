@@ -21,7 +21,7 @@
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;line-height:1.6}
 a{color:var(--accent)}
 .wrap{max-width:1380px;margin:0 auto;padding:0 16px 48px}
-header{background:linear-gradient(135deg,#0b2a44 0%,#07131f 60%);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:1000}
+header{background:linear-gradient(135deg,#0b2a44 0%,#07131f 60%);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2000}
 .hdr{max-width:1380px;margin:0 auto;padding:12px 16px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
 .hdr h1{margin:0;font-size:clamp(18px,2.6vw,26px);font-weight:900;letter-spacing:.02em}
 .hdr h1 small{font-weight:500;color:var(--muted);font-size:.6em;margin-left:8px}
@@ -314,7 +314,8 @@ const windColor = w => w==null?'#94a3b8': w>=51?'#ef4444': w>=33?'#f97316': w>=1
 
 // ---------- 地圖 ----------
 const map = L.map('map',{zoomControl:true,worldCopyJump:true}).setView([23.8,124],5);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:12}).addTo(map);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'Tiles &copy; Esri, GEBCO, NOAA, Garmin',maxZoom:12}).addTo(map);
+L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}',{maxZoom:12}).addTo(map);
 const lyTrack=L.layerGroup().addTo(map), lyFc=L.layerGroup().addTo(map), lyJma=L.layerGroup().addTo(map), lySea=L.layerGroup().addTo(map), lyAqua=L.layerGroup().addTo(map);
 L.control.layers(null,{'歷史路徑':lyTrack,'CWA 預報':lyFc,'JMA 預報':lyJma,'海域浪高點':lySea,'養殖區風雨點':lyAqua},{collapsed:true}).addTo(map);
 let fitted=false;
