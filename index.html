@@ -442,6 +442,7 @@ function curState(){
   var nr=nearest(pos.lat,pos.lon), now=Date.now();
   var fut=(S.cwa&&S.cwa.fcs||[]).filter(function(f){return f.t.getTime()>now;});
   var fcMin=null; fut.forEach(function(f){ var n=nearest(f.lat,f.lon); if(!fcMin||n[1]<fcMin.d) fcMin={d:n[1],place:n[0],t:f.t}; });
+  if(fcMin&&fcMin.d>=nr[1]) fcMin=null;
   var fx=S.cwa&&S.cwa.fixes||[], prev=fx.length>6?fx[fx.length-7]:null, prevD=prev?nearest(prev.lat,prev.lon)[1]:null;
   var warnOn=S.warn&&S.warn.active, covering=pos.r15&&nr[1]<=pos.r15, stage, color;
   if(!warnOn && nr[1]>300 && (!fcMin||fcMin.d>=nr[1]-20)){ stage='已遠離'; color='#2E8A66'; }
@@ -496,7 +497,7 @@ function renderRuler(){
   var rows=BANDS.map(function(){return [];}), topId=B.length?B[B.length-1].id:null;
   B.slice().reverse().forEach(function(b){ rows[bandOf(b.h)].push(b); });
   $('#marks').innerHTML=B.length?rows.map(function(r){ var shown=r.slice(0,4), more=r.length-shown.length; return '<div class="mrow'+(r.length?' has':'')+'"><span>'+shown.map(function(b){return '<span class="mk'+(b.id===topId?' top':'')+'">'+esc(b.n)+' <b>'+b.h+'</b></span>';}).join('、')+(more>0?'，另 '+more+' 站':'')+'</span></div>'; }).join(''):'<div class="mrow">浮標資料暫無</div>';
-  $('#ruler-cap').textContent='中央氣象署浪級。右側為各浮標最新實測浪高（公尺）'+(B.length?'（'+fmtTW(new Date(Math.max.apply(null,B.map(function(b){return b.t.getTime();}))))+'）':'')+'。';
+  $('#ruler-cap').textContent='中央氣象署浪級。右側為各浮標最新實測浪高，單位公尺'+(B.length?'，觀測時間 '+fmtTW(new Date(Math.max.apply(null,B.map(function(b){return b.t.getTime();})))):'')+'。';
 }
 
 // ---------- 警報 ----------
