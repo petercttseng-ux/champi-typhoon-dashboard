@@ -3,263 +3,301 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>薔琵颱風即時儀表板｜漁業與養殖影響｜水試所 AI 應用小組</title>
-<meta name="description" content="2026 年第 29 號颱風薔琵（CHAMPI）即時路徑、強度、警報、海況與對海洋漁業及水產養殖影響之自動更新儀表板">
+<title>薔琵颱風｜出海與養殖即時判讀｜水試所 AI 應用小組</title>
+<meta name="description" content="2026 年第 29 號颱風薔琵（CHAMPI）：浮標浪級、颱風路徑、警報與對海洋漁業及水產養殖影響之即時判讀">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
 :root{
-  --bg:#07131f; --panel:#0d1f30; --line:#1e3a55;
-  --ink:#e6f0f8; --muted:#8fa9c0; --accent:#38bdf8; --accent2:#f59e0b;
-  --low:#22c55e; --mid:#eab308; --high:#f97316; --ext:#ef4444;
-  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --paper:#E9F0F1;      /* 海圖紙 */
+  --sheet:#F6F9F9;      /* 圖表底 */
+  --shoal:#D3E3E7;      /* 淺灘 */
+  --ink:#0F2C3F;        /* 墨藍 */
+  --ink2:#3F5D6E;
+  --isobath:#2C6E8F;    /* 等深線藍 */
+  --red:#C4122F; --amber:#D99A0E; --green:#2E8A66;
+  --num:"Barlow Condensed","Noto Sans TC",sans-serif;
+  --serif:"Noto Serif TC",serif;
+  --sans:"Noto Sans TC",system-ui,sans-serif;
 }
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;line-height:1.6}
-a{color:var(--accent)}
-.wrap{max-width:1380px;margin:0 auto;padding:0 16px 48px}
-header{background:linear-gradient(135deg,#0b2a44 0%,#07131f 60%);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:2000}
-.hdr{max-width:1380px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
-.hdr h1{margin:0;font-size:clamp(18px,2.6vw,26px);font-weight:900;letter-spacing:.02em}
-.hdr h1 small{font-weight:500;color:var(--muted);font-size:.6em;margin-left:8px}
-.org{font-size:13px;color:#bae6fd;margin:2px 0 6px;letter-spacing:.06em}
-.badges{display:flex;flex-wrap:wrap;gap:6px}
-.badge{font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:#0a1a29}
-.badge.hot{border-color:#7f1d1d;background:#3b0d0d;color:#fecaca}
-.badge.ok{border-color:#14532d;background:#052e16;color:#bbf7d0}
-.upd{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right}
-.upd b{color:var(--ink)}
-section{margin-top:22px}
-h2{font-size:18px;margin:0 0 10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-h2::before{content:"";width:4px;height:18px;background:var(--accent);border-radius:2px}
-h2 .ts{font-size:12px;font-weight:400;color:var(--muted);font-family:var(--mono)}
-h3{font-size:15px;margin:14px 0 6px;color:#cfe3f3}
-.grid{display:grid;gap:12px}
-.kpis{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-width:0}
-.kpi .lab{font-size:12px;color:var(--muted)}
-.kpi .val{font-family:var(--mono);font-size:26px;font-weight:700;line-height:1.2}
-.kpi .val small{font-size:13px;color:var(--muted);font-weight:500}
-.kpi .sub{font-size:12px;color:var(--muted)}
-.alert{border-radius:12px;padding:10px 14px;font-size:14px;border:1px solid}
-.alert.on{background:#2a1306;border-color:#9a3412;color:#fed7aa}
-.alert.off{background:#052e16;border-color:#166534;color:#bbf7d0}
-.alert b{color:#fff}
-.warnsec{font-size:13.5px;margin:6px 0 0}
-.warnsec dt{color:#fdba74;font-weight:700;margin-top:6px}
-.warnsec dd{margin:0 0 0 0}
-#map{height:560px;border-radius:12px;border:1px solid var(--line);background:#0a1a29}
-.two{grid-template-columns:2fr 1fr}
-.half{grid-template-columns:1fr 1fr}
-@media (max-width:900px){.two,.half{grid-template-columns:1fr}#map{height:420px}}
-.legend{font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
-.imgs{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
-.imgs figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
-.imgs img{width:100%;height:auto;display:block;background:#fff;min-height:120px;cursor:zoom-in}
-.imgs figcaption{font-size:13px;padding:6px 10px;color:var(--muted);display:flex;justify-content:space-between;gap:8px}
-.imgs figure.fail img{display:none}
-.imgs figure.fail::after{content:"圖檔暫無法載入（來源未更新或已移除）";padding:30px 10px;color:var(--muted);font-size:13px;text-align:center}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
-th{color:var(--muted);font-weight:500;position:sticky;top:0;background:var(--panel)}
-td.num{font-family:var(--mono);text-align:right}
-.tbl{overflow:auto;max-height:420px}
-.risk{display:inline-block;padding:1px 8px;border-radius:6px;font-size:12px;font-weight:700;color:#0b0b0b}
-.r0{background:var(--low)}.r1{background:var(--mid)}.r2{background:var(--high)}.r3{background:var(--ext);color:#fff}
+html{background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7}
+a{color:var(--isobath);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+
+/* 頂列 */
+.bar{border-bottom:1px solid var(--shoal);background:var(--paper)}
+.bar .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px;padding-top:12px;padding-bottom:10px}
+.bar h1{margin:0;font-family:var(--serif);font-weight:900;font-size:20px;letter-spacing:.04em}
+.bar h1 span{font-family:var(--num);font-weight:600;letter-spacing:.08em;color:var(--isobath);margin-left:6px}
+.bar .org{color:var(--ink2);font-size:14px}
+.bar .clock{margin-left:auto;font-size:13px;color:var(--ink2)}
+.bar .clock b{font-family:var(--num);font-size:16px;color:var(--ink);font-weight:600}
+.btn{font:inherit;font-size:13px;color:var(--ink);background:var(--sheet);border:1px solid var(--isobath);border-radius:3px;padding:2px 10px;margin-left:6px;cursor:pointer}
+.btn:hover{background:var(--shoal)}
+
+/* Hero：出海判斷 + 浪級尺 */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;padding:40px 0 36px;align-items:start}
+.verdict{font-family:var(--serif);font-weight:900;font-size:clamp(34px,5.4vw,64px);line-height:1.15;margin:0 0 18px;letter-spacing:.01em}
+.verdict.red{color:var(--red)} .verdict.amber{color:#9A6A00} .verdict.green{color:var(--green)}
+.lede{font-size:18px;max-width:34em;margin:0 0 26px;color:var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px;margin:0;max-width:640px}
+.facts div{border-top:2px solid var(--ink);padding-top:8px}
+.facts dt{font-size:13px;color:var(--ink2)}
+.facts dd{margin:0;font-size:16px}
+.facts dd strong{font-family:var(--num);font-size:24px;font-weight:600;margin-right:4px}
+.fine{font-size:13px;color:var(--ink2);margin-top:22px;max-width:40em}
+
+.ruler{position:relative;height:440px;display:grid;grid-template-columns:96px 1fr;gap:0}
+.scale{position:relative;border:1.5px solid var(--ink);display:flex;flex-direction:column-reverse;overflow:hidden;background:var(--sheet)}
+.band{flex:1;position:relative;border-top:1px solid rgba(15,44,63,.25);display:flex;align-items:center;justify-content:center}
+.band:last-child{border-top:none}
+.band .bn{position:relative;z-index:2;font-size:13px;font-weight:700;color:var(--ink);text-align:center;line-height:1.2}
+.band .bn small{display:block;font-family:var(--num);font-weight:500;font-size:13px;color:var(--ink2)}
+.water{position:absolute;left:0;right:0;bottom:0;height:0;z-index:1;opacity:.85;transition:height 1.6s cubic-bezier(.2,.7,.2,1)}
+.water::before{content:"";position:absolute;left:0;right:0;top:-6px;height:6px;background:radial-gradient(6px 6px at 6px 6px,transparent 5px,currentColor 5.5px) repeat-x;background-size:12px 6px;color:inherit}
+.marks{position:relative}
+.mk{position:absolute;left:0;right:0;transform:translateY(50%);display:flex;align-items:center;gap:6px;font-size:13px;white-space:nowrap}
+.mk::before{content:"";width:14px;height:2px;background:var(--ink);flex:none}
+.mk b{font-family:var(--num);font-size:16px;font-weight:600}
+.mk.top{font-weight:700}
+.ruler-cap{grid-column:1/-1;font-size:13px;color:var(--ink2);margin-top:8px}
+
+/* 區段 */
+section.blk{padding:34px 0;border-top:1px solid var(--shoal)}
+h2{font-family:var(--serif);font-weight:700;font-size:26px;margin:0 0 4px;letter-spacing:.02em}
+.sub{color:var(--ink2);font-size:14px;margin:0 0 18px}
+h3{font-size:17px;margin:0 0 10px}
+.cols{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px}
+.cols.even{grid-template-columns:repeat(2,minmax(0,1fr))}
+.panel{background:var(--sheet);border:1px solid var(--shoal);padding:16px 18px}
+
+/* 警報 */
+.warnbox{border-left:6px solid var(--red);background:#FBEDEF;padding:14px 18px}
+.warnbox.lifted{border-left-color:var(--green);background:#E6F2EC}
+.warnbox p{margin:0}
+details{margin-top:10px}
+summary{cursor:pointer;color:var(--isobath);font-weight:500}
+.wsec dt{font-weight:700;margin-top:10px}
+.wsec dd{margin:0;max-width:52em}
+
+/* 地圖與讀數 */
+#map{height:520px;border:1.5px solid var(--ink);background:#cfe0e6}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink2);margin-top:8px}
+.sw{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:5px}
+.read dl{margin:0}
+.read .row{display:grid;grid-template-columns:7em 1fr;gap:10px;padding:9px 0;border-bottom:1px solid var(--shoal)}
+.read dt{color:var(--ink2);font-size:14px}
+.read dd{margin:0}
+.read dd strong{font-family:var(--num);font-size:24px;font-weight:600;margin-right:3px;line-height:1}
+.read .note{font-size:13px;color:var(--ink2);margin-top:10px}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font-weight:500;color:var(--ink2);text-align:left;border-bottom:1.5px solid var(--ink);padding:6px 8px;white-space:nowrap}
+td{border-bottom:1px solid var(--shoal);padding:6px 8px;white-space:nowrap}
+td.n{font-family:var(--num);font-size:16px;font-weight:500;text-align:right}
+.scroll{overflow:auto;max-height:360px}
+.chip{display:inline-block;min-width:3.2em;text-align:center;padding:0 6px;font-size:13px;font-weight:700;border-radius:2px}
+
+/* 研判 */
+.ana ul{list-style:none;padding:0;margin:0}
+.ana li{padding:10px 0;border-bottom:1px solid var(--shoal);max-width:40em}
+.ana li b{color:var(--ink);margin-right:6px}
+.stage{display:inline-block;padding:2px 12px;font-weight:700;color:#fff;border-radius:2px;margin-right:8px}
+.adv ol{padding-left:1.4em;margin:6px 0 0}
+.adv li{margin-bottom:6px;max-width:40em}
+
+/* 圖資條 */
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,340px);gap:16px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.strip figure{margin:0;scroll-snap-align:start;background:var(--sheet);border:1px solid var(--shoal)}
+.strip img{display:block;width:100%;height:260px;object-fit:contain;background:#fff;cursor:zoom-in}
+.strip figcaption{display:flex;justify-content:space-between;gap:8px;font-size:13px;padding:6px 10px}
+.strip figure.fail img{display:none}
+.strip figure.fail::before{content:"此圖目前無法取得，來源可能尚未更新。";display:flex;height:260px;align-items:center;justify-content:center;padding:20px;color:var(--ink2);font-size:13px;text-align:center}
 .chartbox{position:relative;height:300px}
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
-.tabs button{background:#0a1a29;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font:inherit;font-size:13px;cursor:pointer}
-.tabs button.on{background:var(--accent);color:#04121e;border-color:var(--accent);font-weight:700}
-.news{list-style:none;margin:0;padding:0;max-height:520px;overflow:auto}
-.news li{padding:8px 4px;border-bottom:1px dashed var(--line)}
-.news a{color:var(--ink);text-decoration:none}
-.news a:hover{color:var(--accent);text-decoration:underline}
-.news .meta{font-size:12px;color:var(--muted)}
-.expert li{font-size:14.5px;margin-bottom:4px}
-.expert ul{padding-left:20px;margin:6px 0}
-.tag{display:inline-block;font-size:11px;padding:0 6px;border-radius:4px;background:#173350;color:#bae6fd;margin-right:4px}
-.sev3{border-left:4px solid var(--ext)}.sev2{border-left:4px solid var(--high)}.sev1{border-left:4px solid var(--mid)}.sev0{border-left:4px solid var(--low)}
-.stage{display:inline-block;padding:2px 10px;border-radius:999px;font-size:13px;font-weight:700}
-.timeline{list-style:none;padding:0;margin:0;border-left:2px solid var(--line)}
-.timeline li{padding:4px 0 8px 14px;position:relative;font-size:14px}
-.timeline li::before{content:"";position:absolute;left:-6px;top:11px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
-.timeline li.fc::before{background:transparent;border:2px dashed #f43f5e}
-.timeline li.now::before{background:#f43f5e;box-shadow:0 0 0 4px rgba(244,63,94,.25)}
-.timeline time{font-family:var(--mono);color:var(--accent2);font-size:12px;margin-right:6px}
-.muted{color:var(--muted);font-size:13px}
-.src{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px;font-size:12.5px;font-family:var(--mono)}
-.src span{color:var(--muted)}
-.src .okc{color:#86efac}.src .bad{color:#fca5a5}
-footer{margin-top:30px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
-.lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:3000;cursor:zoom-out}
+
+/* 航海日誌 */
+.log{width:100%}
+.log td{white-space:normal;vertical-align:top}
+.log td.t{font-family:var(--num);font-size:16px;font-weight:600;white-space:nowrap;width:7.5em}
+.log tr.fc td{color:var(--ink2);font-style:italic}
+.log tr.now td{background:#FFF4D6}
+
+.tabs{display:flex;flex-wrap:wrap;gap:0;margin-bottom:12px;border-bottom:1.5px solid var(--ink)}
+.tabs button{font:inherit;font-size:15px;background:none;border:none;border-bottom:3px solid transparent;padding:6px 14px;margin-bottom:-1.5px;color:var(--ink2);cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--isobath);font-weight:700}
+.news{list-style:none;margin:0;padding:0;max-height:480px;overflow:auto}
+.news li{padding:10px 0;border-bottom:1px solid var(--shoal)}
+.news a{color:var(--ink);text-decoration:none;font-weight:500}
+.news a:hover{text-decoration:underline}
+.news small{display:block;color:var(--ink2)}
+
+.status{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:4px 24px;font-size:14px}
+.ok{color:var(--green)} .bad{color:var(--red)}
+footer{padding:28px 0 48px;border-top:1px solid var(--shoal);font-size:13px;color:var(--ink2)}
+footer p{max-width:60em}
+
+.lb{position:fixed;inset:0;background:rgba(15,44,63,.9);display:none;align-items:center;justify-content:center;z-index:3000;cursor:zoom-out}
 .lb img{max-width:96vw;max-height:94vh;background:#fff}
-.leaflet-container{font-family:inherit}
-.leaflet-popup-content{font-size:13px;line-height:1.5}
-.btn{background:#0a1a29;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font:inherit;font-size:12px;cursor:pointer}
-@keyframes spin{to{transform:rotate(-360deg)}}
+.leaflet-container{font-family:var(--sans)}
+.leaflet-popup-content{font-size:13px;line-height:1.55}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:28px;padding-top:28px}
+  .ruler{height:360px;max-width:360px}
+  .cols,.cols.even{grid-template-columns:1fr}
+  #map{height:420px}
+  .bar .clock{margin-left:0}
+}
+@media (max-width:520px){ .facts{grid-template-columns:1fr} }
+@media (prefers-reduced-motion:reduce){ .water{transition:none} }
 </style>
 </head>
 <body>
-<header>
-  <div class="hdr">
-    <div>
-      <h1>🌀 薔琵颱風 CHAMPI 即時儀表板<small>海洋漁業・水產養殖影響</small></h1>
-      <div class="org">農業部水產試驗所 AI 應用小組</div>
-      <div class="badges">
-        <span class="badge hot" id="b-cat">—</span>
-        <span class="badge" id="b-warn">警報狀態讀取中</span>
-        <span class="badge">CWA 第 29 號</span>
-        <span class="badge">JMA 台風第 30 号</span>
-        <span class="badge">JTWC 29W</span>
-      </div>
-    </div>
-    <div class="upd">
-      頁面刷新：<b id="u-page">—</b>（<span id="u-next">10:00</span> 後自動更新）
-      <button class="btn" id="btn-refresh">立即更新</button>
-    </div>
+
+<div class="bar"><div class="wrap">
+  <h1>薔琵颱風<span>CHAMPI 2026</span></h1>
+  <span class="org">農業部水產試驗所 AI 應用小組</span>
+  <span class="clock">資料更新於 <b id="u-page">—</b>，<span id="u-next">10:00</span> 後自動重新整理<button class="btn" id="btn-refresh">立即更新</button></span>
+</div></div>
+
+<main class="wrap">
+
+<section class="hero" aria-labelledby="verdict">
+  <div>
+    <h2 class="verdict" id="verdict">讀取海況中…</h2>
+    <p class="lede" id="lede"></p>
+    <dl class="facts" id="facts"></dl>
+    <p class="fine">出海判斷依中央氣象署颱風警報、浮標實測與 Open-Meteo 波浪模式自動產生，每 10 分鐘更新；實際出港請以漁業署、海巡署及各漁港公告為準。</p>
   </div>
-</header>
-
-<div class="wrap">
-
-<section>
-  <div class="alert on" id="alert">資料讀取中…</div>
+  <div class="ruler" aria-label="浮標實測浪級尺">
+    <div class="scale" id="scale"><div class="water" id="water"></div></div>
+    <div class="marks" id="marks"></div>
+    <div class="ruler-cap" id="ruler-cap">中央氣象署浪級，標記為各浮標最新實測浪高。</div>
+  </div>
 </section>
 
-<section>
-  <h2>颱風現況 <span class="ts" id="ts-kpi"></span></h2>
-  <div class="grid kpis" id="kpis"></div>
-  <p class="muted" id="kpi-note"></p>
+<section class="blk" id="warn-blk" aria-labelledby="h-warn">
+  <h2 id="h-warn">颱風警報</h2>
+  <p class="sub" id="warn-sub"></p>
+  <div class="warnbox" id="warnbox"><p>讀取中…</p></div>
 </section>
 
-<section>
-  <h2>中央氣象署 颱風警報 <span class="ts" id="ts-warn"></span></h2>
-  <div class="card"><dl class="warnsec" id="warn"></dl></div>
-</section>
-
-<section>
-  <h2>路徑與漁業／養殖監測點 <span class="ts" id="ts-map"></span></h2>
-  <div class="grid two">
+<section class="blk" aria-labelledby="h-map">
+  <h2 id="h-map">颱風位置與路徑</h2>
+  <p class="sub" id="map-sub"></p>
+  <div class="cols">
     <div>
-      <div id="map"></div>
+      <div id="map" role="region" aria-label="颱風路徑地圖"></div>
       <div class="legend">
-        <span><span class="dot" style="background:#94a3b8"></span>CWA 歷史路徑（顏色＝強度）</span>
-        <span><span class="dot" style="background:#f43f5e"></span>CWA 預報（70% 機率圈）</span>
-        <span><span class="dot" style="background:#a78bfa"></span>JMA 預報</span>
-        <span><span class="dot" style="background:rgba(250,204,21,.6)"></span>七級風暴風圈</span>
-        <span><span class="dot" style="background:rgba(239,68,68,.6)"></span>十級風暴風圈</span>
-        <span>▲ 模式浪高點　◆ 浮標實測　● 養殖區風雨點（顏色＝風險）</span>
+        <span><i class="sw" style="background:#C4122F"></i>中央氣象署路徑（實線）與預報（虛線）</span>
+        <span><i class="sw" style="background:#6B4FA0"></i>日本氣象廳預報</span>
+        <span><i class="sw" style="background:#D99A0E;height:8px;opacity:.5"></i>七級風範圍</span>
+        <span>◆ 浮標（顏色＝浪級）　● 養殖區（顏色＝風雨風險）</span>
       </div>
     </div>
-    <div class="card">
-      <h3 style="margin-top:0">預報路徑（中央氣象署）</h3>
-      <div class="tbl" style="max-height:250px"><table id="t-fc"></table></div>
-      <h3>預報路徑（日本氣象廳）</h3>
-      <div class="tbl" style="max-height:220px"><table id="t-jma"></table></div>
+    <div class="read">
+      <dl id="read"></dl>
+      <p class="note" id="read-note"></p>
+      <details><summary>中央氣象署預報路徑</summary><div class="scroll"><table id="t-fc"></table></div></details>
+      <details><summary>日本氣象廳預報路徑</summary><div class="scroll"><table id="t-jma"></table></div></details>
     </div>
   </div>
 </section>
 
-<section class="expert">
-  <h2>即時研判：對海洋漁業及水產養殖之影響 <span class="ts" id="ts-exp"></span></h2>
-  <p><span class="stage" id="stage">—</span> <span class="muted" id="stage-txt"></span></p>
-  <div class="grid half">
-    <div class="card sev3" id="c-fish"><h3 style="margin-top:0">🎣 海洋漁業</h3><ul id="ex-fish"></ul></div>
-    <div class="card sev3" id="c-aq"><h3 style="margin-top:0">🐟 水產養殖</h3><ul id="ex-aqua"></ul></div>
+<section class="blk ana" aria-labelledby="h-ana">
+  <h2 id="h-ana">對漁業與養殖的影響</h2>
+  <p class="sub"><span class="stage" id="stage">—</span><span id="stage-txt"></span></p>
+  <div class="cols even">
+    <div><h3>海洋漁業</h3><ul id="ex-fish"></ul></div>
+    <div><h3>水產養殖</h3><ul id="ex-aqua"></ul></div>
   </div>
-  <div class="grid half" style="margin-top:12px">
-    <div class="card sev2"><h3 style="margin-top:0" id="adv-title">✅ 現階段建議</h3><ul id="ex-adv"></ul></div>
-    <div class="card sev1"><h3 style="margin-top:0">🔧 災後復原與通報</h3>
-      <ul>
-        <li>逐日監測鹽度、溶氧、pH、氨氮、亞硝酸，以小量多次換水調整，避免一次大量換水再造成緊迫。</li>
-        <li>密切觀察攝食與游動，死魚即時移除並消毒；有異常可洽水產試驗所各研究中心或縣市動物防疫機關協助診斷。</li>
-        <li>受損請用「農產業天然災害現地照相」APP 拍照存證，儘速向所在地鄉（鎮、市、區）公所通報，依農業部公告辦理現金救助或低利貸款；有投保養殖水產保險者同步申報理賠。</li>
-        <li>漁港清除漂流物、檢查泊區與航道水深；定置網業者檢查網具、錨碇後再下網。</li>
-        <li>颱風過後可利用研究船或衛星資料，觀測東部海域冷跡範圍、葉綠素變化與漁場位移（參考 <a href="https://petercttseng-ux.github.io/taiwan-sst-dashboard/" target="_blank" rel="noopener">臺灣海表溫儀表板</a>）。</li>
-      </ul>
+  <div class="cols even adv" style="margin-top:26px">
+    <div class="panel"><h3 id="adv-title">現階段建議</h3><ol id="ex-adv"></ol></div>
+    <div class="panel"><h3>災後復原與通報</h3>
+      <ol>
+        <li>逐日監測鹽度、溶氧、pH、氨氮、亞硝酸，小量多次換水，避免一次大量換水再造成緊迫。</li>
+        <li>觀察攝食與游動，死魚即時移除並消毒；異常可洽水產試驗所各研究中心或縣市動物防疫機關。</li>
+        <li>損失以「農產業天然災害現地照相」APP 拍照存證，儘速向鄉（鎮、市、區）公所通報，依農業部公告申請現金救助或低利貸款；已投保養殖水產保險者同步申請理賠。</li>
+        <li>漁港清除漂流物並檢查航道水深；定置網檢查網具與錨碇後再下網。</li>
+        <li>颱風過後可比對 <a href="https://petercttseng-ux.github.io/taiwan-sst-dashboard/" target="_blank" rel="noopener">臺灣海表溫儀表板</a>，觀察東部海域冷跡與漁場變化。</li>
+      </ol>
     </div>
   </div>
-  <p class="muted">本區文字依中央氣象署警報、颱風路徑預報、浮標實測及 Open-Meteo 模式資料，按規則自動產生，每 10 分鐘更新；研判僅供參考，實際損失以農業部及各縣市政府統計為準。</p>
+  <p class="fine" id="ana-ts"></p>
 </section>
 
-<section>
-  <h2>官方即時圖資 <span class="ts" id="ts-img"></span></h2>
-  <div class="grid imgs" id="imgs"></div>
-  <p class="muted">圖片直接連結中央氣象署、JTWC 原始檔，每 10 分鐘重新載入；點圖可放大。</p>
-</section>
-
-<section>
-  <h2>海況：浮標實測與漁場浪高預報</h2>
-  <div class="grid two">
-    <div class="card"><div class="chartbox" style="height:340px"><canvas id="c-wave"></canvas></div>
-      <p class="muted">Open-Meteo 海洋模式：過去 24 小時＋未來 72 小時示性波高。</p></div>
-    <div class="card">
-      <h3 style="margin-top:0">中央氣象署浮標實測 <span class="ts muted" id="ts-buoy"></span></h3>
-      <div class="tbl" style="max-height:200px"><table id="t-buoy"></table></div>
-      <h3>漁場浪高預報（未來 48 小時）</h3>
-      <div class="tbl" style="max-height:260px"><table id="t-wave"></table></div>
-      <p class="muted">風險：<span class="risk r0">低</span> &lt;2 m <span class="risk r1">中</span> 2–4 m <span class="risk r2">高</span> 4–6 m <span class="risk r3">極高</span> ≥6 m</p>
+<section class="blk" aria-labelledby="h-sea">
+  <h2 id="h-sea">海況</h2>
+  <p class="sub">浮標為中央氣象署實測；漁場浪高為 Open-Meteo 波浪模式，含過去 24 小時與未來 72 小時。</p>
+  <div class="cols">
+    <div class="panel"><div class="chartbox" style="height:340px"><canvas id="c-wave" aria-label="各漁場浪高時序圖"></canvas></div></div>
+    <div>
+      <h3>浮標實測 <span class="sub" id="buoy-ts" style="font-weight:400"></span></h3>
+      <div class="scroll" style="max-height:260px"><table id="t-buoy"></table></div>
     </div>
   </div>
+  <h3 style="margin-top:24px">漁場未來 48 小時最大浪高</h3>
+  <div class="scroll"><table id="t-wave"></table></div>
 </section>
 
-<section>
-  <h2>養殖區風雨（Open-Meteo 模式） <span class="ts" id="ts-aqua"></span></h2>
-  <div class="grid two">
-    <div class="card"><div class="chartbox" style="height:340px"><canvas id="c-aqua"></canvas></div></div>
-    <div class="card"><div class="tbl"><table id="t-aqua"></table></div>
-    <p class="muted">72 小時（過去 24h＋未來 48h）累積雨量與最大陣風取較高等級：雨量 ≥80/200/350 mm 或陣風 ≥8/10/12 級分別為中/高/極高。</p></div>
+<section class="blk" aria-labelledby="h-aqua">
+  <h2 id="h-aqua">養殖區風雨</h2>
+  <p class="sub">Open-Meteo 氣象模式，72 小時（過去 24 小時＋未來 48 小時）累積雨量與最大陣風。雨量達 80、200、350 mm 或陣風達 8、10、12 級，分別列為中、高、極高風險。</p>
+  <div class="cols">
+    <div class="panel"><div class="chartbox" style="height:340px"><canvas id="c-aqua" aria-label="養殖區雨量與陣風圖"></canvas></div></div>
+    <div class="scroll" style="max-height:400px"><table id="t-aqua"></table></div>
   </div>
 </section>
 
-<section>
-  <h2>強度變化 <span class="ts" id="ts-int"></span></h2>
-  <div class="card"><div class="chartbox"><canvas id="c-int"></canvas></div>
-  <p class="muted">中央氣象署逐時分析（10 分鐘平均風速、中心氣壓）與日本氣象廳最新實況。</p></div>
+<section class="blk" aria-labelledby="h-img">
+  <h2 id="h-img">官方圖資</h2>
+  <p class="sub">直接載入中央氣象署與 JTWC 原始圖檔，可左右捲動，點圖放大。</p>
+  <div class="strip" id="imgs"></div>
 </section>
 
-<section>
-  <h2>事件時間軸（依路徑資料自動產生） <span class="ts" id="ts-tl"></span></h2>
-  <div class="card"><ul class="timeline" id="timeline"></ul></div>
-</section>
-
-<section>
-  <h2>最新新聞 <span class="ts" id="ts-news"></span></h2>
-  <div class="card">
-    <div class="tabs" id="news-tabs">
-      <button data-k="fish" class="on">漁業／養殖</button>
-      <button data-k="tw">颱風動態</button>
-      <button data-k="agri">農損／民生</button>
-      <button data-k="en">國際（英文）</button>
-      <button data-k="jp">日本</button>
-    </div>
-    <ul class="news" id="news"></ul>
+<section class="blk" aria-labelledby="h-log">
+  <h2 id="h-log">強度變化與航海日誌</h2>
+  <p class="sub">依中央氣象署逐時路徑自動整理；斜體為預報。</p>
+  <div class="cols even">
+    <div class="panel"><div class="chartbox"><canvas id="c-int" aria-label="中心氣壓與最大風速變化圖"></canvas></div></div>
+    <div class="scroll" style="max-height:420px"><table class="log" id="log"></table></div>
   </div>
 </section>
 
-<section>
-  <h2>資料來源狀態</h2>
-  <div class="card"><div class="src" id="srcstat"></div></div>
+<section class="blk" aria-labelledby="h-news">
+  <h2 id="h-news">相關新聞</h2>
+  <p class="sub" id="news-ts"></p>
+  <div class="tabs" role="tablist" id="news-tabs">
+    <button role="tab" data-k="fish" aria-selected="true">漁業與養殖</button>
+    <button role="tab" data-k="tw" aria-selected="false">颱風動態</button>
+    <button role="tab" data-k="agri" aria-selected="false">農損與民生</button>
+    <button role="tab" data-k="en" aria-selected="false">英文報導</button>
+    <button role="tab" data-k="jp" aria-selected="false">日本報導</button>
+  </div>
+  <ul class="news" id="news"></ul>
 </section>
 
-<footer>
-  <b>資料來源：</b>
-  <a href="https://opendata.cwa.gov.tw/" target="_blank" rel="noopener">中央氣象署開放資料（W-C0034-001 颱風警報、W-C0034-005 熱帶氣旋路徑、O-B0075-001 海象監測）</a>、
-  <a href="https://www.cwa.gov.tw/V8/C/P/Typhoon/TY_NEWS.html" target="_blank" rel="noopener">中央氣象署颱風消息圖資</a>、
-  <a href="https://www.jma.go.jp/bosai/map.html#contents=typhoon" target="_blank" rel="noopener">日本氣象廳</a>、
-  <a href="https://www.metoc.navy.mil/jtwc/jtwc.html" target="_blank" rel="noopener">JTWC</a>、
-  <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo（CC BY 4.0）</a>、
-  <a href="https://news.google.com/" target="_blank" rel="noopener">Google News</a>（由 GitHub Actions 定時彙整）。
-  <br>本頁由<b>農業部水產試驗所 AI 應用小組</b>製作，為內部參考用儀表板，非官方警報發布管道；颱風警報、停班停課及災情請以中央氣象署、行政院人事行政總處及中央災害應變中心公布為準。
-  <br>相關監測：<a href="https://petercttseng-ux.github.io/taiwan-sst-dashboard/" target="_blank" rel="noopener">臺灣海表溫儀表板</a>・<a href="https://petercttseng-ux.github.io/fri-cwa-weather-dashboard/" target="_blank" rel="noopener">水試所氣象儀表板</a>・<a href="https://petercttseng-ux.github.io/budai-salinity-dashboard/" target="_blank" rel="noopener">布袋鹽度儀表板</a>
-</footer>
-</div>
+<section class="blk" aria-labelledby="h-src">
+  <h2 id="h-src">資料來源狀態</h2>
+  <div class="status" id="srcstat"></div>
+</section>
 
-<div class="lb" id="lb"><img alt=""></div>
+</main>
+
+<footer><div class="wrap">
+  <p>資料來源：<a href="https://opendata.cwa.gov.tw/" target="_blank" rel="noopener">中央氣象署開放資料</a>（颱風警報 W-C0034-001、熱帶氣旋路徑 W-C0034-005、海象監測 O-B0075-001）與<a href="https://www.cwa.gov.tw/V8/C/P/Typhoon/TY_NEWS.html" target="_blank" rel="noopener">颱風消息圖資</a>、<a href="https://www.jma.go.jp/bosai/map.html#contents=typhoon" target="_blank" rel="noopener">日本氣象廳</a>、<a href="https://www.metoc.navy.mil/jtwc/jtwc.html" target="_blank" rel="noopener">JTWC</a>、<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>（CC BY 4.0）、Google News（GitHub Actions 定時彙整）。</p>
+  <p>本頁由農業部水產試驗所 AI 應用小組製作，供內部參考，非官方警報發布管道。颱風警報、停班停課及災情請以中央氣象署、行政院人事行政總處及中央災害應變中心公布為準。</p>
+  <p>相關監測：<a href="https://petercttseng-ux.github.io/taiwan-sst-dashboard/" target="_blank" rel="noopener">臺灣海表溫儀表板</a>、<a href="https://petercttseng-ux.github.io/fri-cwa-weather-dashboard/" target="_blank" rel="noopener">水試所氣象儀表板</a>、<a href="https://petercttseng-ux.github.io/budai-salinity-dashboard/" target="_blank" rel="noopener">布袋鹽度儀表板</a></p>
+</div></footer>
+
+<div class="lb" id="lb" role="dialog" aria-label="放大圖片"><img alt=""></div>
 
 <script>
 var CWA_KEY = 'CWA-4024AEE6-8945-4BAE-9AE2-3A5D649911CC';
@@ -267,422 +305,407 @@ var TY_EN = 'CHAMPI', TY_ZH = '薔琵';
 var REFRESH_MS = 10*60*1000;
 function $(s){ return document.querySelector(s); }
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-var fmtTW = function(d){ return new Intl.DateTimeFormat('zh-TW',{timeZone:'Asia/Taipei',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d); };
+var fmtTW = function(d){ return new Intl.DateTimeFormat('zh-TW',{timeZone:'Asia/Taipei',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}).format(d); };
 function num(v){ var n=parseFloat(v); return isNaN(n)?null:n; }
-function cwaUrl(id,extra){ return 'https://opendata.cwa.gov.tw/api/v1/rest/datastore/'+id+'?Authorization='+CWA_KEY+'&format=JSON'+(extra||''); }
+function cwaUrl(id){ return 'https://opendata.cwa.gov.tw/api/v1/rest/datastore/'+id+'?Authorization='+CWA_KEY+'&format=JSON'; }
 function getJSON(u){ return fetch(u,{cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }); }
+
+// ---------- 浪級（中央氣象署） ----------
+var BANDS=[{n:'小浪',lo:0,hi:0.5,c:'#BFE0D6'},{n:'中浪',lo:0.5,hi:1.25,c:'#86C5AE'},{n:'大浪',lo:1.25,hi:2.5,c:'#4EA383'},{n:'巨浪',lo:2.5,hi:4,c:'#E6B54A'},{n:'狂浪',lo:4,hi:6,c:'#E0701A'},{n:'狂濤',lo:6,hi:9,c:'#C4122F'},{n:'怒濤',lo:9,hi:14,c:'#8E0E24'},{n:'暴濤',lo:14,hi:20,c:'#4A0716'}];
+function bandOf(h){ if(h==null) return null; for(var i=0;i<BANDS.length;i++) if(h<BANDS[i].hi||i===BANDS.length-1) return i; }
+function bandName(h){ if(h==null) return '—'; return h<0.1?'微浪':BANDS[bandOf(h)].n; }
+function bandPos(h){ var i=bandOf(h), b=BANDS[i]; return (i+Math.min(1,(h-b.lo)/(b.hi-b.lo)))/BANDS.length; }
+function chip(h){ if(h==null) return '—'; var b=BANDS[bandOf(h)]; var dark=bandOf(h)>=5; return '<span class="chip" style="background:'+b.c+';color:'+(dark?'#fff':'#0F2C3F')+'">'+bandName(h)+'</span>'; }
 
 // ---------- 監測點 ----------
 var SEA = [
-  {n:'基隆外海',lat:25.25,lon:121.80,note:'北部漁場／八斗子',east:true},
-  {n:'宜蘭外海',lat:24.60,lon:122.00,note:'南方澳・定置網・鯖鰺',east:true},
-  {n:'花蓮外海',lat:23.95,lon:121.80,note:'定置網・曳繩釣',east:true},
-  {n:'臺東成功外海',lat:23.10,lon:121.55,note:'鏢旗魚・定置網',east:true},
-  {n:'屏東東港外海',lat:22.30,lon:120.30,note:'東港・小琉球箱網'},
+  {n:'基隆外海',lat:25.25,lon:121.80,note:'北部漁場、八斗子',east:true},
+  {n:'宜蘭外海',lat:24.60,lon:122.00,note:'南方澳、定置網、鯖鰺',east:true},
+  {n:'花蓮外海',lat:23.95,lon:121.80,note:'定置網、曳繩釣',east:true},
+  {n:'臺東成功外海',lat:23.10,lon:121.55,note:'鏢旗魚、定置網',east:true},
+  {n:'屏東東港外海',lat:22.30,lon:120.30,note:'東港、小琉球箱網'},
   {n:'澎湖海域',lat:23.50,lon:119.75,note:'箱網養殖'},
-  {n:'臺南七股外海',lat:23.10,lon:119.95,note:'牡蠣・近海'},
+  {n:'臺南七股外海',lat:23.10,lon:119.95,note:'牡蠣、近海'},
   {n:'雲嘉外海',lat:23.55,lon:120.00,note:'牡蠣棚架'},
-  {n:'彰化外海',lat:24.10,lon:120.20,note:'牡蠣・文蛤'},
-  {n:'桃竹外海',lat:25.05,lon:120.95,note:'竹圍・永安漁港'}
+  {n:'彰化外海',lat:24.10,lon:120.20,note:'牡蠣、文蛤'},
+  {n:'桃竹外海',lat:25.05,lon:120.95,note:'竹圍、永安漁港'}
 ];
 var AQUA = [
-  {n:'宜蘭壯圍・五結',lat:24.74,lon:121.80},
-  {n:'彰化芳苑',lat:23.92,lon:120.33},
-  {n:'雲林口湖',lat:23.58,lon:120.18},
-  {n:'嘉義布袋・東石',lat:23.38,lon:120.17},
-  {n:'臺南七股・北門',lat:23.14,lon:120.10},
-  {n:'高雄永安・彌陀',lat:22.82,lon:120.23},
-  {n:'屏東林邊・佳冬',lat:22.43,lon:120.51},
-  {n:'澎湖馬公',lat:23.57,lon:119.58},
-  {n:'花蓮吉安',lat:23.96,lon:121.60},
-  {n:'臺東成功',lat:23.10,lon:121.37}
+  {n:'宜蘭壯圍、五結',lat:24.74,lon:121.80},{n:'彰化芳苑',lat:23.92,lon:120.33},{n:'雲林口湖',lat:23.58,lon:120.18},
+  {n:'嘉義布袋、東石',lat:23.38,lon:120.17},{n:'臺南七股、北門',lat:23.14,lon:120.10},{n:'高雄永安、彌陀',lat:22.82,lon:120.23},
+  {n:'屏東林邊、佳冬',lat:22.43,lon:120.51},{n:'澎湖馬公',lat:23.57,lon:119.58},{n:'花蓮吉安',lat:23.96,lon:121.60},{n:'臺東成功',lat:23.10,lon:121.37}
 ];
 var BUOYS = {
-  '46694A':{n:'龍洞浮標',lat:25.10,lon:121.92},
-  '46708A':{n:'龜山島浮標',lat:24.85,lon:121.93},
-  '46706A':{n:'蘇澳浮標',lat:24.63,lon:121.88},
-  '46699A':{n:'花蓮浮標',lat:24.03,lon:121.63},
-  '46761F':{n:'成功浮標',lat:23.13,lon:121.42},
-  '46714D':{n:'小琉球浮標',lat:22.32,lon:120.36},
-  '46735A':{n:'澎湖浮標',lat:23.73,lon:119.55},
-  '46757B':{n:'新竹浮標',lat:24.76,lon:120.84},
-  '46778A':{n:'七股浮標',lat:23.10,lon:120.00}
+  '46694A':{n:'龍洞',lat:25.10,lon:121.92,east:true},'46708A':{n:'龜山島',lat:24.85,lon:121.93,east:true},'46706A':{n:'蘇澳',lat:24.63,lon:121.88,east:true},
+  '46699A':{n:'花蓮',lat:24.03,lon:121.63,east:true},'46761F':{n:'成功',lat:23.13,lon:121.42,east:true},'46714D':{n:'小琉球',lat:22.32,lon:120.36},
+  '46735A':{n:'澎湖',lat:23.73,lon:119.55},'46757B':{n:'新竹',lat:24.76,lon:120.84},'46778A':{n:'七股',lat:23.10,lon:120.00}
 };
 var PLACES = [['基隆',25.15,121.77],['蘇澳',24.60,121.86],['花蓮',23.98,121.61],['臺東成功',23.10,121.38],['鵝鑾鼻',21.90,120.85],['高雄',22.62,120.27],['澎湖馬公',23.57,119.58],['臺中港',24.29,120.51],['新竹',24.85,120.92],['淡水',25.18,121.41]];
-
-var RISK_TXT=['低','中','高','極高'], RISK_COL=['#22c55e','#eab308','#f97316','#ef4444'];
-function riskWave(h){ return h==null?-1 : h>=6?3 : h>=4?2 : h>=2?1 : 0; }
+var RISK=['低','中','高','極高'], RISKC=['#4EA383','#E6B54A','#E0701A','#C4122F'];
 function riskAqua(rain,gust){ return Math.max(rain>=350?3:rain>=200?2:rain>=80?1:0, gust>=32.7?3:gust>=24.5?2:gust>=17.2?1:0); }
 function beaufort(ms){ return [0.3,1.6,3.4,5.5,8.0,10.8,13.9,17.2,20.8,24.5,28.5,32.7,37.0,41.5,46.2,51.0,56.1,61.3].filter(function(v){return ms>=v;}).length; }
 function hav(a,b,c,d){ var R=6371,r=Math.PI/180,x=Math.pow(Math.sin((c-a)*r/2),2)+Math.cos(a*r)*Math.cos(c*r)*Math.pow(Math.sin((d-b)*r/2),2); return 2*R*Math.asin(Math.sqrt(x)); }
 function nearest(lat,lon){ var best=null; PLACES.forEach(function(p){ var d=hav(lat,lon,p[1],p[2]); if(!best||d<best[1]) best=[p[0],d]; }); return best; }
 function catZh(w){ return w==null?'—': w>=51?'強烈颱風': w>=32.7?'中度颱風': w>=17.2?'輕度颱風':'熱帶性低氣壓'; }
-function windColor(w){ return w==null?'#94a3b8': w>=51?'#ef4444': w>=32.7?'#f97316': w>=17.2?'#eab308':'#38bdf8'; }
+function windColor(w){ return w==null?'#7a8a94': w>=51?'#8E0E24': w>=32.7?'#C4122F': w>=17.2?'#E0701A':'#2C6E8F'; }
 var DIRZH={N:'北',NNE:'北北東',NE:'東北',ENE:'東北東',E:'東',ESE:'東南東',SE:'東南',SSE:'南南東',S:'南',SSW:'南南西',SW:'西南',WSW:'西南西',W:'西',WNW:'西北西',NW:'西北',NNW:'北北西'};
 
-// ---------- 全域狀態 ----------
 var S = {cwa:null, warn:null, jma:null, buoy:null, marine:null, aqua:null, snap:null, status:{}};
 
-// ---------- 資料讀取 ----------
+// ---------- 讀取 ----------
 function loadCwaTrack(){
   return getJSON(cwaUrl('W-C0034-005')).then(function(j){
     var list=((j.records||{}).TropicalCyclones||{}).TropicalCyclone||[];
     var tc=list.filter(function(t){return (t.TyphoonName||'').toUpperCase()===TY_EN;})[0];
-    if(!tc){ S.cwa={active:false}; return; }
-    var fixes=((tc.AnalysisData||{}).Fix||[]).map(function(f){ return {t:new Date(f.DateTime),lat:num(f.CoordinateLatitude),lon:num(f.CoordinateLongitude),w:num(f.MaxWindSpeed),g:num(f.MaxGustSpeed),p:num(f.Pressure),spd:num(f.MovingSpeed),dir:f.MovingDirection,r15:num(((f.Circle15ms||{}).Radius)),r25:num(((f.Circle25ms||{}).Radius)),pred:((f.MovingPrediction||[])[0]||{}).value}; }).filter(function(f){return f.lat!=null;});
+    if(!tc){ S.cwa={active:false}; S.status.cwa=['ok','清單中已無此颱風']; return; }
+    var fixes=((tc.AnalysisData||{}).Fix||[]).map(function(f){ return {t:new Date(f.DateTime),lat:num(f.CoordinateLatitude),lon:num(f.CoordinateLongitude),w:num(f.MaxWindSpeed),g:num(f.MaxGustSpeed),p:num(f.Pressure),spd:num(f.MovingSpeed),dir:f.MovingDirection,r15:num((f.Circle15ms||{}).Radius),r25:num((f.Circle25ms||{}).Radius),pred:((f.MovingPrediction||[])[0]||{}).value}; }).filter(function(f){return f.lat!=null;});
     fixes.sort(function(a,b){return a.t-b.t;});
-    var fcs=((tc.ForecastData||{}).Fix||[]).map(function(f){ var it=new Date(f.InitialTime), h=+f.ForecastHour; return {init:it,tau:h,t:new Date(it.getTime()+h*3600e3),lat:num(f.CoordinateLatitude),lon:num(f.CoordinateLongitude),w:num(f.MaxWindSpeed),g:num(f.MaxGustSpeed),p:num(f.Pressure),dir:f.MovingDirection,spd:num(f.MovingSpeed),r15:num(((f.Circle15ms||{}).Radius)),r25:num(((f.Circle25ms||{}).Radius)),p70:num(f.Radius70PercentProbability)}; }).filter(function(f){return f.lat!=null;});
+    var fcs=((tc.ForecastData||{}).Fix||[]).map(function(f){ var it=new Date(f.InitialTime), h=+f.ForecastHour; return {init:it,tau:h,t:new Date(it.getTime()+h*3600e3),lat:num(f.CoordinateLatitude),lon:num(f.CoordinateLongitude),w:num(f.MaxWindSpeed),p:num(f.Pressure),p70:num(f.Radius70PercentProbability)}; }).filter(function(f){return f.lat!=null;});
     fcs.sort(function(a,b){return a.tau-b.tau;});
-    S.cwa={active:true,no:tc.CwaTyNo,fixes:fixes,fcs:fcs,cur:fixes[fixes.length-1]};
+    S.cwa={active:true,fixes:fixes,fcs:fcs,cur:fixes[fixes.length-1]};
     S.status.cwa=['ok','分析 '+fmtTW(S.cwa.cur.t)];
   }).catch(function(e){ S.status.cwa=['bad',e.message]; });
 }
 function loadCwaWarn(){
   return getJSON(cwaUrl('W-C0034-001')).then(function(j){
     var info=((j.records||{}).info||[]);
-    var w=info.filter(function(i){ return JSON.stringify(i).indexOf(TY_ZH)>=0 || JSON.stringify(i).indexOf(TY_EN)>=0; })[0] || null;
+    var w=info.filter(function(i){ var s=JSON.stringify(i); return s.indexOf(TY_ZH)>=0||s.indexOf(TY_EN)>=0; })[0]||null;
     if(w){
-      var secs=((w.description||{}).section||[]).map(function(s){return {title:s.title,value:s.value};});
-      S.warn={active:true,headline:w.headline,effective:new Date(w.effective),expires:w.expires?new Date(w.expires):null,secs:secs,web:w.web,areas:(w.area||[]).map(function(a){return a.areaDesc;})};
+      var lifted=/解除/.test(w.headline||'');
+      S.warn={active:!lifted,lifted:lifted,headline:w.headline,effective:new Date(w.effective),expires:w.expires?new Date(w.expires):null,secs:((w.description||{}).section||[]).map(function(s){return {title:s.title,value:s.value};}),web:w.web};
       S.status.warn=['ok',w.headline+' '+fmtTW(S.warn.effective)];
-    } else { S.warn={active:false}; S.status.warn=['ok','目前無薔琵颱風警報']; }
+    } else { S.warn={active:false,lifted:false}; S.status.warn=['ok','目前無薔琵颱風警報']; }
   }).catch(function(e){ S.status.warn=['bad',e.message]; });
 }
 function loadJma(){
   return getJSON('https://www.jma.go.jp/bosai/typhoon/data/targetTc.json').then(function(list){
     return Promise.all(list.map(function(tc){ return getJSON('https://www.jma.go.jp/bosai/typhoon/data/'+tc.tropicalCyclone+'/specifications.json').catch(function(){return null;}); }));
   }).then(function(specs){
-    var sp=specs.filter(function(s){ return s && s[0] && ((s[0].name||{}).en||'').toUpperCase()===TY_EN; })[0];
-    if(!sp){ S.jma=null; S.status.jma=['ok','JMA 已無此颱風資料']; return; }
-    var pts=sp.slice(1).filter(function(p){return p.position&&p.position.deg;}).map(function(p){ var mw=p.maximumWind||{}; return {hours:p.advancedHours,t:new Date((p.validtime||{}).UTC),lat:p.position.deg[0],lon:p.position.deg[1],p:num(p.pressure),w:num((mw.sustained||{})['m/s']),g:num((mw.gust||{})['m/s']),course:p.course,location:p.location,intensity:p.intensity,scale:p.scale,cat:(p.category||{}).en,prob:(p.probabilityCircleRadius||{}).km}; });
+    var sp=specs.filter(function(s){ return s&&s[0]&&((s[0].name||{}).en||'').toUpperCase()===TY_EN; })[0];
+    if(!sp){ S.jma=null; S.status.jma=['ok','日本氣象廳已停止發布']; return; }
+    var pts=sp.slice(1).filter(function(p){return p.position&&p.position.deg;}).map(function(p){ var mw=p.maximumWind||{}; return {hours:p.advancedHours,t:new Date((p.validtime||{}).UTC),lat:p.position.deg[0],lon:p.position.deg[1],p:num(p.pressure),w:num((mw.sustained||{})['m/s']),course:p.course,location:p.location,intensity:p.intensity,scale:p.scale,cat:(p.category||{}).en}; });
     S.jma={issue:new Date(sp[0].issue.UTC),pts:pts};
     S.status.jma=['ok','發布 '+fmtTW(S.jma.issue)];
   }).catch(function(e){ S.status.jma=['bad',e.message]; });
 }
 function loadBuoy(){
   return getJSON(cwaUrl('O-B0075-001')).then(function(j){
-    var L=(((j.Records||j.records||{}).SeaSurfaceObs)||{}).Location||[];
-    var out=[];
+    var L=(((j.Records||j.records||{}).SeaSurfaceObs)||{}).Location||[], out=[];
     L.forEach(function(l){ var id=(l.Station||{}).StationID; if(!BUOYS[id]) return;
       var obs=((l.StationObsTimes||{}).StationObsTime||[]).filter(function(t){return t.WeatherElements&&num(t.WeatherElements.WaveHeight)!=null;});
       obs.sort(function(a,b){return new Date(b.DateTime)-new Date(a.DateTime);});
-      if(!obs.length || Date.now()-new Date(obs[0].DateTime).getTime()>6*3600e3) return;
+      if(!obs.length||Date.now()-new Date(obs[0].DateTime).getTime()>6*3600e3) return;
       var o=obs[0].WeatherElements, mx=Math.max.apply(null,obs.slice(0,24).map(function(t){return num(t.WeatherElements.WaveHeight);}));
-      out.push({id:id,n:BUOYS[id].n,lat:BUOYS[id].lat,lon:BUOYS[id].lon,t:new Date(obs[0].DateTime),h:num(o.WaveHeight),per:num(o.WavePeriod),dir:o.WaveDirectionDescription,sst:num(o.SeaTemperature),mx24:mx});
+      out.push({id:id,n:BUOYS[id].n,east:!!BUOYS[id].east,lat:BUOYS[id].lat,lon:BUOYS[id].lon,t:new Date(obs[0].DateTime),h:num(o.WaveHeight),per:num(o.WavePeriod),sst:num(o.SeaTemperature),mx24:mx});
     });
+    out.sort(function(a,b){return b.h-a.h;});
     S.buoy=out; S.status.buoy=['ok',out.length+' 站'];
   }).catch(function(e){ S.status.buoy=['bad',e.message]; });
 }
 function loadMarine(){
   var q=new URLSearchParams({latitude:SEA.map(function(s){return s.lat;}).join(','),longitude:SEA.map(function(s){return s.lon;}).join(','),hourly:'wave_height',past_days:1,forecast_days:3,timezone:'Asia/Taipei'});
   return getJSON('https://marine-api.open-meteo.com/v1/marine?'+q).then(function(js){
-    var arr=Array.isArray(js)?js:[js]; var times=arr[0].hourly.time.map(function(t){return new Date(t+':00+08:00');});
-    var now=Date.now(), i0=Math.max(0,times.findIndex(function(t){return t.getTime()>=now;}));
+    var arr=Array.isArray(js)?js:[js], times=arr[0].hourly.time.map(function(t){return new Date(t+':00+08:00');});
+    var i0=Math.max(0,times.findIndex(function(t){return t.getTime()>=Date.now();}));
     S.marine={times:times,i0:i0,series:arr.map(function(o){return o.hourly.wave_height;})};
-    S.status.marine=['ok','模式 '+fmtTW(new Date())];
+    S.status.marine=['ok','讀取 '+fmtTW(new Date())];
   }).catch(function(e){ S.status.marine=['bad',e.message]; });
 }
 function loadAqua(){
   var q=new URLSearchParams({latitude:AQUA.map(function(s){return s.lat;}).join(','),longitude:AQUA.map(function(s){return s.lon;}).join(','),hourly:'precipitation,wind_gusts_10m',wind_speed_unit:'ms',past_days:1,forecast_days:3,timezone:'Asia/Taipei'});
   return getJSON('https://api.open-meteo.com/v1/forecast?'+q).then(function(js){
-    var arr=Array.isArray(js)?js:[js]; var times=arr[0].hourly.time.map(function(t){return new Date(t+':00+08:00');});
-    var now=Date.now(), i0=Math.max(0,times.findIndex(function(t){return t.getTime()>=now;}));
-    var s0=Math.max(0,i0-24), s1=i0+48;
-    S.aqua=arr.map(function(o,i){
-      var pr=o.hourly.precipitation, gs=o.hourly.wind_gusts_10m;
-      var sum=function(a,b,c){var s=0;for(var k=b;k<c&&k<a.length;k++) s+=(a[k]||0);return s;};
+    var arr=Array.isArray(js)?js:[js], times=arr[0].hourly.time.map(function(t){return new Date(t+':00+08:00');});
+    var i0=Math.max(0,times.findIndex(function(t){return t.getTime()>=Date.now();})), s0=Math.max(0,i0-24), s1=i0+48;
+    function sum(a,b,c){var s=0;for(var k=b;k<c&&k<a.length;k++) s+=(a[k]||0);return s;}
+    S.aqua=arr.map(function(o,i){ var pr=o.hourly.precipitation, gs=o.hourly.wind_gusts_10m;
       var past=sum(pr,s0,i0), fut=sum(pr,i0,s1), g=Math.max.apply(null,gs.slice(s0,s1).filter(function(v){return v!=null;}));
-      return {n:AQUA[i].n,lat:AQUA[i].lat,lon:AQUA[i].lon,past:past,fut:fut,rain:past+fut,gust:g,rk:riskAqua(past+fut,g)};
-    });
-    S.status.aqua=['ok','模式 '+fmtTW(new Date())];
+      return {n:AQUA[i].n,lat:AQUA[i].lat,lon:AQUA[i].lon,past:past,fut:fut,rain:past+fut,gust:g,rk:riskAqua(past+fut,g)}; });
+    S.status.aqua=['ok','讀取 '+fmtTW(new Date())];
   }).catch(function(e){ S.status.aqua=['bad',e.message]; });
 }
 function loadSnapshot(){
-  return getJSON('data/latest.json?t='+Date.now()).then(function(d){ S.snap=d; S.status.news=['ok','彙整 '+(d.updated?fmtTW(new Date(d.updated)):'—')]; })
-    .catch(function(e){ S.status.news=['bad',e.message]; });
+  return getJSON('data/latest.json?t='+Date.now()).then(function(d){ S.snap=d; S.status.news=['ok','彙整 '+(d.updated?fmtTW(new Date(d.updated)):'—')]; }).catch(function(e){ S.status.news=['bad',e.message]; });
+}
+
+// ---------- 判讀 ----------
+function sec(title){ var s=((S.warn&&S.warn.secs)||[]).filter(function(x){return x.title.indexOf(title)>=0;})[0]; return s?s.value:''; }
+function position(){
+  var c=S.cwa&&S.cwa.active?S.cwa.cur:null, j=S.jma?S.jma.pts.filter(function(p){return p.hours===0;})[0]:null;
+  if(j&&(!c||j.t-c.t>3600e3)) return {lat:j.lat,lon:j.lon,t:j.t,w:j.w,p:j.p,src:'日本氣象廳',r15:null};
+  if(c) return {lat:c.lat,lon:c.lon,t:c.t,w:c.w,p:c.p,src:'中央氣象署',r15:c.r15};
+  return null;
+}
+function curState(){
+  var pos=position(); if(!pos) return null;
+  var nr=nearest(pos.lat,pos.lon), now=Date.now();
+  var fut=(S.cwa&&S.cwa.fcs||[]).filter(function(f){return f.t.getTime()>now;});
+  var fcMin=null; fut.forEach(function(f){ var n=nearest(f.lat,f.lon); if(!fcMin||n[1]<fcMin.d) fcMin={d:n[1],place:n[0],t:f.t}; });
+  var fx=S.cwa&&S.cwa.fixes||[], prev=fx.length>6?fx[fx.length-7]:null, prevD=prev?nearest(prev.lat,prev.lon)[1]:null;
+  var warnOn=S.warn&&S.warn.active, covering=pos.r15&&nr[1]<=pos.r15, stage, color;
+  if(!warnOn && nr[1]>300 && (!fcMin||fcMin.d>=nr[1]-20)){ stage='已遠離'; color='#2E8A66'; }
+  else if(covering && fcMin && fcMin.d<nr[1]-20){ stage='暴風圈籠罩，持續接近'; color='#C4122F'; }
+  else if(covering){ stage='暴風圈籠罩'; color='#C4122F'; }
+  else if(fcMin && fcMin.d<nr[1]-30){ stage='接近中'; color='#E0701A'; }
+  else if(prevD!=null && nr[1]>prevD+20){ stage='逐漸遠離'; color='#9A6A00'; }
+  else { stage='影響中'; color='#E0701A'; }
+  return {pos:pos,nr:nr,fcMin:fcMin,stage:stage,color:color,covering:covering};
+}
+function calmTime(){
+  var m=S.marine; if(!m) return null;
+  for(var k=m.i0;k<m.times.length;k++){ var ok=SEA.every(function(s,i){ return !s.east||(m.series[i][k]!=null&&m.series[i][k]<2.5); }); if(ok) return m.times[k]; }
+  return 'none';
+}
+function seaMax(){
+  var m=S.marine; if(!m) return;
+  SEA.forEach(function(s,i){ var h=m.series[i], mx=null, at=null; h.slice(m.i0,m.i0+48).forEach(function(v,k){ if(v!=null&&(mx==null||v>mx)){mx=v;at=m.times[m.i0+k];} }); s.cur=h[m.i0]; s.mx=mx; s.at=at; });
+}
+
+// ---------- Hero ----------
+function renderHero(){
+  var st=curState(), warnOn=S.warn&&S.warn.active, B=S.buoy||[], top=B[0], calm=calmTime();
+  var eastNow=SEA.filter(function(s){return s.east&&s.cur!=null;}).map(function(s){return s.cur;});
+  var eastModel=eastNow.length?Math.max.apply(null,eastNow):null;
+  var v=$('#verdict'), lede='';
+  if(warnOn){ v.textContent='颱風警報中，漁船請勿出海'; v.className='verdict red';
+    lede='中央氣象署'+esc(S.warn.headline)+'自 '+fmtTW(S.warn.effective)+' 起生效。'+(calm instanceof Date?'模式推估東部與東北部漁場約於 '+fmtTW(calm)+' 降至巨浪以下。':''); }
+  else if((top&&top.h>=2.5)||(eastModel!=null&&eastModel>=2.5)){ v.textContent='浪況仍大，出海請暫緩'; v.className='verdict amber';
+    lede=(top?'目前浮標實測最大為'+top.n+' '+top.h+' 公尺（'+bandName(top.h)+'）。':'')+(calm instanceof Date?'模式推估東部與東北部漁場約於 '+fmtTW(calm)+' 起降至 2.5 公尺以下。':calm==='none'?'未來 72 小時東部漁場浪高仍在 2.5 公尺以上。':''); }
+  else { v.textContent='浪況已回穩，可評估恢復作業'; v.className='verdict green';
+    lede=(S.warn&&S.warn.lifted?'中央氣象署已於 '+fmtTW(S.warn.effective)+' 解除颱風警報。':'')+(top?'各浮標實測皆在巨浪以下，最大為'+top.n+' '+top.h+' 公尺（'+bandName(top.h)+'）。':'')+'出港前仍請留意長浪與漂流物。'; }
+  $('#lede').innerHTML=lede;
+  var A=S.aqua||[], hi=A.filter(function(s){return s.rk>=2;});
+  var F=[
+    ['颱風警報', S.warn?(warnOn?'<strong style="color:#C4122F">發布中</strong>'+esc(S.warn.headline):S.warn.lifted?'<strong style="color:#2E8A66">已解除</strong>'+fmtTW(S.warn.effective):'<strong>無</strong>'):'讀取中'],
+    ['颱風', st?'<strong>'+Math.round(st.nr[1])+'</strong>公里外（距'+st.nr[0]+'），'+catZh(st.pos.w)+'，'+st.stage:'—'],
+    ['浮標最大浪高', top?'<strong>'+top.h+'</strong>公尺 '+chip(top.h)+' '+top.n+'，'+fmtTW(top.t):'—'],
+    ['養殖區風雨', A.length?(hi.length?'<strong style="color:#C4122F">'+hi.length+'</strong>區高風險以上，'+hi.slice(0,2).map(function(s){return s.n;}).join('、'):'<strong style="color:#2E8A66">0</strong>區高風險，最大陣風 '+beaufort(Math.max.apply(null,A.map(function(s){return s.gust;})))+' 級'):'—']
+  ];
+  $('#facts').innerHTML=F.map(function(x){return '<div><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>';}).join('');
+  renderRuler();
+}
+function renderRuler(){
+  var sc=$('#scale');
+  if(!sc.dataset.built){
+    BANDS.forEach(function(b){ var d=document.createElement('div'); d.className='band'; d.style.background='linear-gradient(90deg,'+b.c+'33,'+b.c+'14)'; d.innerHTML='<span class="bn">'+b.n+'<small>'+(b.hi>=20?'14 m 以上':(b.lo===0?'0.5 m 以下':b.lo+'–'+b.hi+' m'))+'</small></span>'; sc.appendChild(d); });
+    sc.dataset.built=1;
+  }
+  var B=(S.buoy||[]).slice().sort(function(a,b){return a.h-b.h;}), H=sc.clientHeight, wt=$('#water');
+  if(B.length){ var mx=B[B.length-1]; wt.style.color=BANDS[bandOf(mx.h)].c; wt.style.background=BANDS[bandOf(mx.h)].c; requestAnimationFrame(function(){ wt.style.height=(bandPos(mx.h)*100).toFixed(1)+'%'; }); }
+  var last=-99, html='';
+  B.forEach(function(b,i){ var y=bandPos(b.h)*H; if(y<last+18) y=last+18; last=y;
+    html+='<div class="mk'+(i===B.length-1?' top':'')+'" style="bottom:'+y.toFixed(0)+'px">'+esc(b.n)+' <b>'+b.h+'</b>m</div>'; });
+  $('#marks').innerHTML=html||'<div class="mk" style="bottom:10px">浮標資料暫無</div>';
+  $('#ruler-cap').textContent='中央氣象署浪級。標記為各浮標最新實測'+(B.length?'（'+fmtTW(new Date(Math.max.apply(null,B.map(function(b){return b.t.getTime();}))))+'）':'')+'。';
+}
+
+// ---------- 警報 ----------
+function renderWarn(){
+  var w=S.warn, box=$('#warnbox');
+  if(!w){ box.innerHTML='<p>警報資料暫時無法取得，請直接查看<a href="https://www.cwa.gov.tw/V8/C/P/Typhoon/TY_WARN.html" target="_blank" rel="noopener">中央氣象署颱風警報</a>。</p>'; return; }
+  var detail=(w.secs&&w.secs.length)?'<details'+(w.active?' open':'')+'><summary>'+(w.active?'警報全文':'解除警報全文')+'</summary><dl class="wsec">'+w.secs.map(function(s){return '<dt>'+esc(s.title)+'</dt><dd>'+esc(s.value)+'</dd>';}).join('')+'</dl></details>':'';
+  if(w.active){ box.className='warnbox'; box.innerHTML='<p><b>'+esc(w.headline)+'</b>，'+fmtTW(w.effective)+' 發布。'+esc(sec('命名與位置'))+'</p>'+detail; $('#warn-sub').textContent=w.expires?'下次更新約 '+fmtTW(w.expires):''; }
+  else if(w.lifted){ box.className='warnbox lifted'; box.innerHTML='<p><b>中央氣象署已於 '+fmtTW(w.effective)+' 解除颱風警報。</b>'+esc(sec('颱風動態')||sec('命名與位置'))+'</p>'+detail; $('#warn-sub').textContent=''; }
+  else { box.className='warnbox lifted'; box.innerHTML='<p>目前中央氣象署未對薔琵颱風發布警報。</p>'; $('#warn-sub').textContent=''; }
 }
 
 // ---------- 地圖 ----------
-var map = L.map('map',{zoomControl:true,worldCopyJump:true}).setView([23.8,124],5);
+var map=L.map('map',{zoomControl:true,worldCopyJump:true,scrollWheelZoom:false}).setView([24,124],5);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'Tiles &copy; Esri, GEBCO, NOAA, Garmin',maxZoom:12}).addTo(map);
 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}',{maxZoom:12}).addTo(map);
-var lyTrack=L.layerGroup().addTo(map), lyFc=L.layerGroup().addTo(map), lyJma=L.layerGroup().addTo(map), lySea=L.layerGroup().addTo(map), lyBuoy=L.layerGroup().addTo(map), lyAqua=L.layerGroup().addTo(map);
-L.control.layers(null,{'歷史路徑':lyTrack,'CWA 預報':lyFc,'JMA 預報':lyJma,'模式浪高點':lySea,'浮標實測':lyBuoy,'養殖區風雨點':lyAqua},{collapsed:true}).addTo(map);
+var lyTrack=L.layerGroup().addTo(map), lyFc=L.layerGroup().addTo(map), lyJma=L.layerGroup().addTo(map), lyBuoy=L.layerGroup().addTo(map), lyAqua=L.layerGroup().addTo(map);
+L.control.layers(null,{'中央氣象署路徑':lyTrack,'中央氣象署預報':lyFc,'日本氣象廳預報':lyJma,'浮標':lyBuoy,'養殖區':lyAqua},{collapsed:true}).addTo(map);
 var fitted=false;
-
 function drawMap(){
-  lyTrack.clearLayers(); lyFc.clearLayers(); lyJma.clearLayers();
+  lyTrack.clearLayers(); lyFc.clearLayers(); lyJma.clearLayers(); lyBuoy.clearLayers(); lyAqua.clearLayers();
   var c=S.cwa;
   if(c&&c.active){
     var fx=c.fixes;
-    for(var i=1;i<fx.length;i++) L.polyline([[fx[i-1].lat,fx[i-1].lon],[fx[i].lat,fx[i].lon]],{color:windColor(fx[i].w),weight:3,opacity:.9}).addTo(lyTrack);
-    fx.forEach(function(p,i){ if(i%3!==0 && i!==fx.length-1) return;
-      L.circleMarker([p.lat,p.lon],{radius:3,color:windColor(p.w),fillOpacity:1,weight:1}).bindPopup('<b>'+fmtTW(p.t)+'</b>（CWA）<br>'+p.lat+'°N '+p.lon+'°E<br>'+(p.p||'-')+' hPa，'+(p.w||'-')+' m/s（'+catZh(p.w)+'）').addTo(lyTrack); });
-    var a=c.cur, ctr=[a.lat,a.lon];
-    if(a.r15) L.circle(ctr,{radius:a.r15*1000,color:'#facc15',weight:1,fillColor:'#facc15',fillOpacity:.08}).addTo(lyFc);
-    if(a.r25) L.circle(ctr,{radius:a.r25*1000,color:'#ef4444',weight:1,fillColor:'#ef4444',fillOpacity:.15}).addTo(lyFc);
-    L.marker(ctr,{icon:L.divIcon({className:'',html:'<div style="font-size:28px;line-height:28px;animation:spin 3s linear infinite">🌀</div>',iconSize:[28,28],iconAnchor:[14,14]})})
-      .bindPopup('<b>CWA 實況 '+fmtTW(a.t)+'</b><br>'+a.lat+'°N '+a.lon+'°E　'+(DIRZH[a.dir]||a.dir||'')+' '+(a.spd||'')+' km/h<br>'+a.p+' hPa，'+a.w+' m/s（陣風 '+a.g+'）<br>七級風半徑 '+(a.r15||'-')+' km／十級風 '+(a.r25||'-')+' km').addTo(lyFc);
-    var line=[ctr];
-    c.fcs.forEach(function(f){ line.push([f.lat,f.lon]);
-      if(f.p70) L.circle([f.lat,f.lon],{radius:f.p70*1000,color:'#f43f5e',weight:1,dashArray:'3 4',fillOpacity:.03}).addTo(lyFc);
-      L.circleMarker([f.lat,f.lon],{radius:4,color:'#f43f5e',fillColor:'#fff',fillOpacity:1,weight:2}).bindPopup('<b>CWA +'+f.tau+'h '+fmtTW(f.t)+'</b><br>'+f.lat+'°N '+f.lon+'°E<br>'+(f.p||'-')+' hPa，'+(f.w||'-')+' m/s<br>70% 機率半徑 '+(f.p70||'-')+' km').addTo(lyFc); });
-    L.polyline(line,{color:'#f43f5e',weight:2.5,dashArray:'6 6'}).addTo(lyFc);
+    for(var i=1;i<fx.length;i++) L.polyline([[fx[i-1].lat,fx[i-1].lon],[fx[i].lat,fx[i].lon]],{color:windColor(fx[i].w),weight:3}).addTo(lyTrack);
+    fx.forEach(function(p,i){ if(i%6!==0&&i!==fx.length-1) return; L.circleMarker([p.lat,p.lon],{radius:3,color:windColor(p.w),fillOpacity:1,weight:1}).bindPopup('<b>'+fmtTW(p.t)+'</b><br>'+p.lat+'°N '+p.lon+'°E<br>'+(p.p||'-')+' hPa，'+(p.w||'-')+' m/s，'+catZh(p.w)).addTo(lyTrack); });
+    var a=c.cur;
+    if(a.r15) L.circle([a.lat,a.lon],{radius:a.r15*1000,color:'#D99A0E',weight:1,fillColor:'#D99A0E',fillOpacity:.1}).addTo(lyFc);
+    if(a.r25) L.circle([a.lat,a.lon],{radius:a.r25*1000,color:'#C4122F',weight:1,fillColor:'#C4122F',fillOpacity:.12}).addTo(lyFc);
+    L.circleMarker([a.lat,a.lon],{radius:9,color:'#0F2C3F',weight:2,fillColor:'#C4122F',fillOpacity:1}).bindPopup('<b>中央氣象署 '+fmtTW(a.t)+'</b><br>'+a.lat+'°N '+a.lon+'°E，'+(DIRZH[a.dir]||a.dir||'')+' '+(a.spd||'')+' km/h<br>'+a.p+' hPa，'+a.w+' m/s，陣風 '+a.g+' m/s').addTo(lyFc);
+    var line=[[a.lat,a.lon]];
+    c.fcs.forEach(function(f){ line.push([f.lat,f.lon]); if(f.p70) L.circle([f.lat,f.lon],{radius:f.p70*1000,color:'#C4122F',weight:1,dashArray:'3 4',fillOpacity:0}).addTo(lyFc);
+      L.circleMarker([f.lat,f.lon],{radius:4,color:'#C4122F',fillColor:'#fff',fillOpacity:1,weight:2}).bindPopup('<b>預報 +'+f.tau+' 小時，'+fmtTW(f.t)+'</b><br>'+f.lat+'°N '+f.lon+'°E<br>'+(f.p||'-')+' hPa，'+(f.w||'-')+' m/s').addTo(lyFc); });
+    L.polyline(line,{color:'#C4122F',weight:2.5,dashArray:'6 6'}).addTo(lyFc);
   }
-  if(S.jma){
-    var j=S.jma.pts;
-    L.polyline(j.map(function(p){return [p.lat,p.lon];}),{color:'#a78bfa',weight:2,dashArray:'2 6'}).addTo(lyJma);
-    j.forEach(function(p){ L.circleMarker([p.lat,p.lon],{radius:3,color:'#a78bfa',fillOpacity:1}).bindPopup('<b>JMA '+(p.hours===0?'実況':'+'+p.hours+'h')+' '+fmtTW(p.t)+'</b><br>'+p.lat+'°N '+p.lon+'°E '+(p.course||'')+'<br>'+(p.p||'-')+' hPa，'+(p.w||'-')+' m/s'+(p.location?'<br>'+p.location:'')).addTo(lyJma); });
-  }
-  lyBuoy.clearLayers();
-  (S.buoy||[]).forEach(function(b){ var rk=riskWave(b.h);
-    L.marker([b.lat,b.lon],{icon:L.divIcon({className:'',html:'<div style="color:'+(RISK_COL[rk]||'#94a3b8')+';font-size:16px;text-shadow:0 0 3px #000">◆</div>',iconSize:[16,16],iconAnchor:[8,8]})})
-      .bindPopup('<b>'+b.n+'</b>（實測 '+fmtTW(b.t)+'）<br>浪高 '+b.h+' m，週期 '+(b.per||'-')+' s<br>近 24 筆最大 '+b.mx24+' m'+(b.sst!=null?'<br>水溫 '+b.sst+'°C':'')).addTo(lyBuoy); });
-  if(!fitted){ map.fitBounds([[20.5,118.5],[28.5,127.5]]); fitted=true; }
+  if(S.jma){ var j=S.jma.pts; L.polyline(j.map(function(p){return [p.lat,p.lon];}),{color:'#6B4FA0',weight:2,dashArray:'2 6'}).addTo(lyJma);
+    j.forEach(function(p){ L.circleMarker([p.lat,p.lon],{radius:3,color:'#6B4FA0',fillOpacity:1}).bindPopup('<b>日本氣象廳 '+(p.hours===0?'實況':'+'+p.hours+' 小時')+'，'+fmtTW(p.t)+'</b><br>'+p.lat+'°N '+p.lon+'°E<br>'+(p.p||'-')+' hPa，'+(p.w||'-')+' m/s'+(p.location?'<br>'+esc(p.location):'')).addTo(lyJma); }); }
+  (S.buoy||[]).forEach(function(b){ var bc=BANDS[bandOf(b.h)].c;
+    L.marker([b.lat,b.lon],{icon:L.divIcon({className:'',html:'<div style="width:14px;height:14px;transform:rotate(45deg);background:'+bc+';border:1.5px solid #0F2C3F"></div>',iconSize:[14,14],iconAnchor:[7,7]})})
+      .bindPopup('<b>'+b.n+'浮標</b>，'+fmtTW(b.t)+'<br>浪高 '+b.h+' m（'+bandName(b.h)+'），週期 '+(b.per||'-')+' 秒<br>近 24 筆最大 '+b.mx24+' m'+(b.sst!=null?'<br>水溫 '+b.sst+'°C':'')).addTo(lyBuoy); });
+  (S.aqua||[]).forEach(function(s){ L.circleMarker([s.lat,s.lon],{radius:7,color:'#0F2C3F',weight:1,fillColor:RISKC[s.rk],fillOpacity:.95}).bindPopup('<b>'+s.n+'</b><br>72 小時雨量 '+s.rain.toFixed(0)+' mm<br>最大陣風 '+s.gust.toFixed(1)+' m/s（'+beaufort(s.gust)+' 級）<br>風險：'+RISK[s.rk]).addTo(lyAqua); });
+  if(!fitted){ map.fitBounds([[21,118.5],[29,127]]); fitted=true; }
 }
-
-// ---------- 現況與警報 ----------
-function curState(){
-  var c=S.cwa; if(!c||!c.active) return null;
-  var a=c.cur, nr=nearest(a.lat,a.lon);
-  var fcMin=null; c.fcs.forEach(function(f){ var n=nearest(f.lat,f.lon); if(!fcMin||n[1]<fcMin.d) fcMin={d:n[1],place:n[0],t:f.t,f:f}; });
-  var prev=c.fixes.length>6?c.fixes[c.fixes.length-7]:null, prevD=prev?nearest(prev.lat,prev.lon)[1]:null;
-  var stage, color;
-  var covering = a.r15 && nr[1] <= a.r15;
-  if(S.warn && !S.warn.active && nr[1]>500){ stage='已遠離'; color='#22c55e'; }
-  else if(covering && fcMin && fcMin.d < nr[1]-20){ stage='暴風圈籠罩・持續接近'; color='#ef4444'; }
-  else if(covering){ stage='暴風圈籠罩'; color='#ef4444'; }
-  else if(fcMin && fcMin.d < nr[1]-30){ stage='接近中'; color='#f97316'; }
-  else if(prevD!=null && nr[1]>prevD+20){ stage='逐漸遠離'; color='#eab308'; }
-  else { stage='影響中'; color='#f97316'; }
-  return {a:a,nr:nr,fcMin:fcMin,stage:stage,color:color,covering:covering};
-}
-function sec(title){ var s=(S.warn&&S.warn.secs||[]).filter(function(x){return x.title.indexOf(title)>=0;})[0]; return s?s.value:''; }
-
-function renderTop(){
-  var st=curState(), c=S.cwa, j=S.jma?S.jma.pts.filter(function(p){return p.hours===0;})[0]:null;
-  // badges
-  if(st){ $('#b-cat').textContent=catZh(st.a.w); }
-  var bw=$('#b-warn');
-  if(S.warn){ if(S.warn.active){ bw.textContent=S.warn.headline; bw.className='badge hot'; } else { bw.textContent='無颱風警報'; bw.className='badge ok'; } }
-  // alert
-  var al=$('#alert'), html='';
-  if(S.warn && S.warn.active){
-    al.className='alert on';
-    html='<b>⚠ '+esc(S.warn.headline)+'</b>（中央氣象署 '+fmtTW(S.warn.effective)+' 發布）　'+esc(sec('命名與位置'))+' '+esc(sec('移速與預測'))+'<br><b>漁船勿出海、勿靠近海邊及漁港堤防，養殖業者勿冒險巡查海上箱網。</b>';
-  } else if(S.warn){
-    al.className='alert off';
-    html='<b>✓ 目前中央氣象署未對薔琵颱風發布警報。</b>'+(st?'颱風中心距'+st.nr[0]+'約 '+Math.round(st.nr[1])+' 公里（'+fmtTW(st.a.t)+'）。':'')+'長浪及湧浪可能持續，出海前請確認最新海象。';
-  } else if(st){ al.className='alert on'; html='颱風中心距'+st.nr[0]+'約 '+Math.round(st.nr[1])+' 公里（'+fmtTW(st.a.t)+'）；警報資料暫時無法取得。'; }
-  al.innerHTML=html||'資料讀取中…';
-  // KPI
-  if(!st){ $('#kpis').innerHTML='<div class="card muted">中央氣象署路徑資料暫時無法取得，或颱風已不在西北太平洋活動清單中。</div>'; return; }
-  var a=st.a, near3=PLACES.map(function(p){return [p[0],hav(a.lat,a.lon,p[1],p[2])];}).sort(function(x,y){return x[1]-y[1];}).slice(0,3);
-  var k=[
-    ['強度（CWA）',catZh(a.w),'JMA：'+(j?((j.intensity||'')+(j.scale?'・'+j.scale:'')):'—')],
-    ['中心氣壓',a.p+'<small> hPa</small>','JMA '+(j&&j.p?j.p:'—')+' hPa'],
-    ['近中心最大風速',a.w+'<small> m/s</small>',beaufort(a.w)+' 級；陣風 '+a.g+' m/s（'+beaufort(a.g)+' 級）'],
-    ['暴風半徑',(a.r15||'—')+'<small> / '+(a.r25||'—')+' km</small>','七級風／十級風'],
-    ['中心位置',a.lat+'°N<small> '+a.lon+'°E</small>',(DIRZH[a.dir]||a.dir||'')+' '+(a.spd||'')+' km/h'],
-    ['距最近陸地',Math.round(st.nr[1])+'<small> km</small>',near3.map(function(x){return x[0]+' '+Math.round(x[1])+'km';}).join('、')]
+function renderReadings(){
+  var st=curState(), c=S.cwa&&S.cwa.active?S.cwa.cur:null, j=S.jma?S.jma.pts.filter(function(p){return p.hours===0;})[0]:null;
+  if(!st){ $('#read').innerHTML='<div class="row"><dt>狀態</dt><dd>颱風路徑資料暫無。</dd></div>'; return; }
+  var p=st.pos, rows=[
+    ['強度','<strong>'+catZh(p.w)+'</strong>'+(j?'（日本氣象廳：'+esc((j.intensity&&j.intensity!=='-'?j.intensity:'')+(j.scale||'')||j.cat||'')+'）':'')],
+    ['中心氣壓','<strong>'+(p.p||'—')+'</strong>hPa'],
+    ['最大風速','<strong>'+(p.w||'—')+'</strong>m/s，'+beaufort(p.w||0)+' 級'+(c&&c.g&&p.src==='中央氣象署'?'；陣風 '+c.g+' m/s':'')],
+    ['暴風半徑',c&&p.src==='中央氣象署'?'七級風 <strong>'+(c.r15||'—')+'</strong>km，十級風 '+(c.r25||'—')+' km':'—'],
+    ['位置',p.lat+'°N，'+p.lon+'°E'+(c&&p.src==='中央氣象署'?'，向'+(DIRZH[c.dir]||c.dir||'')+' '+(c.spd||'')+' km/h':'')],
+    ['距離最近陸地','<strong>'+Math.round(st.nr[1])+'</strong>km（'+st.nr[0]+'）']
   ];
-  $('#kpis').innerHTML=k.map(function(x){return '<div class="card kpi"><div class="lab">'+x[0]+'</div><div class="val">'+x[1]+'</div><div class="sub">'+x[2]+'</div></div>';}).join('');
-  $('#ts-kpi').textContent='CWA 分析 '+fmtTW(a.t);
-  $('#kpi-note').textContent=(a.pred?'移動預測：'+a.pred+'。':'')+(st.fcMin?'預報最接近陸地：'+fmtTW(st.fcMin.t)+' 距'+st.fcMin.place+'約 '+Math.round(st.fcMin.d)+' km。':'')+(j?' JMA 實況 '+fmtTW(j.t)+'：'+j.lat+'°N '+j.lon+'°E '+(j.location||''):'');
-  // 警報全文
-  if(S.warn&&S.warn.active){
-    $('#warn').innerHTML=S.warn.secs.map(function(s){return '<dt>'+esc(s.title)+'</dt><dd>'+esc(s.value)+'</dd>';}).join('')+(S.warn.web?'<dd style="margin-top:6px"><a href="'+esc(S.warn.web)+'" target="_blank" rel="noopener">中央氣象署原文 ↗</a></dd>':'');
-    $('#ts-warn').textContent='發布 '+fmtTW(S.warn.effective)+(S.warn.expires?'・下次更新約 '+fmtTW(S.warn.expires):'');
-  } else if(S.warn){ $('#warn').innerHTML='<dd class="muted">目前無薔琵颱風警報。</dd>'; $('#ts-warn').textContent=''; }
-  // 預報表
-  $('#t-fc').innerHTML='<tr><th>時效</th><th>時間</th><th>位置</th><th>氣壓</th><th>風速</th><th>70%圈</th></tr>'+c.fcs.map(function(f){return '<tr><td>+'+f.tau+'h</td><td>'+fmtTW(f.t)+'</td><td class="num">'+f.lat+'N '+f.lon+'E</td><td class="num">'+(f.p||'—')+'</td><td class="num">'+(f.w||'—')+'</td><td class="num">'+(f.p70||'—')+'</td></tr>';}).join('');
-  $('#t-jma').innerHTML=S.jma?'<tr><th>時效</th><th>時間</th><th>位置</th><th>氣壓</th><th>風速</th></tr>'+S.jma.pts.map(function(p){return '<tr><td>'+(p.hours===0?'實況':'+'+p.hours+'h')+'</td><td>'+fmtTW(p.t)+'</td><td class="num">'+p.lat+'N '+p.lon+'E</td><td class="num">'+(p.p||'—')+'</td><td class="num">'+(p.w||'—')+'</td></tr>';}).join(''):'<tr><td class="muted">JMA 資料暫無</td></tr>';
-  $('#ts-map').textContent='CWA '+fmtTW(a.t)+(S.jma?'・JMA '+fmtTW(S.jma.issue):'');
+  $('#read').innerHTML=rows.map(function(r){return '<div class="row"><dt>'+r[0]+'</dt><dd>'+r[1]+'</dd></div>';}).join('');
+  $('#read-note').textContent='資料：'+p.src+' '+fmtTW(p.t)+(c&&c.pred?'。'+c.pred:'')+(st.fcMin?'。預報最接近陸地為 '+fmtTW(st.fcMin.t)+'，距'+st.fcMin.place+'約 '+Math.round(st.fcMin.d)+' 公里':'')+'。';
+  $('#map-sub').textContent='中央氣象署 '+(c?fmtTW(c.t):'—')+'，日本氣象廳 '+(S.jma?fmtTW(S.jma.issue):'—')+'。拖曳與縮放地圖查看細節。';
+  var fc=S.cwa&&S.cwa.fcs||[];
+  $('#t-fc').innerHTML=fc.length?'<tr><th>預報</th><th>時間</th><th>位置</th><th>hPa</th><th>m/s</th></tr>'+fc.map(function(f){return '<tr><td>+'+f.tau+'h</td><td>'+fmtTW(f.t)+'</td><td>'+f.lat+'N '+f.lon+'E</td><td class="n">'+(f.p||'—')+'</td><td class="n">'+(f.w||'—')+'</td></tr>';}).join(''):'<tr><td>無預報資料</td></tr>';
+  $('#t-jma').innerHTML=S.jma?'<tr><th>預報</th><th>時間</th><th>位置</th><th>hPa</th><th>m/s</th></tr>'+S.jma.pts.map(function(p){return '<tr><td>'+(p.hours===0?'實況':'+'+p.hours+'h')+'</td><td>'+fmtTW(p.t)+'</td><td>'+p.lat+'N '+p.lon+'E</td><td class="n">'+(p.p||'—')+'</td><td class="n">'+(p.w||'—')+'</td></tr>';}).join(''):'<tr><td>日本氣象廳已停止發布</td></tr>';
+}
+
+// ---------- 研判 ----------
+function item(lead,txt){ return '<li><b>'+lead+'</b>'+txt+'</li>'; }
+function renderAnalysis(){
+  var st=curState(), warnOn=S.warn&&S.warn.active, F=[], Q=[], ADV;
+  if(st){ var sg=$('#stage'); sg.textContent=st.stage; sg.style.background=st.color;
+    $('#stage-txt').textContent='颱風中心距'+st.nr[0]+'約 '+Math.round(st.nr[1])+' 公里'+(st.covering?'，七級風範圍涵蓋臺灣陸地或近海':'')+(st.fcMin?'；預報最接近陸地 '+fmtTW(st.fcMin.t)+'，約 '+Math.round(st.fcMin.d)+' 公里':'')+'。'; }
+  var big=SEA.filter(function(s){return s.mx!=null&&s.mx>=6;}), B=S.buoy||[], top=B[0], calm=calmTime();
+  if(warnOn) F.push(item('作業中斷','中央氣象署'+esc(S.warn.headline)+'發布中。'+esc((sec('警戒區域')||'').replace(/^海上：/,'').split('陸上：')[0])));
+  else if(S.warn&&S.warn.lifted) F.push(item('警報解除','颱風警報已於 '+fmtTW(S.warn.effective)+' 解除，長浪與湧浪可能仍持續一段時間。'));
+  if(big.length) F.push(item('海況','未來 48 小時浪高達狂濤（6 公尺）以上的漁場：'+big.map(function(s){return s.n+' '+s.mx.toFixed(1)+' 公尺';}).join('、')+'。'));
+  if(top) F.push(item('浮標實測','最大為'+top.n+' '+top.h+' 公尺（'+bandName(top.h)+'），'+fmtTW(top.t)+'；近 24 筆最大值 '+Math.max.apply(null,B.map(function(b){return b.mx24;})).toFixed(1)+' 公尺。'));
+  if(calm instanceof Date) F.push(item('恢復作業',(calm.getTime()<=Date.now()+3600e3?'模式顯示東部與東北部漁場浪高已降至 2.5 公尺以下，可評估恢復沿近海作業。':'模式推估東部與東北部漁場約於 '+fmtTW(calm)+' 起降至 2.5 公尺以下，屆時可評估恢復作業。')+'仍以警報解除與實際海況為準。'));
+  else if(calm==='none') F.push(item('恢復作業','未來 72 小時東部與東北部漁場浪高仍高於 2.5 公尺，暫不宜恢復沿近海作業。'));
+  var setnet=SEA.filter(function(s){return s.east&&s.mx!=null&&s.mx>=4;});
+  if(setnet.length) F.push(item('定置網','宜蘭、花蓮、臺東定置網區浪高預估達 '+Math.max.apply(null,setnet.map(function(s){return s.mx;})).toFixed(1)+' 公尺，網具破損、錨碇移位或流失風險高；修復與重新布網約需 1 至 3 週。'));
+  else if(!warnOn) F.push(item('定置網','東部浪高已降，下網前請先檢查網具、浮具與錨碇，並清除漂流物。'));
+  if(warnOn) F.push(item('供應與魚價','警報期間漁船停航、魚市場可能休市，鮮魚到港量減少，短期魚價偏漲。'));
+  else F.push(item('供應與魚價','漁船陸續出港後到港量將回升，停航期間偏高的魚價可望逐步回落。'));
+  if(st&&(st.stage==='逐漸遠離'||st.stage==='已遠離')) F.push(item('冷跡效應','颱風通過的東部至東北部海域，因垂直混合與湧升，表層水溫可能下降約 1 至 3°C，營養鹽上湧、葉綠素升高，鯖鰺、鎖管等魚群聚集位置可能改變，可留意新漁場。'));
+  if(S.jma){ var last=S.jma.pts[S.jma.pts.length-1]; F.push(item('外海航行','日本氣象廳預估颱風 '+fmtTW(last.t)+' 前後位於'+esc(last.location||(last.lat+'°N '+last.lon+'°E'))+'，東海及日本南方作業或返航漁船應避開其路徑。')); }
+
+  var A=S.aqua||[], byRain=A.slice().sort(function(a,b){return b.rain-a.rain;}), wet=byRain.filter(function(s){return s.rain>=80;});
+  var heavy=sec('豪雨特報'), mSup=/超大豪雨地區：([^。]+)/.exec(heavy);
+  if(wet.length||mSup) Q.push(item('淡化與水質驟變',(wet.length?'72 小時雨量較多：'+wet.slice(0,3).map(function(s){return s.n+' '+s.rain.toFixed(0)+' mm';}).join('、')+'。':'')+(mSup?'豪雨特報超大豪雨地區：'+esc(mSup[1])+'。':'')+'魚塭鹽度、pH 可能快速下降，文蛤、白蝦、石斑等易受滲透壓緊迫。'));
+  else if(A.length) Q.push(item('雨量','各養殖區 72 小時雨量皆低於 80 mm（最多為'+byRain[0].n+' '+byRain[0].rain.toFixed(0)+' mm），淡化風險低。'));
+  var windy=A.filter(function(s){return s.gust>=24.5;}).sort(function(a,b){return b.gust-a.gust;});
+  if(windy.length) Q.push(item('強風、停電與缺氧','陣風達 10 級以上：'+windy.slice(0,5).map(function(s){return s.n+' '+beaufort(s.gust)+' 級';}).join('、')+'。停電時增氧機停擺，夜間至清晨最易缺氧翻池。'));
+  else if(A.length) Q.push(item('風力','各養殖區最大陣風在 10 級以下，可逐步恢復正常增氧與投餵作業。'));
+  var phB=B.filter(function(b){return b.id==='46735A';})[0], ph=SEA.filter(function(s){return s.n==='澎湖海域';})[0], dg=SEA.filter(function(s){return s.n==='屏東東港外海';})[0];
+  var phH=Math.max(ph&&ph.mx||0, phB?phB.h:0), dgH=dg&&dg.mx||0, oys=Math.max.apply(null,SEA.filter(function(s){return /雲嘉|七股|彰化/.test(s.n);}).map(function(s){return s.mx||0;}).concat([0]));
+  if(phH||dgH||oys) Q.push(item('海上設施','澎湖箱網區浪高 '+phH.toFixed(1)+' 公尺，東港與小琉球 '+dgH.toFixed(1)+' 公尺，彰雲嘉南牡蠣棚架區最大 '+oys.toFixed(1)+' 公尺。'+(Math.max(phH,dgH,oys)>=4?'纜繩斷裂、浮具流失與蚵串脫落風險高。':'風浪已可控，請檢查纜繩與浮具後再恢復作業。')));
+  var note=sec('注意事項'); if(/焚風/.test(note)){ var fm=/([^。＊]*焚風[^。＊]*)/.exec(note); Q.push(item('焚風',(fm?esc(fm[1].trim())+'。':'')+'淺池水溫升高、溶氧下降，請加強增氧與遮蔭。')); }
+  if(!warnOn){ var d1=new Date(Date.now()+7*864e5), d2=new Date(Date.now()+14*864e5); Q.push(item('病害後效','約 '+(d1.getMonth()+1)+'/'+d1.getDate()+' 至 '+(d2.getMonth()+1)+'/'+d2.getDate()+' 為弧菌症、白點病毒、虹彩病毒等疾病好發期，請加強巡池與水質監測。')); }
+  else Q.push(item('病害後效','颱風過後 1 至 2 週為弧菌症、白點病毒、虹彩病毒等疾病好發期。'));
+
+  if(warnOn||(st&&st.stage.indexOf('籠罩')>=0)){ $('#adv-title').textContent='颱風期間建議';
+    ADV=['警報期間不出海、不巡箱網；岸上巡查兩人以上同行並遠離堤防。','減量或停止投餵，降低耗氧與殘餌負荷。','增氧機全開，備援發電機試車並備足油料，必要時準備液態氧。','雨水浮在表層，可優先由表層排出淡水，減緩鹽度劇降。','加固塭堤並加設防逃網；漁船加強纜繩，未進港船筏移泊港內或上岸。']; }
+  else { $('#adv-title').textContent='颱風遠離後建議';
+    ADV=['確認警報解除與實際浪況後再出港，留意長浪與漂流物。','由少量開始恢復投餵，觀察攝食狀況。','檢查塭堤、閘門、增氧與電力設備，修復防逃網。','定置網、箱網、牡蠣棚架檢查纜繩與錨碇後再恢復作業。','損失儘速拍照存證並向公所通報。']; }
+  $('#ex-fish').innerHTML=F.join('')||'<li>資料讀取中</li>';
+  $('#ex-aqua').innerHTML=Q.join('')||'<li>資料讀取中</li>';
+  $('#ex-adv').innerHTML=ADV.map(function(x){return '<li>'+x+'</li>';}).join('');
+  $('#ana-ts').textContent='以上文字於 '+fmtTW(new Date())+' 依最新資料自動產生，僅供參考；實際損失以農業部及各縣市政府統計為準。';
+}
+
+// ---------- 海況與養殖 ----------
+var charts={};
+function chartOpts(ax){
+  var g='#D3E3E7', t='#3F5D6E', f={family:'Noto Sans TC',size:12};
+  var sc={x:{ticks:{color:t,font:f,maxRotation:0,autoSkip:true,maxTicksLimit:8},grid:{color:g}}};
+  Object.keys(ax).forEach(function(k){ var v=ax[k]; sc[k]={position:v.right?'right':'left',reverse:!!v.reverse,beginAtZero:!!v.zero,ticks:{color:t,font:f},grid:{color:v.right?'transparent':g},title:{display:true,text:v.title,color:t,font:f}}; });
+  return {responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:'index',intersect:false},spanGaps:true,plugins:{legend:{labels:{color:'#0F2C3F',boxWidth:12,font:f}}},scales:sc};
+}
+function mkChart(id,cfg){ if(charts[id]) charts[id].destroy(); charts[id]=new Chart($('#'+id),cfg); }
+var LINEC=['#0F2C3F','#2C6E8F','#5FA3C0','#9AC6D6','#C4122F','#E0701A','#D99A0E','#6B4FA0','#2E8A66','#7a8a94'];
+function renderSea(){
+  var m=S.marine;
+  if(m){
+    var labels=m.times.map(function(t){return fmtTW(t);});
+    var nowLine={id:'nowLine',afterDatasetsDraw:function(ch){ var x=ch.scales.x.getPixelForValue(m.i0), y=ch.chartArea; var cx=ch.ctx; cx.save(); cx.strokeStyle='#C4122F'; cx.setLineDash([4,4]); cx.beginPath(); cx.moveTo(x,y.top); cx.lineTo(x,y.bottom); cx.stroke(); cx.fillStyle='#C4122F'; cx.font='12px Noto Sans TC'; cx.fillText('現在',x+4,y.top+12); cx.restore(); }};
+    var o=chartOpts({y:{title:'浪高（公尺）',zero:true}}); o.plugins.legend.position='bottom';
+    mkChart('c-wave',{type:'line',data:{labels:labels,datasets:m.series.map(function(s,i){return {label:SEA[i].n,data:s,borderColor:LINEC[i],backgroundColor:LINEC[i],pointRadius:0,borderWidth:SEA[i].east?2.2:1.3,tension:.3};})},options:o,plugins:[nowLine]});
+    $('#t-wave').innerHTML='<tr><th>漁場</th><th>主要漁業</th><th>目前</th><th>48h 最大</th><th>浪級</th><th>出現時間</th></tr>'+SEA.map(function(s){return '<tr><td>'+s.n+'</td><td>'+s.note+'</td><td class="n">'+(s.cur==null?'—':s.cur.toFixed(1))+'</td><td class="n">'+(s.mx==null?'—':s.mx.toFixed(1))+'</td><td>'+chip(s.mx)+'</td><td>'+(s.at?fmtTW(s.at):'—')+'</td></tr>';}).join('');
+  } else $('#t-wave').innerHTML='<tr><td>波浪模式資料暫時無法取得，請稍後按「立即更新」。</td></tr>';
+  var B=S.buoy||[];
+  $('#t-buoy').innerHTML=B.length?'<tr><th>浮標</th><th>浪高</th><th>浪級</th><th>週期</th><th>24 筆最大</th></tr>'+B.map(function(b){return '<tr><td>'+b.n+'</td><td class="n">'+b.h+'</td><td>'+chip(b.h)+'</td><td class="n">'+(b.per||'—')+'</td><td class="n">'+b.mx24+'</td></tr>';}).join(''):'<tr><td>浮標資料暫時無法取得。</td></tr>';
+  $('#buoy-ts').textContent=B.length?'（'+fmtTW(new Date(Math.max.apply(null,B.map(function(b){return b.t.getTime();}))))+'）':'';
+}
+function renderAqua(){
+  var A=S.aqua;
+  if(!A){ $('#t-aqua').innerHTML='<tr><td>氣象模式資料暫時無法取得。</td></tr>'; return; }
+  var o=chartOpts({y:{title:'雨量（mm）',zero:true},y2:{title:'陣風（m/s）',right:true,zero:true}});
+  o.scales.x.stacked=true; o.scales.y.stacked=true; o.scales.x.ticks.autoSkip=false; o.scales.x.ticks.maxRotation=45; o.scales.x.ticks.minRotation=30; o.plugins.legend.position='bottom';
+  mkChart('c-aqua',{type:'bar',data:{labels:A.map(function(s){return s.n;}),datasets:[
+    {label:'過去 24 小時雨量',data:A.map(function(s){return +s.past.toFixed(1);}),backgroundColor:'#2C6E8F',stack:'r',yAxisID:'y'},
+    {label:'未來 48 小時雨量',data:A.map(function(s){return +s.fut.toFixed(1);}),backgroundColor:'#9AC6D6',stack:'r',yAxisID:'y'},
+    {label:'最大陣風',type:'line',data:A.map(function(s){return +s.gust.toFixed(1);}),borderColor:'#C4122F',backgroundColor:'#C4122F',yAxisID:'y2'}]},options:o});
+  $('#t-aqua').innerHTML='<tr><th>養殖區</th><th>72h 雨量</th><th>最大陣風</th><th>風險</th></tr>'+A.slice().sort(function(a,b){return b.rk-a.rk||b.gust-a.gust;}).map(function(s){return '<tr><td>'+s.n+'</td><td class="n">'+s.rain.toFixed(0)+'</td><td class="n">'+beaufort(s.gust)+' 級</td><td><span class="chip" style="background:'+RISKC[s.rk]+';color:'+(s.rk>=2?'#fff':'#0F2C3F')+'">'+RISK[s.rk]+'</span></td></tr>';}).join('');
 }
 
 // ---------- 圖資 ----------
 function ptaCandidates(){
-  var out=[], base=null;
-  if(S.cwa&&S.cwa.fcs&&S.cwa.fcs.length) base=S.cwa.fcs[0].init; else base=new Date();
-  var t=new Date(base.getTime()); t.setUTCMinutes(0,0,0); t.setUTCHours(Math.floor(t.getUTCHours()/3)*3);
-  for(var i=0;i<6;i++){ var d=new Date(t.getTime()-i*3*3600e3); out.push(d.getUTCFullYear()+String(d.getUTCMonth()+1).padStart(2,'0')+String(d.getUTCDate()).padStart(2,'0')+String(d.getUTCHours()).padStart(2,'0')+'00'); }
+  var base=(S.cwa&&S.cwa.fcs&&S.cwa.fcs.length)?S.cwa.fcs[0].init:new Date(), t=new Date(base.getTime()), out=[];
+  t.setUTCMinutes(0,0,0); t.setUTCHours(Math.floor(t.getUTCHours()/3)*3);
+  for(var i=0;i<8;i++){ var d=new Date(t.getTime()-i*3*3600e3); out.push(d.getUTCFullYear()+String(d.getUTCMonth()+1).padStart(2,'0')+String(d.getUTCDate()).padStart(2,'0')+String(d.getUTCHours()).padStart(2,'0')+'00'); }
   return out;
 }
 function renderImgs(){
   var bust='t='+Math.floor(Date.now()/600000), pc=ptaCandidates();
   var L=[
-    ['CWA 颱風路徑潛勢預報',pc.map(function(s){return 'https://www.cwa.gov.tw/Data/typhoon/TY_NEWS/PTA_'+s+'-120_zhtw.png';}),'https://www.cwa.gov.tw/V8/C/P/Typhoon/TY_NEWS.html'],
-    ['CWA 七級風侵襲機率',pc.map(function(s){return 'https://www.cwa.gov.tw/Data/typhoon/TY_NEWS/WSP-MAP_'+s+'_zhtw.png';}),'https://www.cwa.gov.tw/V8/C/P/Typhoon/TY_WIND.html'],
-    ['CWA 衛星雲圖（真實色）',['https://www.cwa.gov.tw/Data/satellite/LCC_TRGB_1000/LCC_TRGB_1000_forPreview.jpg?'+bust],'https://www.cwa.gov.tw/V8/C/W/OBS_Sat.html'],
-    ['CWA 雷達回波',['https://www.cwa.gov.tw/Data/radar/CV1_TW_1000.png?'+bust],'https://www.cwa.gov.tw/V8/C/W/OBS_Radar.html'],
-    ['CWA 日累積雨量',['https://www.cwa.gov.tw/Data/rainfall/QZJ_forPreview.jpg?'+bust],'https://www.cwa.gov.tw/V8/C/P/Rainfall/Rainfall_QZJ.html'],
-    ['CWA 鄉鎮日雨量',['https://www.cwa.gov.tw/Data/rainfall/rain_town/rainfall_town_day.png?'+bust],'https://www.cwa.gov.tw/V8/C/P/Rainfall/Rainfall_QZJ.html'],
-    ['CWA 24 小時波浪預報',['https://www.cwa.gov.tw/Data/fcst_img/WaveAna24PO-00.jpg?'+bust],'https://www.cwa.gov.tw/V8/C/M/Fishery/Wave_24.html'],
-    ['CWA 浪高潮位監測',['https://www.cwa.gov.tw/Data/warning/Surge_Swell/Surge_Wave_Taiwan03.png?'+bust],'https://www.cwa.gov.tw/V8/C/M/OBS_Marine.html'],
-    ['JTWC 29W 警報圖',['https://www.metoc.navy.mil/jtwc/products/wp2926.gif?'+bust],'https://www.metoc.navy.mil/jtwc/jtwc.html']
+    ['颱風路徑潛勢',pc.map(function(s){return 'https://www.cwa.gov.tw/Data/typhoon/TY_NEWS/PTA_'+s+'-120_zhtw.png';}),'https://www.cwa.gov.tw/V8/C/P/Typhoon/TY_NEWS.html'],
+    ['七級風侵襲機率',pc.map(function(s){return 'https://www.cwa.gov.tw/Data/typhoon/TY_NEWS/WSP-MAP_'+s+'_zhtw.png';}),'https://www.cwa.gov.tw/V8/C/P/Typhoon/TY_WIND.html'],
+    ['衛星雲圖',['https://www.cwa.gov.tw/Data/satellite/LCC_TRGB_1000/LCC_TRGB_1000_forPreview.jpg?'+bust],'https://www.cwa.gov.tw/V8/C/W/OBS_Sat.html'],
+    ['雷達回波',['https://www.cwa.gov.tw/Data/radar/CV1_TW_1000.png?'+bust],'https://www.cwa.gov.tw/V8/C/W/OBS_Radar.html'],
+    ['24 小時波浪預報',['https://www.cwa.gov.tw/Data/fcst_img/WaveAna24PO-00.jpg?'+bust],'https://www.cwa.gov.tw/V8/C/M/Fishery/Wave_24.html'],
+    ['浪高潮位監測',['https://www.cwa.gov.tw/Data/warning/Surge_Swell/Surge_Wave_Taiwan03.png?'+bust],'https://www.cwa.gov.tw/V8/C/M/OBS_Marine.html'],
+    ['日累積雨量',['https://www.cwa.gov.tw/Data/rainfall/QZJ_forPreview.jpg?'+bust],'https://www.cwa.gov.tw/V8/C/P/Rainfall/Rainfall_QZJ.html'],
+    ['鄉鎮日雨量',['https://www.cwa.gov.tw/Data/rainfall/rain_town/rainfall_town_day.png?'+bust],'https://www.cwa.gov.tw/V8/C/P/Rainfall/Rainfall_QZJ.html'],
+    ['JTWC 警報圖',['https://www.metoc.navy.mil/jtwc/products/wp2926.gif?'+bust],'https://www.metoc.navy.mil/jtwc/jtwc.html']
   ];
-  $('#imgs').innerHTML=L.map(function(x,i){ return '<figure data-i="'+i+'" data-k="0"><img loading="lazy" alt="'+x[0]+'"><figcaption><span>'+x[0]+'</span><a href="'+x[2]+'" target="_blank" rel="noopener">來源 ↗</a></figcaption></figure>'; }).join('');
-  document.querySelectorAll('#imgs figure').forEach(function(fg){
-    var urls=L[+fg.dataset.i][1], img=fg.querySelector('img'), k=0;
-    img.onerror=function(){ k++; if(k<urls.length) img.src=urls[k]; else fg.classList.add('fail'); };
-    img.src=urls[0];
-  });
-  $('#ts-img').textContent='載入 '+fmtTW(new Date());
+  $('#imgs').innerHTML=L.map(function(x,i){ return '<figure data-i="'+i+'"><img loading="lazy" alt="'+x[0]+'"><figcaption><span>'+x[0]+'</span><a href="'+x[2]+'" target="_blank" rel="noopener">原始頁面</a></figcaption></figure>'; }).join('');
+  document.querySelectorAll('#imgs figure').forEach(function(fg){ var urls=L[+fg.dataset.i][1], img=fg.querySelector('img'), k=0;
+    img.onerror=function(){ k++; if(k<urls.length) img.src=urls[k]; else fg.classList.add('fail'); }; img.src=urls[0]; });
 }
-$('#imgs').addEventListener('click',function(e){ if(e.target.tagName==='IMG'){ $('#lb img').src=e.target.src; $('#lb').style.display='flex'; }});
+$('#imgs').addEventListener('click',function(e){ if(e.target.tagName==='IMG'){ $('#lb img').src=e.target.src; $('#lb img').alt=e.target.alt; $('#lb').style.display='flex'; }});
 $('#lb').addEventListener('click',function(){ $('#lb').style.display='none'; });
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') $('#lb').style.display='none'; });
 
-// ---------- 圖表 ----------
-var charts={};
-function chartOpts(ax){
-  var g='#1e3a55', t='#8fa9c0';
-  var scales={x:{ticks:{color:t,maxRotation:0,autoSkip:true,maxTicksLimit:10},grid:{color:g}}};
-  Object.keys(ax).forEach(function(k){ var v=ax[k]; scales[k]={position:v.right?'right':'left',reverse:!!v.reverse,ticks:{color:t},grid:{color:v.right?'transparent':g},title:{display:true,text:v.title,color:t},beginAtZero:!!v.zero}; });
-  return {responsive:true,maintainAspectRatio:false,animation:false,interaction:{mode:'index',intersect:false},spanGaps:true,plugins:{legend:{labels:{color:'#cfe3f3',boxWidth:12}}},scales:scales};
-}
-function mkChart(id,cfg){ if(charts[id]) charts[id].destroy(); charts[id]=new Chart($('#'+id),cfg); }
-var PALETTE=['#38bdf8','#f43f5e','#22c55e','#f59e0b','#a78bfa','#14b8a6','#ec4899','#84cc16','#fb923c','#e2e8f0'];
-
-function renderIntensity(){
-  var c=S.cwa; if(!c||!c.active) return;
-  var fx=c.fixes.filter(function(f,i){ return i%2===0 || i===c.fixes.length-1; });
-  var labels=fx.map(function(f){return fmtTW(f.t);});
-  var ds=[
-    {label:'CWA 最大風速 (m/s)',data:fx.map(function(f){return f.w;}),borderColor:'#f43f5e',backgroundColor:'#f43f5e',pointRadius:0,borderWidth:2,yAxisID:'y'},
-    {label:'CWA 中心氣壓 (hPa)',data:fx.map(function(f){return f.p;}),borderColor:'#f59e0b',backgroundColor:'#f59e0b',pointRadius:0,borderDash:[4,4],borderWidth:2,yAxisID:'y2'}
-  ];
-  var opt=chartOpts({y:{title:'風速 m/s',zero:true},y2:{title:'hPa',reverse:true,right:true}});
-  mkChart('c-int',{type:'line',data:{labels:labels,datasets:ds},options:opt});
-  $('#ts-int').textContent='至 '+fmtTW(c.cur.t);
-}
-function renderMarine(){
-  var m=S.marine; if(!m) { $('#t-wave').innerHTML='<tr><td class="muted">Open-Meteo 海洋資料暫時無法取得</td></tr>'; return; }
-  var labels=m.times.map(function(t){return fmtTW(t);});
-  mkChart('c-wave',{type:'line',data:{labels:labels,datasets:m.series.map(function(s,i){return {label:SEA[i].n,data:s,borderColor:PALETTE[i],backgroundColor:PALETTE[i],pointRadius:0,borderWidth:1.6,tension:.3};})},options:chartOpts({y:{title:'示性波高 (m)',zero:true}})});
-  lySea.clearLayers();
-  var rows=m.series.map(function(h,i){
-    var cur=h[m.i0], fut=h.slice(m.i0,m.i0+48), mx=null, at='';
-    fut.forEach(function(v,k){ if(v!=null&&(mx==null||v>mx)){mx=v;at=labels[m.i0+k];} });
-    var rk=riskWave(mx); SEA[i].mx=mx; SEA[i].cur=cur;
-    L.marker([SEA[i].lat,SEA[i].lon],{icon:L.divIcon({className:'',html:'<div style="color:'+(RISK_COL[rk]||'#94a3b8')+';font-size:18px;text-shadow:0 0 3px #000">▲</div>',iconSize:[18,18],iconAnchor:[9,9]})})
-      .bindPopup('<b>'+SEA[i].n+'</b>（'+SEA[i].note+'）<br>目前浪高 '+(cur==null?'—':cur)+' m<br>未來48h最大 '+(mx==null?'—':mx)+' m（'+at+'）').addTo(lySea);
-    return '<tr><td>'+SEA[i].n+'<br><span class="muted">'+SEA[i].note+'</span></td><td class="num">'+(cur==null?'—':cur)+'</td><td class="num">'+(mx==null?'—':mx)+'</td><td>'+at+'</td><td>'+(rk<0?'—':'<span class="risk r'+rk+'">'+RISK_TXT[rk]+'</span>')+'</td></tr>';
-  });
-  $('#t-wave').innerHTML='<tr><th>海域</th><th>目前(m)</th><th>48h最大</th><th>出現時間</th><th>風險</th></tr>'+rows.join('');
-  var b=(S.buoy||[]).slice().sort(function(x,y){return (y.h||0)-(x.h||0);});
-  $('#t-buoy').innerHTML=b.length?'<tr><th>浮標</th><th>浪高(m)</th><th>週期(s)</th><th>近24筆最大</th><th>時間</th></tr>'+b.map(function(x){return '<tr><td>'+x.n+'</td><td class="num"><span class="risk r'+Math.max(0,riskWave(x.h))+'">'+x.h+'</span></td><td class="num">'+(x.per||'—')+'</td><td class="num">'+x.mx24+'</td><td>'+fmtTW(x.t)+'</td></tr>';}).join(''):'<tr><td class="muted">浮標資料暫時無法取得</td></tr>';
-  $('#ts-buoy').textContent=b.length?'最新 '+fmtTW(new Date(Math.max.apply(null,b.map(function(x){return x.t.getTime();})))):'';
-}
-function renderAqua(){
-  var A=S.aqua; if(!A){ $('#t-aqua').innerHTML='<tr><td class="muted">Open-Meteo 氣象資料暫時無法取得</td></tr>'; return; }
-  lyAqua.clearLayers();
-  A.forEach(function(s){ L.circleMarker([s.lat,s.lon],{radius:8,color:'#000',weight:1,fillColor:RISK_COL[s.rk],fillOpacity:.9}).bindPopup('<b>'+s.n+'</b><br>72h 雨量 '+s.rain.toFixed(0)+' mm（過去24h '+s.past.toFixed(0)+'）<br>最大陣風 '+s.gust.toFixed(1)+' m/s（'+beaufort(s.gust)+' 級）<br>風險：'+RISK_TXT[s.rk]).addTo(lyAqua); });
-  var o=chartOpts({y:{title:'雨量 mm',zero:true},y2:{title:'陣風 m/s',right:true,zero:true}});
-  o.scales.x.stacked=true; o.scales.y.stacked=true; o.scales.x.ticks={color:'#8fa9c0',maxRotation:45,minRotation:30,autoSkip:false,font:{size:11}};
-  mkChart('c-aqua',{type:'bar',data:{labels:A.map(function(s){return s.n;}),datasets:[
-    {label:'過去 24h 雨量 (mm)',data:A.map(function(s){return +s.past.toFixed(1);}),backgroundColor:'#0ea5e9',stack:'r',yAxisID:'y'},
-    {label:'未來 48h 雨量 (mm)',data:A.map(function(s){return +s.fut.toFixed(1);}),backgroundColor:'#7dd3fc',stack:'r',yAxisID:'y'},
-    {label:'最大陣風 (m/s)',type:'line',data:A.map(function(s){return +s.gust.toFixed(1);}),borderColor:'#f59e0b',backgroundColor:'#f59e0b',yAxisID:'y2'}]},options:o});
-  $('#t-aqua').innerHTML='<tr><th>養殖區</th><th>72h雨量</th><th>最大陣風</th><th>風險</th></tr>'+A.map(function(s){return '<tr><td>'+s.n+'</td><td class="num">'+s.rain.toFixed(0)+' mm</td><td class="num">'+s.gust.toFixed(1)+' m/s・'+beaufort(s.gust)+'級</td><td><span class="risk r'+s.rk+'">'+RISK_TXT[s.rk]+'</span></td></tr>';}).join('');
-  $('#ts-aqua').textContent='模式讀取 '+fmtTW(new Date());
-}
-
-// ---------- 即時研判（規則產生） ----------
-function li(tag,txt){ return '<li><span class="tag">'+tag+'</span>'+txt+'</li>'; }
-function renderExpert(){
-  var st=curState(), F=[], Q=[], ADV=[];
-  var warnOn=S.warn&&S.warn.active;
-  // 階段
-  if(st){ $('#stage').textContent=st.stage; $('#stage').style.background=st.color; $('#stage').style.color=st.color==='#eab308'||st.color==='#22c55e'?'#0b0b0b':'#fff';
-    $('#stage-txt').textContent='中心距'+st.nr[0]+'約 '+Math.round(st.nr[1])+' km'+(st.covering?'，七級風暴風圈已涵蓋臺灣陸地或近海':'')+(st.fcMin?'；預報最接近時間 '+fmtTW(st.fcMin.t)+'（距'+st.fcMin.place+'約 '+Math.round(st.fcMin.d)+' km）':'')+'。';
-  } else { $('#stage').textContent='—'; }
-  // 海況
-  var eastPts=SEA.filter(function(s){return s.east&&s.mx!=null;}), bigSea=SEA.filter(function(s){return s.mx!=null&&s.mx>=6;}).map(function(s){return s.n+' '+s.mx.toFixed(1)+' m';});
-  var buoyMax=(S.buoy||[]).slice().sort(function(a,b){return (b.h||0)-(a.h||0);})[0];
-  // 回穩時間：東部四點均 < 2.5 m 的第一個時間
-  var calm=null;
-  if(S.marine){ var m=S.marine; for(var k=m.i0;k<m.times.length;k++){ var ok=SEA.every(function(s,i){ return !s.east || (m.series[i][k]!=null && m.series[i][k]<2.5); }); if(ok){ calm=m.times[k]; break; } } }
-  // ---- 漁業
-  if(warnOn){ F.push(li('作業中斷','中央氣象署'+esc(S.warn.headline)+'發布中（'+fmtTW(S.warn.effective)+'）。'+esc((sec('警戒區域')||'').replace(/^海上：/,'').split('陸上：')[0]))); }
-  else if(S.warn){ F.push(li('警報','目前已無颱風警報，惟長浪、湧浪可能持續，出海前請確認最新海象。')); }
-  if(bigSea.length) F.push(li('海況','模式預估未來 48 小時浪高達 6 m 以上的漁場：'+bigSea.join('、')+'。'+(buoyMax?'浮標實測最大為'+buoyMax.n+' '+buoyMax.h+' m（'+fmtTW(buoyMax.t)+'）。':'')));
-  else if(buoyMax) F.push(li('海況','浮標實測最大浪高為'+buoyMax.n+' '+buoyMax.h+' m（'+fmtTW(buoyMax.t)+'）；模式預估各漁場 48 小時內浪高皆低於 6 m。'));
-  if(calm) F.push(li('恢復作業','依模式推估，東北部與東部漁場浪高約於 <b>'+fmtTW(calm)+'</b> 起降至 2.5 m 以下，屆時可評估恢復沿近海作業（仍以警報解除及實際海況為準）。'));
-  else if(S.marine) F.push(li('恢復作業','未來 72 小時內東北部與東部漁場浪高仍高於 2.5 m，暫不宜恢復沿近海作業。'));
-  var setnet=SEA.filter(function(s){return s.east&&s.mx!=null&&s.mx>=4;});
-  if(setnet.length) F.push(li('定置網','宜蘭、花蓮、臺東定置網區浪高預估達 '+Math.max.apply(null,setnet.map(function(s){return s.mx;})).toFixed(1)+' m，'+(st&&st.stage.indexOf('籠罩')>=0?'颱風減速期間暴露時間延長，':'')+'網具破損、錨碇移位或流失風險高；修復與重新布網一般需 1–3 週。'));
-  if(warnOn) F.push(li('供應與魚價','警報期間漁船停航、魚市場可能休市，鮮魚到港量減少，短期魚價偏漲；颱風前搶捕拋售則可能先壓低價格。'));
-  if(st && (st.stage==='逐漸遠離'||st.stage==='已遠離')) F.push(li('海洋環境後效','颱風通過海域因垂直混合與湧升可能形成「冷跡」，東部至東北部表層水溫可下降約 1–3°C，營養鹽上湧、葉綠素升高，短期內可能改變鯖鰺、鎖管等魚群聚集位置，可留意新漁場。'));
-  if(S.jma){ var last=S.jma.pts[S.jma.pts.length-1]; F.push(li('外海航行','JMA 預估颱風將於 '+fmtTW(last.t)+' 前後抵達'+(last.location||(last.lat+'°N '+last.lon+'°E'))+'，於東海及日本南方作業或返航的漁船應避開其路徑與強風區。')); }
-  // ---- 養殖
-  var A=S.aqua||[], byRain=A.slice().sort(function(a,b){return b.rain-a.rain;}), wet=byRain.filter(function(s){return s.rain>=80;});
-  var heavy=sec('豪雨特報'), mSup=/超大豪雨地區：([^。]+)/.exec(heavy), mBig=/大豪雨地區：([^。]+)/.exec(heavy.replace(/超大豪雨地區：[^。]+。?/,''));
-  if(wet.length || mSup) Q.push(li('淡化與水質驟變',(wet.length?'72 小時雨量較多的養殖區：'+wet.slice(0,3).map(function(s){return s.n+' '+s.rain.toFixed(0)+' mm';}).join('、')+'。':'')+(mSup?'氣象署豪雨特報之超大豪雨地區：'+mSup[1]+(mBig?'；大豪雨地區：'+mBig[1]:'')+'。':'')+'沿海魚塭鹽度、pH 可能快速下降、濁度升高，文蛤、白蝦、石斑等海水或廣鹽性物種易受滲透壓緊迫。'));
-  else if(A.length) Q.push(li('雨量','各養殖區 72 小時雨量皆低於 80 mm（最多為'+byRain[0].n+' '+byRain[0].rain.toFixed(0)+' mm），淡化風險較低。'));
-  var windy=A.filter(function(s){return s.gust>=24.5;}).sort(function(a,b){return b.gust-a.gust;});
-  if(windy.length) Q.push(li('強風・停電・缺氧','陣風達 10 級以上的養殖區：'+windy.slice(0,5).map(function(s){return s.n+' '+beaufort(s.gust)+' 級';}).join('、')+'。強風易致停電，增氧機停擺時夜間至清晨最易缺氧翻池；魚塭防逃網、棚架也可能受損。'));
-  var phB=(S.buoy||[]).filter(function(b){return b.id==='46735A';})[0], ph=SEA.filter(function(s){return s.n==='澎湖海域';})[0], phA=A.filter(function(s){return s.n==='澎湖馬公';})[0], dg=SEA.filter(function(s){return s.n==='屏東東港外海';})[0];
-  if(ph&&phB&&phB.h!=null&&(ph.mx==null||phB.h>ph.mx)) ph={n:ph.n,mx:phB.h};
-  var cages=[]; if(ph&&ph.mx!=null) cages.push('澎湖浪高 '+ph.mx.toFixed(1)+' m'+(phA?'、陣風 '+beaufort(phA.gust)+' 級':'')); if(dg&&dg.mx!=null) cages.push('東港・小琉球浪高 '+dg.mx.toFixed(1)+' m');
-  var oys=SEA.filter(function(s){return /雲嘉|七股|彰化/.test(s.n)&&s.mx!=null;}).map(function(s){return s.mx;});
-  if(cages.length||oys.length) Q.push(li('海上設施','箱網區：'+cages.join('；')+(oys.length?'；彰雲嘉南牡蠣棚架區浪高最大約 '+Math.max.apply(null,oys).toFixed(1)+' m':'')+'。'+((ph&&ph.mx>=4)||(oys.length&&Math.max.apply(null,oys)>=4)?'纜繩斷裂、浮具流失、蚵串脫落風險高。':'風浪尚屬可控，仍應加固纜繩與浮具。')));
-  var note=sec('注意事項'); if(/焚風/.test(note)){ var fm=/([^。＊]*焚風[^。＊]*)/.exec(note); Q.push(li('焚風',(fm?esc(fm[1].trim())+'。':'')+'陸上淺池水溫升高、蒸發加劇，溶氧降低，請加強增氧與遮蔭。')); }
-  if(st && (st.stage==='逐漸遠離'||st.stage==='已遠離'||!warnOn)){ var d1=new Date(Date.now()+7*864e5), d2=new Date(Date.now()+14*864e5); Q.push(li('病害後效','水質劇變後 1–2 週（約 '+(d1.getMonth()+1)+'/'+d1.getDate()+'–'+(d2.getMonth()+1)+'/'+d2.getDate()+'）為弧菌症、白點病毒、虹彩病毒等疾病好發期，請加強巡池與水質監測。')); }
-  else Q.push(li('病害後效','颱風過後 1–2 週為弧菌症、白點病毒、虹彩病毒等疾病好發期，災後應持續監測。'));
-  // ---- 建議
-  if(warnOn || (st&&st.stage.indexOf('籠罩')>=0)){
-    $('#adv-title').textContent='✅ 颱風期間建議';
-    ADV=['警報期間不出海、不巡箱網，人員安全優先；岸上巡查需兩人以上同行並遠離堤防。','減量或停止投餵，降低池中耗氧與殘餌負荷。','增氧機全開，備援發電機試車並備足油料，必要時準備液態氧。','雨水會浮在表層，可優先由表層排出淡水，減緩鹽度劇降；控制閘門避免外水湧入。','加固塭堤並加設防逃網；漁船加強纜繩，未進港船筏移泊港內或上岸。'];
-  } else {
-    $('#adv-title').textContent='✅ 颱風遠離後建議';
-    ADV=['確認警報解除及實際浪況後再出港，留意長浪與漂流物。','逐步恢復投餵，由少量開始並觀察攝食。','檢查塭堤、閘門、增氧與電力設備，修復防逃網。','定置網、箱網、牡蠣棚架全面檢查纜繩與錨碇，再恢復作業。','損失儘速拍照存證並向公所通報。'];
-  }
-  $('#ex-fish').innerHTML=F.join('')||'<li class="muted">資料讀取中…</li>';
-  $('#ex-aqua').innerHTML=Q.join('')||'<li class="muted">資料讀取中…</li>';
-  $('#ex-adv').innerHTML=ADV.map(function(x){return '<li>'+x+'</li>';}).join('');
-  $('#c-fish').className='card '+(bigSea.length?'sev3':warnOn?'sev2':'sev0');
-  $('#c-aq').className='card '+(A.some(function(s){return s.rk>=3;})?'sev3':A.some(function(s){return s.rk>=2;})?'sev2':'sev0');
-  $('#ts-exp').textContent='自動產生 '+fmtTW(new Date());
-}
-
-// ---------- 時間軸（自動） ----------
-function renderTimeline(){
-  var c=S.cwa, L=[];
+// ---------- 強度與日誌 ----------
+function renderLog(){
+  var c=S.cwa, rows=[];
   if(c&&c.active&&c.fixes.length){
-    var fx=c.fixes;
-    L.push([fx[0].t,'生成熱帶性低氣壓，位置 '+fx[0].lat+'°N '+fx[0].lon+'°E。','']);
-    [[17.2,'增強為輕度颱風（命名薔琵）'],[32.7,'增強為中度颱風'],[51,'增強為強烈颱風']].forEach(function(th){ var f=fx.filter(function(x){return x.w>=th[0];})[0]; if(f) L.push([f.t,th[1]+'，近中心最大風速 '+f.w+' m/s。','']); });
-    var pk=fx.reduce(function(a,b){return (b.p!=null&&(a.p==null||b.p<a.p))?b:a;});
-    L.push([pk.t,'強度巔峰：中心氣壓 '+pk.p+' hPa，最大風速 '+pk.w+' m/s（'+pk.lat+'°N '+pk.lon+'°E）。','']);
-    for(var i=1;i<fx.length;i++){ var a=catZh(fx[i-1].w), b=catZh(fx[i].w); if(a!==b && fx[i].w<fx[i-1].w) L.push([fx[i].t,'減弱為'+b+'（'+fx[i].w+' m/s）。','']); }
-    var cl=fx.reduce(function(a,b){ return nearest(b.lat,b.lon)[1]<nearest(a.lat,a.lon)[1]?b:a; }), cn=nearest(cl.lat,cl.lon);
-    L.push([cl.t,'截至目前最接近臺灣：距'+cn[0]+'約 '+Math.round(cn[1])+' km。','']);
-    if(S.warn&&S.warn.active) L.push([S.warn.effective,'中央氣象署最新發布：'+esc(S.warn.headline)+'。','']);
-    var cur=c.cur, cnr=nearest(cur.lat,cur.lon);
-    L.push([cur.t,'最新位置 '+cur.lat+'°N '+cur.lon+'°E，'+catZh(cur.w)+' '+cur.p+' hPa，距'+cnr[0]+'約 '+Math.round(cnr[1])+' km。','now']);
-    c.fcs.forEach(function(f,i){ if(i===0||i===c.fcs.length-1||f.tau===24||f.tau===48){ var n=nearest(f.lat,f.lon); L.push([f.t,'［預報 +'+f.tau+'h］'+f.lat+'°N '+f.lon+'°E，'+(f.w?catZh(f.w)+' '+f.w+' m/s，':'')+'距'+n[0]+'約 '+Math.round(n[1])+' km。','fc']); } });
+    var fx=c.fixes.filter(function(f,i){return i%2===0||i===c.fixes.length-1;});
+    var o=chartOpts({y:{title:'最大風速（m/s）',zero:true},y2:{title:'中心氣壓（hPa）',right:true,reverse:true}}); o.plugins.legend.position='bottom';
+    mkChart('c-int',{type:'line',data:{labels:fx.map(function(f){return fmtTW(f.t);}),datasets:[
+      {label:'最大風速',data:fx.map(function(f){return f.w;}),borderColor:'#C4122F',backgroundColor:'#C4122F',pointRadius:0,borderWidth:2,yAxisID:'y'},
+      {label:'中心氣壓',data:fx.map(function(f){return f.p;}),borderColor:'#2C6E8F',backgroundColor:'#2C6E8F',pointRadius:0,borderWidth:2,borderDash:[5,4],yAxisID:'y2'}]},options:o});
+    var F=c.fixes;
+    rows.push([F[0].t,'於 '+F[0].lat+'°N '+F[0].lon+'°E 生成熱帶性低氣壓。','']);
+    [[17.2,'增強為輕度颱風，命名薔琵'],[32.7,'增強為中度颱風'],[51,'增強為強烈颱風']].forEach(function(th){ var f=F.filter(function(x){return x.w>=th[0];})[0]; if(f) rows.push([f.t,th[1]+'，最大風速 '+f.w+' m/s。','']); });
+    var pk=F.reduce(function(a,b){return (b.p!=null&&(a.p==null||b.p<a.p))?b:a;});
+    rows.push([pk.t,'達到巔峰，中心氣壓 '+pk.p+' hPa，最大風速 '+pk.w+' m/s。','']);
+    for(var i=1;i<F.length;i++){ var a=catZh(F[i-1].w), b=catZh(F[i].w); if(a!==b&&F[i].w<F[i-1].w) rows.push([F[i].t,'減弱為'+b+'，最大風速 '+F[i].w+' m/s。','']); }
+    var cl=F.reduce(function(a,b){return nearest(b.lat,b.lon)[1]<nearest(a.lat,a.lon)[1]?b:a;}), cn=nearest(cl.lat,cl.lon);
+    rows.push([cl.t,'最接近臺灣，距'+cn[0]+'約 '+Math.round(cn[1])+' 公里。','']);
+    if(S.warn&&S.warn.effective) rows.push([S.warn.effective,'中央氣象署發布'+esc(S.warn.headline)+'。','']);
+    var cur=c.cur, n=nearest(cur.lat,cur.lon); rows.push([cur.t,'中央氣象署最新分析：'+catZh(cur.w)+' '+cur.p+' hPa，距'+n[0]+'約 '+Math.round(n[1])+' 公里。','now']);
+    c.fcs.filter(function(f){return f.t.getTime()>Date.now();}).forEach(function(f,i,arr){ if(i===0||i===arr.length-1||f.tau===24||f.tau===48){ var m=nearest(f.lat,f.lon); rows.push([f.t,'預報位於 '+f.lat+'°N '+f.lon+'°E'+(f.w?'，'+catZh(f.w):'')+'，距'+m[0]+'約 '+Math.round(m[1])+' 公里。','fc']); } });
   }
-  if(S.jma){ var lp=S.jma.pts[S.jma.pts.length-1]; if(lp.cat==='LOW') L.push([lp.t,'［JMA 預報］轉為溫帶氣旋（'+(lp.location||'')+'）。','fc']); }
-  L.sort(function(a,b){return a[0]-b[0];});
-  var seen={}; L=L.filter(function(x){ var k=x[0].getTime()+x[1]; if(seen[k]) return false; seen[k]=1; return true; });
-  $('#timeline').innerHTML=L.map(function(x){return '<li class="'+x[2]+'"><time>'+fmtTW(x[0])+'</time>'+x[1]+'</li>';}).join('')||'<li class="muted">資料讀取中…</li>';
-  $('#ts-tl').textContent='更新 '+fmtTW(new Date());
+  if(S.jma){ var lp=S.jma.pts[S.jma.pts.length-1]; if(lp.cat==='LOW') rows.push([lp.t,'日本氣象廳預報轉為溫帶氣旋，位於'+esc(lp.location||'')+'。','fc']); }
+  rows.sort(function(a,b){return a[0]-b[0];});
+  var seen={}; rows=rows.filter(function(r){var k=r[0].getTime()+r[1]; if(seen[k]) return false; seen[k]=1; return true;});
+  $('#log').innerHTML=rows.map(function(r){return '<tr class="'+r[2]+'"><td class="t">'+fmtTW(r[0])+'</td><td>'+r[1]+'</td></tr>';}).join('')||'<tr><td>路徑資料讀取中</td></tr>';
 }
 
-// ---------- 新聞 ----------
+// ---------- 新聞與狀態 ----------
 var curTab='fish';
 function renderNews(){
   var N=(S.snap&&S.snap.news)||{}, L=N[curTab]||[];
-  $('#news').innerHTML=L.length?L.map(function(x){return '<li><a href="'+esc(x.link)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a><div class="meta">'+esc(x.source||'')+(x.time?' ・ '+fmtTW(new Date(x.time)):'')+'</div></li>';}).join(''):'<li class="muted">暫無資料</li>';
+  $('#news').innerHTML=L.length?L.map(function(x){return '<li><a href="'+esc(x.link)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a><small>'+esc(x.source||'')+(x.time?'，'+fmtTW(new Date(x.time)):'')+'</small></li>';}).join(''):'<li>這個分類目前沒有新聞。</li>';
   var up=S.snap&&S.snap.updated?new Date(S.snap.updated):null;
-  $('#ts-news').textContent=up?'彙整於 '+fmtTW(up)+((Date.now()-up)>3*3600e3?'（排程延遲中）':''):'';
+  $('#news-ts').textContent=up?'新聞由 GitHub Actions 定時彙整，最近一次為 '+fmtTW(up)+((Date.now()-up)>3*3600e3?'；排程延遲中，可能不是最新。':'。'):'';
 }
 $('#news-tabs').addEventListener('click',function(e){ var k=e.target.dataset.k; if(!k) return; curTab=k;
-  document.querySelectorAll('#news-tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.k===k);}); renderNews(); });
-
+  document.querySelectorAll('#news-tabs button').forEach(function(b){ b.setAttribute('aria-selected',b.dataset.k===k?'true':'false'); }); renderNews(); });
 function renderStatus(){
-  var names={cwa:'CWA 颱風路徑',warn:'CWA 颱風警報',jma:'JMA 台風情報',buoy:'CWA 浮標實測',marine:'Open-Meteo 海洋',aqua:'Open-Meteo 氣象',news:'新聞（Actions）'};
-  $('#srcstat').innerHTML=Object.keys(names).map(function(k){ var s=S.status[k]||['bad','未取得']; return '<div>'+names[k]+'：<span class="'+(s[0]==='ok'?'okc':'bad')+'">'+(s[0]==='ok'?'● ':'✕ ')+esc(s[1])+'</span></div>'; }).join('');
+  var names={cwa:'中央氣象署颱風路徑',warn:'中央氣象署颱風警報',jma:'日本氣象廳',buoy:'中央氣象署浮標',marine:'Open-Meteo 波浪模式',aqua:'Open-Meteo 氣象模式',news:'新聞彙整'};
+  $('#srcstat').innerHTML=Object.keys(names).map(function(k){ var s=S.status[k]||['bad','未取得']; return '<div>'+names[k]+'：<span class="'+(s[0]==='ok'?'ok':'bad')+'">'+(s[0]==='ok'?'正常，':'失敗，')+esc(s[1])+'</span></div>'; }).join('');
 }
 
 // ---------- 主流程 ----------
@@ -691,15 +714,15 @@ var nextAt=0, busy=false;
 function loadAll(){
   if(busy) return; busy=true;
   Promise.all([loadCwaTrack(),loadCwaWarn(),loadJma(),loadBuoy(),loadMarine(),loadAqua(),loadSnapshot()]).then(function(){
-    safe(renderTop); safe(drawMap); safe(renderImgs); safe(renderMarine); safe(renderAqua); safe(renderIntensity); safe(renderExpert); safe(renderTimeline); safe(renderNews); safe(renderStatus);
+    safe(seaMax); safe(renderHero); safe(renderWarn); safe(drawMap); safe(renderReadings); safe(renderAnalysis); safe(renderSea); safe(renderAqua); safe(renderImgs); safe(renderLog); safe(renderNews); safe(renderStatus);
     $('#u-page').textContent=fmtTW(new Date());
-  }).then(function(){ busy=false; nextAt=Date.now()+REFRESH_MS; }, function(){ busy=false; nextAt=Date.now()+REFRESH_MS; });
+  }).then(function(){ busy=false; nextAt=Date.now()+REFRESH_MS; },function(){ busy=false; nextAt=Date.now()+REFRESH_MS; });
 }
-setInterval(function(){ var s=Math.max(0,Math.round((nextAt-Date.now())/1000)); $('#u-next').textContent=String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); if(nextAt&&s===0) loadAll(); },1000);
-document.addEventListener('visibilitychange',function(){ if(!document.hidden && nextAt && Date.now()>nextAt-REFRESH_MS+120000) loadAll(); });
+setInterval(function(){ var s=Math.max(0,Math.round((nextAt-Date.now())/1000)); $('#u-next').textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); if(nextAt&&s===0) loadAll(); },1000);
+document.addEventListener('visibilitychange',function(){ if(!document.hidden&&nextAt&&Date.now()>nextAt-REFRESH_MS+120000) loadAll(); });
+window.addEventListener('resize',function(){ safe(renderRuler); });
 $('#btn-refresh').onclick=loadAll;
-// 每 6 小時整頁重新載入，以取得網頁程式更新
-setTimeout(function(){ location.reload(); }, 6*3600e3);
+setTimeout(function(){ location.reload(); },6*3600e3);
 loadAll();
 </script>
 </body>
