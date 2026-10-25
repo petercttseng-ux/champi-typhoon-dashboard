@@ -44,7 +44,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 
 /* Hero：出海判斷 + 浪級尺 */
 .hero{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;padding:40px 0 36px;align-items:start}
-.verdict{font-family:var(--serif);font-weight:900;font-size:clamp(34px,5.4vw,64px);line-height:1.15;margin:0 0 18px;letter-spacing:.01em}
+.verdict{text-wrap:balance;font-family:var(--serif);font-weight:900;font-size:clamp(34px,5.4vw,64px);line-height:1.15;margin:0 0 18px;letter-spacing:.01em}
 .verdict.red{color:var(--red)} .verdict.amber{color:#9A6A00} .verdict.green{color:var(--green)}
 .lede{font-size:18px;max-width:34em;margin:0 0 26px;color:var(--ink)}
 .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px;margin:0;max-width:640px}
@@ -62,9 +62,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
 .band .bn small{display:block;font-family:var(--num);font-weight:500;font-size:13px;color:var(--ink2)}
 .water{position:absolute;left:0;right:0;bottom:0;height:0;z-index:1;opacity:.85;transition:height 1.6s cubic-bezier(.2,.7,.2,1)}
 .water::before{content:"";position:absolute;left:0;right:0;top:-6px;height:6px;background:radial-gradient(6px 6px at 6px 6px,transparent 5px,currentColor 5.5px) repeat-x;background-size:12px 6px;color:inherit}
-.marks{position:relative}
-.mk{position:absolute;left:0;right:0;transform:translateY(50%);display:flex;align-items:center;gap:6px;font-size:13px;white-space:nowrap}
-.mk::before{content:"";width:14px;height:2px;background:var(--ink);flex:none}
+.marks{display:flex;flex-direction:column-reverse;border-top:1.5px solid transparent;border-bottom:1.5px solid transparent}
+.mrow{flex:1;display:flex;flex-direction:column;justify-content:center;padding-left:10px;font-size:13px;line-height:1.35;border-left:2px solid transparent}
+.mrow.has{border-left-color:var(--ink)}
+.mk{display:block;white-space:nowrap}
 .mk b{font-family:var(--num);font-size:16px;font-weight:600}
 .mk.top{font-weight:700}
 .ruler-cap{grid-column:1/-1;font-size:13px;color:var(--ink2);margin-top:8px}
@@ -491,10 +492,9 @@ function renderRuler(){
   }
   var B=(S.buoy||[]).slice().sort(function(a,b){return a.h-b.h;}), H=sc.clientHeight, wt=$('#water');
   if(B.length){ var mx=B[B.length-1]; wt.style.color=BANDS[bandOf(mx.h)].c; wt.style.background=BANDS[bandOf(mx.h)].c; requestAnimationFrame(function(){ wt.style.height=(bandPos(mx.h)*100).toFixed(1)+'%'; }); }
-  var last=-99, html='';
-  B.forEach(function(b,i){ var y=bandPos(b.h)*H; if(y<last+18) y=last+18; last=y;
-    html+='<div class="mk'+(i===B.length-1?' top':'')+'" style="bottom:'+y.toFixed(0)+'px">'+esc(b.n)+' <b>'+b.h+'</b>m</div>'; });
-  $('#marks').innerHTML=html||'<div class="mk" style="bottom:10px">浮標資料暫無</div>';
+  var rows=BANDS.map(function(){return [];}), topId=B.length?B[B.length-1].id:null;
+  B.slice().reverse().forEach(function(b){ rows[bandOf(b.h)].push(b); });
+  $('#marks').innerHTML=B.length?rows.map(function(r){ var shown=r.slice(0,3), more=r.length-shown.length; return '<div class="mrow'+(r.length?' has':'')+'">'+shown.map(function(b){return '<span class="mk'+(b.id===topId?' top':'')+'">'+esc(b.n)+' <b>'+b.h+'</b> m</span>';}).join('')+(more>0?'<span class="mk">另 '+more+' 站</span>':'')+'</div>'; }).join(''):'<div class="mrow">浮標資料暫無</div>';
   $('#ruler-cap').textContent='中央氣象署浪級。標記為各浮標最新實測'+(B.length?'（'+fmtTW(new Date(Math.max.apply(null,B.map(function(b){return b.t.getTime();}))))+'）':'')+'。';
 }
 
