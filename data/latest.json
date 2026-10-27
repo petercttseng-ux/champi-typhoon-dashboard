@@ -1,7 +1,7 @@
 {
  "cwa": {
   "active": false,
-  "data_time": "202610261800"
+  "data_time": "202610270000"
  },
  "jma": {
   "tc_id": "TC2636",
@@ -32,10 +32,76 @@
  "news": {
   "tw": [
    {
-    "title": "風災農損僅宜蘭全品項救助 惹怒雲林農民 - UDN",
-    "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9KSUFneHZPd1dDMTBEZF9zTU95R1hkZlNiV2U0WkZHbFV6UERsWE1oczdlS2U5VlY4UUhDUjhvOXN0aW9jaG1QTEFxOWtlT1p2cmJF0gFYQVVfeXFMTkc1NWVQQUxpcjV0UGFqaFgxZXpmYXp2YkZDSndvRXN3NFFMUjNWamNXaTdXMjZjNWVtWDFwS1Q5ZG14NUR2V0pPdzJ3cXlJbTV2eEdIV1VPSg?oc=5",
+    "title": "煙花颱風最快今升格！挑戰罕見「連5強颱」 最新路徑曝光 | Newtalk - LINE TODAY",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1oZjQ2TG9sZEF0TU5UMWFvUnp0cVZXTFk0VHFFaDhtMERPWVJTWU1xMFJuS1d2dWd1NHduRU10TkVYU244SXZ3RlR3MjFzeEFmQlBVVnBR?oc=5",
+    "source": "LINE TODAY",
+    "time": "2026-10-27T12:33:21+08:00"
+   },
+   {
+    "title": "公告彰化縣為辦理薔琵颱風農業天然災害現金救助及低利貸款地區 - 墨新聞-MORE News",
+    "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTFBkN1l3emtRXzU3OXJmS0t3Q2E2YWVOR3M3dmpQX2Y5UnRoVEZObWVXZV9fUm54SXlaVzRsb0NjblVOdw?oc=5",
+    "source": "墨新聞-MORE News",
+    "time": "2026-10-27T12:20:42+08:00"
+   },
+   {
+    "title": "薔琵重創草嶺古道「全線封閉搶修」　官方：芒花季確定延期 - ETtoday旅遊雲",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBVaDhONzNqNHZVUVYzMTdhWklsREZraVJLUHhpUUNJSlJMblVwZTdUc1FrMzdwOEY4ck5WM1RqLVFhTVlsSjdoREpoMmwyNnV0emRHTUJDMVRJQdIBT0FVX3lxTE90NmJpNGJ1SU9XRzRMaUNqRXQ1UGJJWFFhREhpbkYzakZPbDN2NTc1dzgtWE1Gb0RjbjJSNjU3VXhLY0ozWUlTZi1COUZlSDQ?oc=5",
+    "source": "ETtoday旅遊雲",
+    "time": "2026-10-27T11:49:00+08:00"
+   },
+   {
+    "title": "薔琵颱風威力太大！全台農損失2億5,634萬元| 生活 - Newtalk新聞",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1RZ2lLNE16aElmLXJianN0MXV1M0l3X0E3VzhhaE9INEZsaG1wSHAyajk4VVZwWEZHYWNMYjVzVTVoaGdEUVdLLUJzUkJVb1ZJV1pRLW1LZndSVk0?oc=5",
+    "source": "Newtalk新聞",
+    "time": "2026-10-27T11:39:37+08:00"
+   },
+   {
+    "title": "薔琵颱風遠離「東北季風接手」！今起2冷空氣接力報到北東轉雨| 生活 - Newtalk新聞",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE00bXNyblYxS2NOZ0luMEVfcFctUjdrdEhya05RSUJvZzVCZzBUc1N4ZEtXWnVlajlYekJKbkZDbUpVcmswYjdrRzlEVzN3allqV2pSUUtwS09tZ0U?oc=5",
+    "source": "Newtalk新聞",
+    "time": "2026-10-27T11:29:07+08:00"
+   },
+   {
+    "title": "因應薔琵颱風 竹市10/23垃圾停收、公車及YouBike停駛 部分醫院門診暫停 - 蕃新聞",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9Nb25GOXhVNlp6d2pDckx0RDB1TmV5NWpYeXJhOUlSNWl5X0Exa2tfZ29wS2t4dWJrV0hpdjJUYnBjWlp6SGlkcDFxUlpNZGFiTWc?oc=5",
+    "source": "蕃新聞",
+    "time": "2026-10-27T10:45:34+08:00"
+   },
+   {
+    "title": "薔琵颱風威脅未除仍不容小覷！高虹安市長主持第二次工作會議 要求防災應變不鬆懈 - 中央社 CNA",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFA5OTF4b3YzaFpYNk8ydzhUakNsVXprVlBUOFg4bmJQUmRKODlLSVZiT25xeHA3eDBTMzQ3M2thMS1yS0prTFFEZkZ2cHVwbDZNQzdfNXF3?oc=5",
+    "source": "中央社 CNA",
+    "time": "2026-10-27T09:44:38+08:00"
+   },
+   {
+    "title": "薔琵颱風強風豪雨襲竹市！高虹安市長主持應變會議 嚴防11級強陣風 - 中央社 CNA",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBfRXVFVDZ4Ny1lOENFeHRURjVHcWJNQm1EeU9kTVNhYWdqZjdmNDY5TGZuU1NKOTNpSXZsYUJLb3F4OFV2UHFkZmY4Qk5wN3RBQ0VDcldn?oc=5",
+    "source": "中央社 CNA",
+    "time": "2026-10-27T09:43:56+08:00"
+   },
+   {
+    "title": "薔琵颱風來襲！竹市災害應變中心提升一級開設 高虹安市長召開整備會議 全面嚴陣以待 - 中央社 CNA",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE00dDY4MHlKekJPb2pEa29aNkJ4bk44VjZnNkxwc3lncjlxcTA4eXNQdGQyWDdSRVQzTkh1QjhveUEwdmZsNjFSZVJwWHByTlpTQzRhYzl3?oc=5",
+    "source": "中央社 CNA",
+    "time": "2026-10-27T09:42:20+08:00"
+   },
+   {
+    "title": "薔琵颱風「有風沒雨」釀嚴重鹽害 屏東枋山芒果明年恐減產 - UDN",
+    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1nRFd0a3BObkVCeVJNZFdqVHhyckpnOGpDWEZtQkZEQlJtQ1B3TFhhVEpXcmxWaW1tZVZfZ1d0cnBqcklZQWVpMUJuZ0ZVeS1J0gFWQVVfeXFMT0RJMW1BYmlZdHFIR0YtMEs2cVBzSmdaekI5MmNhYjk1N1FhVVJlNHJMMW9wSTR4T25KNG14WGlDbFA4STVEZjlTRHg0VVc0VWpiVlVqVnc?oc=5",
     "source": "UDN",
-    "time": "2026-10-27T04:20:08+08:00"
+    "time": "2026-10-27T09:36:22+08:00"
+   },
+   {
+    "title": "薔琵颱風重創農民心血 王縣長前往溪州勘災：加速農損查報、全力爭取全品項中央救助 - 墨新聞-MORE News",
+    "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5yM3piSE5ZaDVUdjc1dXp2ektKckVuQXV2dmJtcnd2X3ZPdzl1dTZVcGlFTUl6N1VVbDAycW1fSTJvUQ?oc=5",
+    "source": "墨新聞-MORE News",
+    "time": "2026-10-27T09:04:02+08:00"
+   },
+   {
+    "title": "「煙花」颱風眼現形！今恐升強颱 颱風論壇曝路徑 - 自由時報",
+    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5PSWluUTNfcFFGTktscWpfV1hlQlU0NUJIUnpRR3d5a2JmRG5nN20ybFNEUWUyLS12ZWpVOHNCdV9zUEhORWVNbzl6S3ZXVndlU3R4b0Jnc09rTS1Hc1ZqLWJZS0_SAWpBVV95cUxOTHNXdTlsNjNpTTlMNkpYX0trdVBpMDRLUGNpQzBSVGUtbU5kd1pWUEZ1Tm1iY0prWHlRTV9xTEZ0V1FTMU1pY09PcG1sNnJ4RlIwbkEwdVNOSTUtREthYk1DdGg3V0hTcG5n?oc=5",
+    "source": "自由時報",
+    "time": "2026-10-27T07:49:17+08:00"
    },
    {
     "title": "工商社論》薔琵颱風過後 反思台灣糧食安全 - 中時新聞網",
@@ -44,16 +110,28 @@
     "time": "2026-10-27T04:10:00+08:00"
    },
    {
+    "title": "薔琵颱風過境 環保局完成水質檢測 為市民飲用水安全把關 - 視傳媒",
+    "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBxRllUN3JwYnhaQjNjd0szcDRYQUhUQnpPalVyNmRUT1pIZzZzWWxUUHdvX28zZE9xVFQyQmg4LWRwb0lQZGppOFlDVm94TktQdnA0eEtFd2VsNlo4Mmt2cjduTW80aVBwd1ZZ?oc=5",
+    "source": "視傳媒",
+    "time": "2026-10-27T01:35:31+08:00"
+   },
+   {
     "title": "NISSAN 心の御守 提醒車主留意「薔琵」 颱風動態 - AutoNet汽車日報",
     "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5CTkV5WHJtM2paTG5XTXVNS2NWLWJZNkY1Q255dXVzQ1N6cnM0WEM4NllFVzBfWGFxU01tY0dUN0lGLWxXRE5Fem1oNGtaS1E3YkJ5T2puVjF4MkNqUV8wTjdiWWxPUE55bldPMEZ0dGFvX0U?oc=5",
     "source": "AutoNet汽車日報",
-    "time": "2026-10-27T00:07:50+08:00"
+    "time": "2026-10-27T00:21:42+08:00"
    },
    {
     "title": "薔琵颱風打亂光復節連假 馬祖旅遊人潮不如預期 - 馬祖日報",
     "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBEQTFxdVhlS25OTlYzMDV1eFVsQlVUdFp5QnRQNmd4UTBTM1FnX2dLSUtBb19iZ0E4aTZVT0dLdzVqMFRsbEpzQWlRakh3SlNjMnpNZ1JFdmVKNXdncnc?oc=5",
     "source": "馬祖日報",
     "time": "2026-10-27T00:02:43+08:00"
+   },
+   {
+    "title": "薔琵颱風造成台中農損 中市農業局籲受災農民11/9前申請現金救助及低利貸款 - PChome Online 新聞",
+    "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOblppUHV6QWNkVUZKcEgyTTd0RWcwY2xkbExBbHVDcGZkUlF1TkpvOU9OaXB2UmVrd1RBcDhickc2UVJlMVpMSU5DNmNDbXF6bGVFVlNCa2pkazFOSTJhWF9xblFNMVVJU0R6Ukd6MzZrR1RxeWpJWEgyR2pZdXFmajhWXzJLbG9MZWhJ?oc=5",
+    "source": "PChome Online 新聞",
+    "time": "2026-10-26T21:27:42+08:00"
    },
    {
     "title": "薔琵颱風強襲！臺東縣稅務局提醒財損先拍照申請減免稅費 - 台灣新聞雲報",
@@ -86,12 +164,6 @@
     "time": "2026-10-26T20:25:15+08:00"
    },
    {
-    "title": "薔琵颱風遠離後東北季風接力｜新聞事件整理與重點摘要 - Yahoo新聞",
-    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE8yY3dDdzlaQjdMZXhKYUFIeUhTYTh2ci01U1huR3RQNVBZZC1YMU1tRTNzRDgtdGlkR3hIcm9XMDB5N1BVSjZaVVduQ2VfajlBZ183eGZDX2hzM1lzYnVENHdVRXRRMk5KeUoyNHYtaUpja0lzRDhtV2l2bmQ0Zw?oc=5",
-    "source": "Yahoo新聞",
-    "time": "2026-10-26T20:06:24+08:00"
-   },
-   {
     "title": "薔琵颱風肆虐 暖西國小校舍受損嚴重 - Yahoo新聞",
     "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNVHFNc0tNOEZfV1R4LWNYby1EaDVfcEJoSzVOZWxscndKQ2NPbXlKY1NYNGUwXzZmOEt0Y013ejFxWmt3aHlvYkVpenpKZnhpX0lHZGp6R3ZibGZnMnhSeVNZZFFOZEtRU0pNYzFzNHN1RG1raXItdE1rQmg3M2JrMHZ1X2JxLVprQlprM2I5RVdCY3pkU0ZuN0Q4WmdPNEZyVXNET2dvT2NrcVZKNFBTalgwWDRsbE10WWdaaEJoM3ZERFROYmI1NmI0WmwtX1U0RnlXbG9xSGZhcFdBMnh3d1FvSEdHb3lVTnNWUE1fblpnMHNsVEwtbzZWLS1NUDZGdzRlc0ZLdVFxSEpxeTM3bmNQLTA?oc=5",
     "source": "Yahoo新聞",
@@ -104,96 +176,24 @@
     "time": "2026-10-26T19:39:45+08:00"
    },
    {
-    "title": "薔琵颱風造成農損 澎湖最大木瓜園搶收低價上市 - Yahoo新聞",
-    "link": "https://news.google.com/rss/articles/CBMi0AJBVV95cUxQVW1RY3ZIQkZNRlJYbDJCTnJhbktNQXdhUnJ3Si0xVzlSbFpha1l3YnBjcm81MmgxOUhqUUZUODhMd1JGcjhuV2ktdzAzbnhuNzRuT2J0NVV1VW9QYjJ4MU1OQlowbU56Q3F4VDFUUnpjazkyVEt2eTNON3Jfb2wwaUpDcmd2c1A2NUhUM0dLRnBlUElaS2NSS0prTU5rT2w0VF93TXQxQzBkN1lncWxFRWJMMm1Jd3J3RngwVXVtbEN5UmdMVFdBbjhRR2FoUXp6ZXlMSDRNU3VoRy1FdzI0MmozS0tuN0hsVGY0bm9qaHI5LUdyeUY0M2xpNTBaZ1I5TlE5ejNsa0tkdF9ieTEzWjA2bjlyWjhWODN1WGl6aHJuZ0llZVYxR3dnSFdLSm9yR0Y1YmJMRHB3c2VBSkVOREtBN3phYWVTaF9xeWlpVXQ?oc=5",
-    "source": "Yahoo新聞",
-    "time": "2026-10-26T19:16:20+08:00"
-   },
-   {
-    "title": "薔琵颱風釀禍！杉林溪聯外道路「巨石擋道」 2小時搶通恢復通行 - TVBS新聞網",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE11U19pRXJjLWxzdnlaaFJqNkNRYzNIQl9KNDlBdTAtVDVyR2RqXzJkQkM2REdlNVFBeHR6d2cxSVpHWm5VbHRxZ3pBelJOdw?oc=5",
-    "source": "TVBS新聞網",
-    "time": "2026-10-26T18:53:00+08:00"
-   },
-   {
-    "title": "薔琵颱風農損救助正式公告！宜蘭農產業全品項納入 農友可依規定申請現金救助及低利貸款 - 觀傳媒",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBqdGtVd0x3MHIyRjlyV0ZxV21RRlQyeEt2dlVybzFNX2pzX0JENGlCQ1JKaDRtQkRMM2FnUnhYZXZ4Ul9XazdzU1ZsbDJGRjRJWTBpRmhEOA?oc=5",
-    "source": "觀傳媒",
-    "time": "2026-10-26T18:36:53+08:00"
-   },
-   {
-    "title": "薔琵颱風重創雲林農田！劉建國邀陳駿季勘災 每公頃最高補助9.5萬 - Yahoo新聞",
-    "link": "https://news.google.com/rss/articles/CBMingNBVV95cUxQS3c4UzlNVmdGMnlMUGxmNmp6QnFFbW9JcWtfTkQ4eFpRaVI2dDdaVXVfaDgzQlhCZ3VHQ3Z6TWJpVk5LcmJ1Q0lralF5LXNWOVdDbjRWSjlrWDBwRjVxVGZIUUNrQTdmNEVIVFpXZjJRTklFaWIza3BPUnVURE9kSEw2LTQ5S045WUtMQmt0Mm1CUG5aVzctMXV2QlRmUjJQcGRGYzc5RGY1TkJaWE5ZNjRLQXByREtJQjNMQjBTaUJtUS1OM0pPMTVvcDNkNzJIN09nbEVycU80X21iUV9JZ0hYd1ZHYnFDQUtxanE1YjhCSlZSclczVzJzYTViUFQ2TGlMWTdpT0NxTEJXQjlpMm0wUHU1eThJX2hfWGZrdHNCOThuamxyeFJ3MEdpN2pMV3VFMVZ1NTF0dkExSm9tMnhSbFJoTURucVI3dUNianFGUW9PWGd0aHZndG5BNHd0Z21KbWpOSm1Ydy1WVkYtNmprb184aEh1R0hOb3pmSWdTSzMwZ201d3ZsVURUU0J6aHYyQXBEdDUxMFRWUkE?oc=5",
-    "source": "Yahoo新聞",
-    "time": "2026-10-26T18:34:30+08:00"
-   },
-   {
-    "title": "農民心血泡湯！薔琵颱風「13縣市農損近2.6億」雲林災情最嚴重 - Yahoo新聞",
-    "link": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxNSV9qM3FaNVdISFRCOUc3cGV3VG1zcmd5U3pJdjBiTTFYb0FSNEs0Z0NNVW1oOTJiVk9HcUkxUkwzVHdNOXlvdjNUc2ItNlZTVTM2VmxfTzB1RzNLejhhdmUyWElMUWR5WkJHTU81ZTI3MEtBd005WU1VTW5pTHlrSk1kUWdJblB3UTNaVm9RaEdncF82UXkyamJYZGFBNGtRUlkzV3FDUU9qVXZlRmp1VEY5WHdycDAwWTJrSmRuNHFGSVBFZU83QmxiaDNwZnR2aG4tSHBzZy14VV84bFpjUFFxTXEtRks1bVlTdlhyRW10X2E3M0d0bmRFbWRWT3p0UVZ3RkU5NWo4alZLMUwwaDVoMTZkSGRCTktKYkhiQUZGMDBlYURnR3lMdldaRmR1SW51MmxFUU1DcENTT1h5YklmbVo2b2tsTVAzSjBTc2hJLUU1WlZwTm5UWnA2RFRka2xTYnV6MjBvaXIyMzk2bGhB?oc=5",
-    "source": "Yahoo新聞",
-    "time": "2026-10-26T18:19:00+08:00"
-   },
-   {
-    "title": "颱風薔琵雖減弱為溫帶氣旋 東西日本各地仍強風大雨 - 民視新聞網",
-    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9neVFYR0pvZGpqVGhESkhnVEhSY2o1ejNLdnFpc1lEQ3ZuNXc4dHhWbzRodmF1MzA3TzdybnZldGpIWUZial9RcEFiQ0JZQkhoYVVDLXRJRkFtaG9aUVlEdA?oc=5",
-    "source": "民視新聞網",
-    "time": "2026-10-26T18:08:44+08:00"
-   },
-   {
-    "title": "薔琵颱風農損逾2.2億 雲林災情最重、9縣市納天災救助 - 大紀元",
-    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1CQXM0MWt6OEpqRlhja0FoYUwzWXVJQll2eG04RzQ2UXZadWE2QVR3LUVEQ09mSlZoLWs4c1R1T2I3OEd4OThhNW9oN01oZnBTMkRhd1NtWHRmZ2s1U3puSk5B0gFnQVVfeXFMTXpRdlU5MkM1TkpaS0tHcmNiUnhZZkp2VWtZdFY5OUhOYkJsVUlwd0FVVlVlVDNHWE8zbGFQRnhWOVpibGsxU3J6TjZTVE5Cc043YV9yVDBtdWI3WkFWSE83SE1VR0ZZdw?oc=5",
-    "source": "大紀元",
-    "time": "2026-10-26T17:46:00+08:00"
-   },
-   {
-    "title": "快新聞／劉建國出手成功！薔琵颱風重創雲林沿海 建議農業部1事火速展開 - 民視新聞網",
-    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9zVk85UmVnWDZsVGhzemtPWTZKYkpOTk0yeTlRSXI5ZElDUUYwSS1YYkhNX0VWNGp1WUNFMGVCTGhSdW1rdVZnckRiR0prN0dPc3NvYnMtbjJEcUJFZWhkMQ?oc=5",
-    "source": "民視新聞網",
-    "time": "2026-10-26T17:33:38+08:00"
-   },
-   {
-    "title": "薔琵颱風重創雲林農業損失逾億元 中央火速公告救助 - Yahoo新聞",
-    "link": "https://news.google.com/rss/articles/CBMi6AJBVV95cUxPeVAxRnh3Y0ZsUDRKeF9ZVE43T2FTU2M2Z01vY2p5UlpQYnlYaVl1aFZ0eWNEZ2h6cVJUZEZRWVJidjZNOUxwcXBfSFZJMVA5dnFUT2tNU0FXWEtnTHJYYzJHR1Ewd243REZ5NUhRWk1heXdsOXB3UmtSalMwRXdjc2ptbzNpNE13SXhsS0JyLWtkYWVDMHgyVVo4d3VNWWJEei1NOThieW1yYzhoZjlNWTEtMmhKajNwNjM2cWZ2MTlVcWJ4ejcwOWxsZlFjNGlac0w4dk5OWjZZWWxJQUQwVzF3S3puWTJkUkNoSXVCWG83WVZ5M041bVZYYS02ZFRib0d0LXNBRWJWbklOQzVWNGVmeHNGWTAteVphOHZvb041NlNYcU5RdWZKMVVlck5yOEdxOUZQa3Q2ZTBYaXh4dVZyRmZyQjhjM2hQd3NoektHUElPaDhlbEprZGsydy1KQS15OFBWRmc?oc=5",
-    "source": "Yahoo新聞",
-    "time": "2026-10-26T17:07:18+08:00"
-   },
-   {
-    "title": "薔琵颱風造成台中農損 中市農業局籲受災農民11/9前申請現金救助及低利貸款 - 臺中市政府全球資訊網",
-    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBMUFZmT3l2NWlpNGhaYzV5MEVRb0ZPZ1dha3J4b0c1Qk1aZnhCbnA4a2R6czJMcm82ZWo4UThhQjltQzNGQmNSczhCMUdqcFZCUnc?oc=5",
-    "source": "臺中市政府全球資訊網",
-    "time": "2026-10-26T16:57:26+08:00"
-   },
-   {
-    "title": "天然管風琴！薔琵颱風吹響「魚簍造型」宜蘭原住民處 - TVBS新聞網",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9qUU02ek95MVdaNENFYlVPT2RhdHUzZGJzYjB1U0h6M2l1aFF1SW5zR0lSV2Qtekh6MXJQOGR6ZWZyNG9VTU5nS0VMWk5Odw?oc=5",
-    "source": "TVBS新聞網",
-    "time": "2026-10-26T16:46:00+08:00"
-   },
-   {
-    "title": "薔琵颱風重創雲林沿海 劉建國偕農業部長陳駿季勘災火速公告天然災害救助 - Yahoo新聞",
-    "link": "https://news.google.com/rss/articles/CBMi4ANBVV95cUxNTUNiYnJjWllkOVZMX1ZVVTFKSVk2YVl5Q3BIQmpwblpPQ2tFdW82X0lYbWdJMEctTUtPTHF6aFhBMjVGYXZvOU9QeVYzMUZHTmlKeGlJUWgwclI3NUtZZDROV3I1SUhFNktuVnN2SWR0cDFYZ0laR3dtN2hPWnJJeXgtVHpaSW1yczBkdnBsajM5djBGYW83azJuR1dNZVhKM3EtWHZTX3FDbGJHWFRPRUM5Q1BreVRFTDZ3d1hCTnRLUnFmb3h2b0wxVFdlVk00TURDSWhkUzNEdWNXeEdMMmo2UlJ0dW53NGtUODk4alpWazZkMEtpcUJCOGhMZkszRUxhZ212b042LTdlV1U0V1BtRVlseU0yaGZhMHFlc19pY0RpWS03R3U2TkNxUlowMFRlVHRDbkZOcXVsUXctZWVYV21hOGo1OW1vUFBjX0VWMUkzRTNKVnRXUDZWbXV6TXFJWl82cXNSeXpGaTJQS2tfN0QweEFDc3pBcnVGNm42OGhPaDlnR1dBQ3Z4SDBwNHVFRWFPRVNfWXNfcmJMcUdsUWhyRnJfMHZtYXAweF91Y1pyTGNsMF9Zbmg1dDhPNVl3RUEyZEtvd2djakRyY2ZEMmx1a1ppSE5BaW1haVg?oc=5",
-    "source": "Yahoo新聞",
-    "time": "2026-10-26T16:31:54+08:00"
-   },
-   {
-    "title": "薔琵颱風過境 謝國樑勘查獅球路、樂一路及七堵友二里 力拚上班日前完成搶修 - 報新聞",
-    "link": "https://news.google.com/rss/articles/CBMi5wJBVV95cUxNUGRvc1FYY3N4U0NabDY0bHV3OEhjbVRZazFCdUF6aG9aMnFhdkRhcjB6MGpFQkt0OERCTHNXb3Rhc2h4a1JXNHh2TWtoWmxTTWxfTFpkYk0tMHNxcDNaLWxoTk9FNEpCOFJiQ0ZfaF9LMVhZRUpJaHFBR3JuaDBoS3M2LVJOWXpTU0szUXQwQzJYa2FMc2tRYzNaeVBPWHpnTzhHR2pMTUJKVjdzLVhuaXVubm1hYVBHSTV1UHdfQVhlbDg5WHZ2UlFlMWhZMXk1elVQTnV2clgxc0YyRGhUZjdfNUxNMjJkVXIxSHFKZjlMejRCcXF4blFQd3FTWTlHSFZsRkpiVVNCM1RJSm9RdnltWkJnNURyZVZBbnY4TU9uNGwwUWRlblVWVHhnamxyLXpBallodFVyWE5KRDlpOW9vazJWd1pQMDRYVU5xVTFkOWpqbnVRYjMzazZJMmpBNGFSc21BSQ?oc=5",
-    "source": "報新聞",
-    "time": "2026-10-26T16:07:55+08:00"
+    "title": "薔琵颱風造成農損澎湖最大木瓜園搶收低價上市- 股市爆料同學會 - CMoney",
+    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE83aUJmXzJGUEZMd0p4el8tVnpDbktyZWFmNWJBbFd6X1kxWUo0Z3V3a3hwV2dLUW42T29LZGMzdXlJRHZ5eXNQREY5cXNTaVJtUFNtaE9nMHQ?oc=5",
+    "source": "CMoney",
+    "time": "2026-10-26T19:32:51+08:00"
    }
   ],
   "fish": [
+   {
+    "title": "薔琵颱風威力太大！全台農損失2億5,634萬元| 生活 - Newtalk新聞",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1RZ2lLNE16aElmLXJianN0MXV1M0l3X0E3VzhhaE9INEZsaG1wSHAyajk4VVZwWEZHYWNMYjVzVTVoaGdEUVdLLUJzUkJVb1ZJV1pRLW1LZndSVk0?oc=5",
+    "source": "Newtalk新聞",
+    "time": "2026-10-27T11:39:37+08:00"
+   },
    {
     "title": "薔琵過境馬公漁港船隻半沉 就地拆解油污漂散挨批「便宜行事」 - CMoney",
     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5yWkpEeGFhZUd6bXBwMkNqc3RDUldCc2cxTmFGcWRzWE83bUR0ZkNjNXVydzk4cElrZ3BhSFV6d3Q5ZXl6ZEM1aU1xUVhQR3Q1eU9CeGwxY0U?oc=5",
     "source": "CMoney",
     "time": "2026-10-26T18:33:36+08:00"
-   },
-   {
-    "title": "薔琵颱風13縣市農損2.6億！雲林災情最重 - 鏡週刊Mirror Media",
-    "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1IOGhXaFFTN3ctWl9YX1V3QUwzczUybTBpMW1UWFp1UHNwNHVFTGU5cXREcmozMlNFLWxab1h6RGMxMGxEYzkwYzJOOF9rNzRMdi1OZEJDUnVLdThxU3VnQklR0gFiQVVfeXFMTUg4aFdoUVM3dy1aX1hfVXdBTDNzNTJtMGkxbVRYWnVQc3A0dUVMZTlxdERyajMyU0UtbFpvWHpEYzEwbERjOTBjMk44X2s3NEx2LU5kQkNSdUt1OHFTdWdCSVE?oc=5",
-    "source": "鏡週刊Mirror Media",
-    "time": "2026-10-26T18:14:00+08:00"
    },
    {
     "title": "薔琵颱風農損2.2億！ 農業部公告「9縣市」發補助 申請範圍一次看 - TVBS新聞網",
@@ -208,42 +208,6 @@
     "time": "2026-10-26T14:45:55+08:00"
    },
    {
-    "title": "討論牆 | 颱風薔琵過後 竹圍漁港北堤受損封鎖搶修(圖) - LINE TODAY",
-    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBUTnB5T3gyQnpVRk9vUGVvRDZSVThNRDN4VTlmc0lESTB3UXV5dm9ycXZEMjJscWF0LWFqelZzTUhaY0M3NGpXSl91ZEZRVjZESlZydGJfeUZhU19vRDFjRVpVdzM?oc=5",
-    "source": "LINE TODAY",
-    "time": "2026-10-26T11:00:12+08:00"
-   },
-   {
-    "title": "富岡漁港掀10米大浪 吊車慘被巨浪吞噬落海 【發燒話題】-20261023 - 台視新聞網",
-    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQeHVrcUhfMHlNRGN5dTJBVFMwWVFnSDE4N1djblVlbGlFS3BUWURtTE5KeFZpQmlQTmZzajREMmJpT3lNNjkzRlFFOEpfSUxyNEtjOXdqc3Eyc0JsUVBvNXlvWU54UWx0MkxkN0d5WmtjbGRpTVB3ODV2QmpOQzNmTHRB?oc=5",
-    "source": "台視新聞網",
-    "time": "2026-10-26T04:22:12+08:00"
-   },
-   {
-    "title": "【薔琵颱風】| 公視新聞網 - 你的公共電視",
-    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE96ODVpazY2NVNaSlIwVFplMHhwWE42czdyVVY1LTVDOGFrVW5jalpZTVZKclY5ZnE5X0dERXpmdkhzQ1ZiUlBGRll1el9zQm8?oc=5",
-    "source": "你的公共電視",
-    "time": "2026-10-26T02:26:58+08:00"
-   },
-   {
-    "title": "討論牆 | 薔琵颱風重創沖繩石垣島！海葡萄養殖場屋頂吹飛、逾萬戶停電 北上逼近九州恐釀豪雨 - LINE TODAY",
-    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE03ZHJ4WkFvU29oYlhyN2VhR0lZWnhXaVBfV3pybl9hV2pMSEVHWVZ5QkpRS2hXbTBYYTJjbFBKT001VTFWYjRvMFV1Wl9GWU94bVdEYWJRWkltYzR3OWNkZDRxZnI?oc=5",
-    "source": "LINE TODAY",
-    "time": "2026-10-25T21:03:19+08:00"
-   },
-   {
-    "title": "基隆碧砂漁港釣客落海 子獲救、父失聯搜救中 - 你的公共電視",
-    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5UcHNvWUdNMWVXa1lZRnlCc2o2aC0yOG4yZWs2U1pLWjhpbE42aG1kNHI3T3lLYnVza3l1blFDSzQzLVNubWpueDVrSVQtVzA?oc=5",
-    "source": "你的公共電視",
-    "time": "2026-10-25T19:09:34+08:00"
-   },
-   {
-    "title": "薔琵颱風遠離 桃市府加速農損勘查跨局處啟動漁港搶災 - 大紀元",
-    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE14R1JVSDBOb3l2U0tUeENKZnFjaURMT2Q1bHRodEhwYUFSZzlDQjVVS1VvcUItX0JLZnZ6TnFrcC15UXFrY0doR0hJT3ZMYWdHOTdmeGFqSkM3NEZWZlViVHpJNXlId2vSAWdBVV95cUxNeEdSVUgwTm95dlNLVHhDSmZxY2lETE9kNWx0aHRIcGFBUmc5Q0I1VUtVb3FCLV9CS2Z2ek5xa3AteVFxa2NHaEdISU92TGFnRzk3ZnhhakpDNzRGVmZVYlR6STV5SHdr?oc=5",
-    "source": "大紀元",
-    "time": "2026-10-25T19:08:00+08:00"
-   },
-   {
     "title": "薔琵農損近2億 救助地區、品項盡速公告 | NOWNEWS今日新聞 - LINE TODAY",
     "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9pblo2LXRyOUdQVFU2aUEyQ0R6alZZYUowbFBYclRHb0V3emhETnFEaUV1UGNYWERpVHZfSDF3SXNNc2lZYl9sWVNmRGJOSGowNGZjRFBn?oc=5",
     "source": "LINE TODAY",
@@ -254,12 +218,6 @@
     "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFA3UWtFaGN2TmZFZUpCdDIyZTh0WDBzT3NuTU1uYlJFUGdWR2VnR0ZkWlZFV0xXVjFzZ0x5N1FNNkZIc0MyVUdYUzRKaVNBaWM?oc=5",
     "source": "TVBS新聞網",
     "time": "2026-10-25T18:06:00+08:00"
-   },
-   {
-    "title": "農業部召開會議盤點颱風災情 將儘速主動公告救助地區 - 中華新聞雲／中華日報",
-    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFAxUnZrcHZOUjFsTXpiZ28wV2NmUVMtNmhGQ2drbk1XdG1waDhET05wa19QV2phZ0hvb1ZndEtmX25qQ1BsY1liNEVTY09rS2VkOXc?oc=5",
-    "source": "中華新聞雲／中華日報",
-    "time": "2026-10-25T17:48:35+08:00"
    },
    {
     "title": "影/颱風薔琵離台！海巡永新漁港揪出幫助洗錢通緝犯 - 中天新聞網",
@@ -278,12 +236,6 @@
     "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBDcTNoTXE5SXBhNzM3aHNDSjZ5UHBpU1BZajRZeGZUMHV6T2xfRWo1aXF1MnFNRnZ3TFFpUW5JZ2xENEl2ZFJoQ2hBRFd1WGVPc3dVZkZQZ20yZWVLanln?oc=5",
     "source": "中央社 CNA",
     "time": "2026-10-25T16:34:00+08:00"
-   },
-   {
-    "title": "薔琵襲宜蘭！ 粉鳥林自小客遭砂石淹沒 五結民宿網路斷電損失慘重 - 年代電視",
-    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5DT182dVhKZ3dHNGNjbWdLRmV4Z2c2VVpSTG15UU5SUkREUDJ4bGVMc25na09VNWNlWW5TSEY4aC1ZOGpHVndLMFlhcEREeTdCSUVMQ2hKVkxBMDNGRTM4SU9BeV85d1RjSkc2WVR1WUVvN1BEV0ZKQw?oc=5",
-    "source": "年代電視",
-    "time": "2026-10-25T16:29:52+08:00"
    },
    {
     "title": "薔琵颱風桃園農損175公頃 竹圍漁港北岸堤防下沉潰堤 - 自由時報",
@@ -310,12 +262,6 @@
     "time": "2026-10-25T15:58:28+08:00"
    },
    {
-    "title": "薔琵剛走海未平！父子釣魚遇巨浪 兒傷父失蹤 - 東森新聞",
-    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5WQlIwamh1SVRmUXFJbUxKM1BFenpIalVONm52NTA2TklLUkE0TVNhdzJaNFAtOGY5TzQ2N3o1M3pVY3o4Mm10cWhHNTBEUWQxMlpKT25B?oc=5",
-    "source": "東森新聞",
-    "time": "2026-10-25T14:32:00+08:00"
-   },
-   {
     "title": "討論牆 | 薔琵遠離後碧砂漁港\"驚傳落海\" 父失蹤、兒牙裂 - LINE TODAY",
     "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8xSUZPeFFIYkJVN0dXdXdsVWkyYlpXcGE1eTFPc3N0eTVSU3JjT0RfczJtT1N6WUM4X09lMlJPZ0YwRmJHZklwNFlYLVRKZS1FRWR6eklRaHI3ZFJFYndfVVR1UlA?oc=5",
     "source": "LINE TODAY",
@@ -332,20 +278,92 @@
     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5nSEY4ek1oRGE2YWEzQjIwM2xGNjZlbFFOYVFoNmJXNmZ2c25YNU03TkxuX1RFbFpib0tCaEU3QTdCY1hQRmZYRXZxeE1Zb243VnFGSG4wYlFDcEtOZ2U3c01kbE9MNy16Q3NsQnBhMNIBdEFVX3lxTE45RDRWYTBCcG1uOFEyZTgxekpQVnVacWZ3ZWFCUXRRelhOeHU5Rm56SlYxbDBGWHBkU0pmMFBkcURmYmZfTUVNay01S0N5OUdnOVB4ZVlSOU5ERFZ1TzZ1aTBkaTltRkM4azFDRzlmTGtMUjB5?oc=5",
     "source": "自由時報",
     "time": "2026-10-25T11:00:42+08:00"
+   },
+   {
+    "title": "薔琵颱風剛走父子海邊釣魚 大浪越堤將父打落海失蹤、子倒地送醫 - UDN",
+    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9tc1hLemI0Vnc0YXJzM0otRm9DVXZHLTBmOUJHWXJrUXV0bjlfZ3g1Tm9HNkRlLWpDeEFqUXltbnlqelIxZjNtNDZNV2s3NEN50gFWQVVfeXFMTkRVZzZhdm0xczhIZ1pZMnZpbVZCV3VEY2wzWGlKUXBWWThlUzUybEZBWjlrdHdMOUlSb29yVU9WbE8wZGJiUmZqdmd5Y3RncTRJM3BmYmc?oc=5",
+    "source": "UDN",
+    "time": "2026-10-25T10:50:52+08:00"
+   },
+   {
+    "title": "薔琵暴風中心掠過南方澳 宜蘭一度超過2.8萬戶停電 - 你的公共電視",
+    "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1GVmVHck1ocjJrYjlPcnhsR2xMUHFzZFpiSGlsZEp5V2tYZkRmdk9sbDRDQ1JBY0x5b3VwX1JKOHJPdThORzRuUzM3cDh3Mnc?oc=5",
+    "source": "你的公共電視",
+    "time": "2026-10-24T19:06:27+08:00"
+   },
+   {
+    "title": "薔琵颱風焚風夾擊 釋迦日燒落果 吳秀華、陳瑩勘災促加速補助 - 中華新聞雲／中華日報",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBYamJNV3lRWE9mWE83UGVqZXJmZHVXb3c1MEFfc2NwWXJ4UTcwRl8zeEhRRTBTbUpDYzZMTWZxNVdUY1RPUmtTZ1dZTmV1QlU1MXc?oc=5",
+    "source": "中華新聞雲／中華日報",
+    "time": "2026-10-24T17:42:05+08:00"
+   },
+   {
+    "title": "薔琵巨浪打落台東富岡漁港吊車！航道受阻 綠島航線改往成功 - UDN",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE14NENfQ2RMbHlzMmNBWVdSOFgxemJnNUpqdENXVDA2bWJqRGN6eVlfT0I2SDNqSnJOLWwtS08tc012NWpsRF9KTkxyV0RLUnZ1WEtYSjlB0gFWQVVfeXFMTXg0Q19DZExseXMyY0FZV1I4WDF6Ymc1Smp0Q1dUMDZtYmpEY3p5WV9PQjZIM2pKck4tbC1LTy1zTXY1amxEX0pOTHJXREtSdnVYS1hKOUE?oc=5",
+    "source": "UDN",
+    "time": "2026-10-24T17:34:25+08:00"
+   },
+   {
+    "title": "薔琵巨浪打落300噸吊車！7層樓吊臂堵富岡漁港 船隻全卡關 - 自由時報",
+    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPRHJVNmozQW1pS2RxMGpON0YwSzVCcGdCakhGUFRIQ2o0MkZlXzNDWWsyOUVtSzFtTGhqWHJkNzVrNTFZMXdvR0VjMDNid2lTM2VLLXdBTE44TnhjNkxUWjlrd09PaFFrZWdiYXVkTWMzdDBOU1luWVdDT0tGaHBaU3IzVWd0QQ?oc=5",
+    "source": "自由時報",
+    "time": "2026-10-24T17:31:00+08:00"
+   },
+   {
+    "title": "薔琵威力強！ 小琉球岸邊漁船遭吹打 船隻進水半沉油汙外洩 - 壹電視",
+    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE43Tnh0V0hTRFZMdUtSZUk3NmpaaDJTWkM5ZE1TQUZaakg1NHIxYjFna0R0RndMaDMtZzdQU01LMlNVQzZUYzRDTVEtWDFwcXNGXzU5VEZqcFFQZVBVLU80VG1QX1A0S2tnbWIxSUt0YmNuY3RzSUZtZFNXYw?oc=5",
+    "source": "壹電視",
+    "time": "2026-10-24T16:31:46+08:00"
+   },
+   {
+    "title": "薔琵颱風強浪襲小琉球！遊艇斷纜漂流、船體進水座底 海巡急布防線阻油污 - 記者爆料網",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9UN0pQUi0zdm81aU9xa285NGhKYTFBYlo0eWNIYVcyZ1JxdnNPdDV4STdSNkxjR3J6NmRMUi16Z0NqOGs5SmItdktkRGZlUQ?oc=5",
+    "source": "記者爆料網",
+    "time": "2026-10-24T16:22:00+08:00"
+   },
+   {
+    "title": "「薔」風吹掀大德廟4層樓醮台 名車慘遭砸 - 東森新聞",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1GSl9hY1VVaWU0Uk53Uml6NDZTUDlfVFZucnVvQnlLbFZjamt3eXpDcFR0TlNaMVgyWVZxYjJlX29wVEozZmNCdkFsNG52cTJ4NTZqYQ?oc=5",
+    "source": "東森新聞",
+    "time": "2026-10-24T16:17:00+08:00"
+   },
+   {
+    "title": "薔琵颱風肆虐　陳瑩赴漁港、果園勘災：要求農業部加速補助作業 - NOWnews今日新聞",
+    "link": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9BdlZSRDhrWDF5blRNVFhCWW9QX3B4bXhQczBXMlJiMERJUGtiZ3c4U3NkQ3JsRXBIX0gyQzBncXoyaHhyNVVvU2p2VDPSAVJBVV95cUxQN2VSWF9NY053UlNDVEcxZWYwUldjZUhKdU90bFM2SGVHMEJlTFB5eGwwaGpFVzN1TUpuRTgyZC1xUERqN2tRVUlTZXpuZElNbTVn?oc=5",
+    "source": "NOWnews今日新聞",
+    "time": "2026-10-24T15:47:25+08:00"
    }
   ],
   "agri": [
+   {
+    "title": "薔琵釀霧峰香米倒伏嚴重 市議員張芬郁爭取納入現金救助 - 自由時報",
+    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1uU1kyeEczbTJZdExSbUlaUUNYZEw2YWdBMjVoLU5NUlJ1RTc2ejZEcmtqczV5SEFYWDBGS2x5MUVoblVvRUk3VUxtOE80S3ZTdHQ0LUtjaEdEeEJ6VTB2YTU1UnDSAWpBVV95cUxPbXdOOS1qRk5SbHhFZGhnWmNxUTNuVjI3MTZxdVdjTTNSQjdkWHFkTnlBRDdkcEhtUWVTRU9YanJodWJXck8xS252SkUtTUpIY0RhYXoyOWE4QWNHc3luc25wVXJqVGhwMmRn?oc=5",
+    "source": "自由時報",
+    "time": "2026-10-27T12:41:11+08:00"
+   },
+   {
+    "title": "薔琵颱風威力太大！全台農損失2億5,634萬元| 生活 - Newtalk新聞",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1RZ2lLNE16aElmLXJianN0MXV1M0l3X0E3VzhhaE9INEZsaG1wSHAyajk4VVZwWEZHYWNMYjVzVTVoaGdEUVdLLUJzUkJVb1ZJV1pRLW1LZndSVk0?oc=5",
+    "source": "Newtalk新聞",
+    "time": "2026-10-27T11:39:37+08:00"
+   },
+   {
+    "title": "薔琵風災僅宜蘭納全品項救助惹怨 雲林農民：不要選舉到了就差別待遇 - UDN",
+    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFAwd1R3SFhqLU9ROVlIbHAtNFFnT2NSNWRmc2xUS0VPcmlPckVNNmZ6dTlqeDF4eWllV3lhZ1JvMk8ySUNTZDRUVFZOUkN5cTF50gFWQVVfeXFMTlNBbFMwMGtUOU1BZlBVbktGUlB1UmJOdFVrV0I1SUN5ZlF2ZzVGaG1UOTJqY3JuU3ZnXzIzMkg4MTNSNFV4Q3ZQY3VjRWFSX2NxajFrTlE?oc=5",
+    "source": "UDN",
+    "time": "2026-10-27T09:36:22+08:00"
+   },
+   {
+    "title": "薔琵颱風重創農民心血 王縣長前往溪州勘災：加速農損查報、全力爭取全品項中央救助 - 墨新聞-MORE News",
+    "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5yM3piSE5ZaDVUdjc1dXp2ektKckVuQXV2dmJtcnd2X3ZPdzl1dTZVcGlFTUl6N1VVbDAycW1fSTJvUQ?oc=5",
+    "source": "墨新聞-MORE News",
+    "time": "2026-10-27T09:04:02+08:00"
+   },
    {
     "title": "風災農損僅宜蘭全品項救助 惹怒雲林農民 - UDN",
     "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9KSUFneHZPd1dDMTBEZF9zTU95R1hkZlNiV2U0WkZHbFV6UERsWE1oczdlS2U5VlY4UUhDUjhvOXN0aW9jaG1QTEFxOWtlT1p2cmJF0gFYQVVfeXFMTkc1NWVQQUxpcjV0UGFqaFgxZXpmYXp2YkZDSndvRXN3NFFMUjNWamNXaTdXMjZjNWVtWDFwS1Q5ZG14NUR2V0pPdzJ3cXlJbTV2eEdIV1VPSg?oc=5",
     "source": "UDN",
     "time": "2026-10-27T04:20:08+08:00"
-   },
-   {
-    "title": "討論牆 | 颱風薔琵釀農損 台中潭子綠竹筍母竹遭折斷(圖) - LINE TODAY",
-    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBUM1FCbUdsZWUteWR5SERpMlJjQmJTYlhkdWZsdk9zbmxrYW5mNGxUWUgxYnZHQm1hVlBMM2F5RHplQ0s0aDV3djRoUVpjR1pKLUZtWFJrVllMR0hjb1VOTkdUX0s?oc=5",
-    "source": "LINE TODAY",
-    "time": "2026-10-26T23:02:34+08:00"
    },
    {
     "title": "薔琵颱風重創雲林農田！劉建國邀陳駿季勘災 每公頃最高補助9.5萬 - 蕃新聞",
@@ -378,12 +396,6 @@
     "time": "2026-10-26T20:25:15+08:00"
    },
    {
-    "title": "討論牆| 薔琵颱風農損救助正式公告！宜蘭農產業全品項納入農友可依規定申請現金救助及低利貸款 - LINE TODAY",
-    "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1MWTBJYkVuUnlsQU5Idk9VYldSMVQ1cWVhdVoxRktLQkhGRUE4a25MeEx4Vm1rYjZxbWRvemYyUWdMR1M2RjBqNXFpcXdISExCUkVGTXN3N1oxdW1lYzdETHZ6WVM?oc=5",
-    "source": "LINE TODAY",
-    "time": "2026-10-26T20:09:18+08:00"
-   },
-   {
     "title": "薔琵颱風造成農損澎湖最大木瓜園搶收低價上市- 股市爆料同學會 - CMoney",
     "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE83aUJmXzJGUEZMd0p4el8tVnpDbktyZWFmNWJBbFd6X1kxWUo0Z3V3a3hwV2dLUW42T29LZGMzdXlJRHZ5eXNQREY5cXNTaVJtUFNtaE9nMHQ?oc=5",
     "source": "CMoney",
@@ -408,22 +420,16 @@
     "time": "2026-10-26T19:10:34+08:00"
    },
    {
-    "title": "獨家／薔琵釀災！ 石垣島逾1.3萬戶停電 台旅客摸黑 - 壹電視",
-    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBoT1BqYVkxSE1mRk04MDV2RUxvVnBRQm91NHNJZTZFcUdydmh3Q1V0QW5uY3Y0Yl9pbVRWcXBiclJnX01Ed2R4MXZGS0VuVzZSMllQVFozX3R5UXdrSk9CbldTUS1UbXpOSElNS0FsV1JuTzlOaUZhaG1ITQ?oc=5",
-    "source": "壹電視",
-    "time": "2026-10-26T18:52:04+08:00"
-   },
-   {
     "title": "薔琵颱風農損救助正式公告！宜蘭農產業全品項納入 農友可依規定申請現金救助及低利貸款 - 觀傳媒",
     "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBqdGtVd0x3MHIyRjlyV0ZxV21RRlQyeEt2dlVybzFNX2pzX0JENGlCQ1JKaDRtQkRMM2FnUnhYZXZ4Ul9XazdzU1ZsbDJGRjRJWTBpRmhEOA?oc=5",
     "source": "觀傳媒",
     "time": "2026-10-26T18:36:53+08:00"
    },
    {
-    "title": "農民心血泡湯！薔琵颱風「13縣市農損近2.6億」雲林災情最嚴重 - Yahoo新聞",
-    "link": "https://news.google.com/rss/articles/CBMi8gJBVV95cUxNSV9qM3FaNVdISFRCOUc3cGV3VG1zcmd5U3pJdjBiTTFYb0FSNEs0Z0NNVW1oOTJiVk9HcUkxUkwzVHdNOXlvdjNUc2ItNlZTVTM2VmxfTzB1RzNLejhhdmUyWElMUWR5WkJHTU81ZTI3MEtBd005WU1VTW5pTHlrSk1kUWdJblB3UTNaVm9RaEdncF82UXkyamJYZGFBNGtRUlkzV3FDUU9qVXZlRmp1VEY5WHdycDAwWTJrSmRuNHFGSVBFZU83QmxiaDNwZnR2aG4tSHBzZy14VV84bFpjUFFxTXEtRks1bVlTdlhyRW10X2E3M0d0bmRFbWRWT3p0UVZ3RkU5NWo4alZLMUwwaDVoMTZkSGRCTktKYkhiQUZGMDBlYURnR3lMdldaRmR1SW51MmxFUU1DcENTT1h5YklmbVo2b2tsTVAzSjBTc2hJLUU1WlZwTm5UWnA2RFRka2xTYnV6MjBvaXIyMzk2bGhB?oc=5",
-    "source": "Yahoo新聞",
-    "time": "2026-10-26T18:19:00+08:00"
+    "title": "農民心血泡湯！薔琵颱風「13縣市農損近2.6億」雲林災情最嚴重 - 三立新聞",
+    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTFBaa3QtRlVUVlZyUWZhemNicjhaN0c0MEZ5WXhxbjc0Vi1VYVptNXhRTlNCdmRTTFp3N3pENFRyQ05CQ2ZQNWlaM9IBTEFVX3lxTE80ZW9pTzBORWlzRkQtUEZBLW9vbjJ3VF8yNmVZRE9HTGVpazY5QTNvNWlXRGEzdUJSN0k0cEJqcUZoRHkzS251bE5qbGU?oc=5",
+    "source": "三立新聞",
+    "time": "2026-10-26T18:14:00+08:00"
    },
    {
     "title": "薔琵颱風農損逾2.2億元，9縣市救助怎麼申請？品項與期限整理 - 蕃新聞",
@@ -474,16 +480,10 @@
     "time": "2026-10-26T16:57:26+08:00"
    },
    {
-    "title": "颱風薔琵釀農損 台中后里馬鈴薯苗倒伏 (圖) - Yahoo新聞",
-    "link": "https://news.google.com/rss/articles/CBMirgJBVV95cUxQYm5JNzZTR1k5UmhZeF9TcmgwSXU4b2Fpcmg2N0pNVWlRakt0UlJnQjBnM3JGNm5aWEtGNFB1clQ1cTBUQzVUajJfaW94SWRocXp3dWt2ODlUZHBXbnhWb3dYUHhxSVFQOVhpZ0xOaXBWWTk4S29UVlNwQlh6bkp0WmFRcFJ6Uk0tN2FHdDA4RHhZN3pTVzZEbXV2TFQzZkRBZUY1Q0JCOGE4Q0UzcFpsNlVjSEQyZ3BPb2ZkLUFmSnI3OGdHXzR2OXdXcm9MM1hKTVFrbjAxMjNsVE5KWnFjVTVHWmNXeGM0VHNveUJxSjR1TnRwdGN2UUdWWUdQY0pwR2kzd3R2TlhwQkN2VFNFU2tidExrTnNJQXdDVXNINVhlYTRyYUdFUUNqbVg0dw?oc=5",
-    "source": "Yahoo新聞",
-    "time": "2026-10-26T16:55:53+08:00"
-   },
-   {
-    "title": "颱風薔琵台中農損 綠竹筍母攔腰斷、玉米馬鈴薯倒伏 - 信吉衛視+",
-    "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBFOWFvNFdNR1JISWVhZEpSalU4aXljT0RlcjYtcEMxaDJtdmRGWUtNRkpLZ2V1SlVhT0VMenRCX3RxSzc3ZzBTRlBOalBZS2pP?oc=5",
-    "source": "信吉衛視+",
-    "time": "2026-10-26T16:53:55+08:00"
+    "title": "颱風薔琵台中農損綠竹筍母攔腰斷、玉米馬鈴薯倒伏| 地方 - 中央社 CNA",
+    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9nVFdPQ2VfbUhZZlh3eEd0VVhXOGVDNlJlLUdkRkljLXlOY1N4TDV1b19GenpIdTh1MHRYUnRsSTZIa2VFeGw3aTJOQXV0Vk1sclVyS2hGVnZaZXpjekZN?oc=5",
+    "source": "中央社 CNA",
+    "time": "2026-10-26T16:53:00+08:00"
    }
   ],
   "en": [
@@ -491,7 +491,7 @@
     "title": "Heavy rain causes major flooding in New Mexico - Reuters",
     "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1xZTExeXczT2VIX0pQQU9vZUx5RmNYbUN0QTk4MlI5elNONC16clE4c1ZoZFVROExFazhYRkt5VEVnTXJEb0dWZDFuSXU0MzlaanlHanJpeURmVnFVWC03VWw0cmdtOGM?oc=5",
     "source": "Reuters",
-    "time": "2026-10-27T08:00:00+08:00"
+    "time": "2026-10-27T08:01:43+08:00"
    },
    {
     "title": "Watch: Gigantic Typhoon Wave Swallows 75-Foot Lighthouse in Taiwan (Video) - SURFER Magazine",
@@ -512,10 +512,22 @@
     "time": "2026-10-27T00:00:00+08:00"
    },
    {
+    "title": "Retiring workers set to outnumber youth 2-to-1: NDC - Taipei Times",
+    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE82SC1zVExxR0h4ZnA0cDhCbUIxVkxlUWYzZmllZmhBSjZPcEZRTXhad1VlWDRFWVZvMzdhazNWTUFVVXRjU3pzZVh5UDgzUFRyalYwY2JPU3pjYWJDTGZSd2xvMVFqam8ySW1tVG9QRDl5QTBPbFUzXw?oc=5",
+    "source": "Taipei Times",
+    "time": "2026-10-27T00:00:00+08:00"
+   },
+   {
     "title": "After Super Typhoon Champi, Typhoon In-fa threatens Mariana Islands - Yahoo",
     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQTndjVmtmYml6MEplX3BrRGpJeHpQRHhBLVdudFlTVzNQWDAtVkJ1ZHprODBrYlY1bElHWng0b0hhbzRpOTN2cXRndVBjN21SeGFydHp0MHpXUXM2ZHRIMzFWd1hUMGVtYnI5Q1NBb2ZiamxkUUNxTEs0M05OaXI3WlNrTTFPenRZVnFLaFNXNmk0ZEx0dHhsRFFsTQ?oc=5",
     "source": "Yahoo",
     "time": "2026-10-26T23:56:32+08:00"
+   },
+   {
+    "title": "Storm Boelo Batters UK: Two Killed as 90,000 Lose Electricity - Tempo.co English",
+    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNd3cyd18yc0RjcGhOQnN3b05xTEdFV3FZVlkyUDdKdFlvdTBKOEx5eWFCaUduSl9FeURTOHNianBIMmpCZ0FPTFBsUDVpZUZETXpGbzVzZFNSb2pfUklqMkltdnVReXNFSHBKWVVMeDhfemdXLU9mRkN4dTVxaXB0NzMtY1FZYk1hcFdBSE9FaUNGOXBNck5N?oc=5",
+    "source": "Tempo.co English",
+    "time": "2026-10-26T22:40:24+08:00"
    },
    {
     "title": "Typhoon Champi forces widespread shutdowns - Business Insurance",
@@ -537,15 +549,9 @@
    },
    {
     "title": "Typhoon Champi Dissipates... Seoul Temperature to Drop to 2°C the Day After Tomorrow Amid Autumn Cold Wave - SBS 뉴스",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE44a2xpSE9JT3YwdUdMVkZGM05vZE1RcnYxUS01Yi1BRGdBUDRlTXBhOEhSQjFXOUMtV3dhRWE0NE1GVkIxb1pBSllGN2lhOFNuSmpRdHo3ZXdpRG84dWZBbVAyZThfV2RLVHc1ZGxB0gFmQVVfeXFMTmhrc0FZUkZNNG8yMklhcmR0TWNoenFhYm12WXZscjdnWHBjemEwWThpUFFsRVdoVGZiMEZVN05WdngxYktuMEFhSWlNR3FVTzl0Y0FtSjhqT2J3MGY1bjBOZE1kS2p3?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5oa3NBWVJGTTRvMjJJYXJkdE1jaHpxYWJtdll2bHI3Z1hwY3phMFk4aVBRbEVXaFRmYjBGVTdOVnZ4MWJLbjBBYUlpTUdxVU85dGNBbUo4ak9idzBmNW4wTmRNZEtqd9IBZkFVX3lxTE5oa3NBWVJGTTRvMjJJYXJkdE1jaHpxYWJtdll2bHI3Z1hwY3phMFk4aVBRbEVXaFRmYjBGVTdOVnZ4MWJLbjBBYUlpTUdxVU85dGNBbUo4ak9idzBmNW4wTmRNZEtqdw?oc=5",
     "source": "SBS 뉴스",
-    "time": "2026-10-26T19:51:24+08:00"
-   },
-   {
-    "title": "One dead, 500 injured as Typhoon Champi sweeps Taiwan - The Canberra Times",
-    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVVRVbXpMeW93aHpmS1c0eUJRQzJaanQ1cmkzQXdabzY3aFlhOGV1Zk1lNXRRWXhtZWtNX1RtMWxnTENHMWJ5LVpwQ1lWSDA1ekRjckhCSWxCMm1lWFdCNkVURkZUdVJIZ05qR3lQbDRXYlVZSkhMdzFLV1NyekFqWHhycVhIMy1oTmZvbHBaRV9RNlVQWkdVd1dfWU9sYmhmMWc?oc=5",
-    "source": "The Canberra Times",
-    "time": "2026-10-26T19:35:52+08:00"
+    "time": "2026-10-26T19:51:00+08:00"
    },
    {
     "title": "Typhoon In-Fa tracks towards Marianas just a week after Champi - KUAM",
@@ -560,6 +566,24 @@
     "time": "2026-10-26T17:37:44+08:00"
    },
    {
+    "title": "Champi to make landfall as extratropical cyclone over Kyushu after battering Taiwan - InsuranceAsia News",
+    "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbnNZOUc3M2g3U3AwbGE1SzJpNkhRbExCOU1mb1NlVjdrZnRNSUxDUEVVWFY1dHA4REVTSTdpdm91ZWExT3lfcDk5QlhxMXhRZzRyRGhlVld3RS1CbnpVSXpFTWhLMU13bUJfQUJpTFlxUi11Nkg5WWMxNFFzc2tuT19EVk5WUmlEaHNXY3hQZEJZS0NSbks5RzV3Wm1yelhEcUg2dWJhdlp1TTNjRlhoZkJuTU0?oc=5",
+    "source": "InsuranceAsia News",
+    "time": "2026-10-26T15:54:53+08:00"
+   },
+   {
+    "title": "Coast Guard crews continue post-storm recovery in Guam following Super Typhoon Champi [Image 8 of 15] - DVIDS",
+    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQRGw5VWZtUUNmc0tyTVdwNzBQczVFR1g5eHdGRENqMDI5MENSSGRCLUc4MGpQbHAzc1k5M3Mta3A1Rm5qRjVVU1hpRjc4Z2hsVEppa2prTmZTblFGOXNlNS1aOTFoanp2M25jM2tDNVl2MTJGaDhqLTU3cEk5eXBuU3RNclRQWDFHNmFKdkpjcXFJNEszN1FyOEZXeFFVZEd3UnFjSWNnb1EtZ1BJTEx0RVp2YTBnVE9uaVR1SkxaWQ?oc=5",
+    "source": "DVIDS",
+    "time": "2026-10-26T15:25:00+08:00"
+   },
+   {
+    "title": "Typhoon Scare in Taoyuan: Can Wistron Ladies Open Dodge the Weather? - www.golfpost.com",
+    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPenFKbldYYV9Zc05yWlp5blZtbl80cVZwOFVpMlp0bGpSUWZ3ejYtbVd3Y3hrb3lXS1FMWTBTODVaLThlRXJjN3k0eThLZ1BqM3pVa0dSQzU2dVB3NXNPYVhqb095N1lRSzBLUXBsWjFrMkhEZG9fUm52Z0ZfRkZtcXFBbE0tbVNjMU0tMUNPNVhmVGR2UERjMUx5RnVja0M1aWR1cA?oc=5",
+    "source": "www.golfpost.com",
+    "time": "2026-10-26T15:02:53+08:00"
+   },
+   {
     "title": "Cold winds to send temperatures plunging, with wind chills below freezing - Korea JoongAng Daily",
     "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNamg4dk84ekFBNjV1YTNmbWd6bWFaNFRZV1lfbS01MzN1NTZTMHNtQVNOelB0c1Vxb196c1JEMHJRazdBYXVJZkFxMUI5b0s2UExNRmFjZ0NjMjZCMkdCUnV1dTUyeW1Xek9sdHN1dUZfanVkdnpuQlZqY0xZVTBveWNBanc4YVVHaTVkSE9MOXJ5V0RqcGVrVGlZZW1icWRJbmtZVHI2WHJRZS15UTNDMjNacEdqampuN1pUblNZQQ?oc=5",
     "source": "Korea JoongAng Daily",
@@ -572,10 +596,34 @@
     "time": "2026-10-26T11:46:00+08:00"
    },
    {
-    "title": "Typhoon Champi leaves 1 dead, over 600 injured-News-Radio Taiwan International - Rti 中央廣播電臺",
-    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5pWU1rQ2w4a1d4RkFVckhlVUtISkM5cEk5VlhFa3NnbTJNSWVvc2RSbWJZZ0RaQjJTcXFZSGp5SjdyYnZqVzdmM2dYbnRJdjBOcG9MdllaMHR0azQ?oc=5",
-    "source": "Rti 中央廣播電臺",
-    "time": "2026-10-26T11:13:44+08:00"
+    "title": "First October Typhoon in 12 Years Brings Rain to South - 조선일보",
+    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPeF9vdEhoRG9IZmtSeUlXaXNwYWdvYS1FMzVIV2E1R0ZnVFhmWFIwVEVUMkRKS085NmcwMnZxczdRRVFTOURMYjdsemlpOVFjWF9qY283S0ZpYjR3dEVWVjlObktTYVpLQkxfbTNhMFdlTzIzYVR4c3hMdTV3RFZaQUNIRVNWSFRN?oc=5",
+    "source": "조선일보",
+    "time": "2026-10-26T11:15:32+08:00"
+   },
+   {
+    "title": "Crowd work - Taipei Times",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBsSTNjc2VwXzVfN1dBUUZRQ0l6WjJINGZEZC1zc2FCWGtmZlFBRVVfYnNpQl9UMmVSV1ZidV9LOEVlUjVtajBjdWhnUENEcFo2RW1STFF6SnkxMVA5RzV4SHFha0dLNFhwb1dwbk10SVJuelJ1UkFwRWt3?oc=5",
+    "source": "Taipei Times",
+    "time": "2026-10-26T11:06:04+08:00"
+   },
+   {
+    "title": "Celebrating culture - Taipei Times",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE04TF91T2RVY1FuT1pDa21STEhKY21DUWoyM3daeTN6TzJOOEVhS2N3OVE4djEzdGVhcl9kTXdUTUk1aEUxT0gtd0hEdE54S1huODhYNDhRWHQxQ1FKakhWbTFLcm5LM2o3TVJEbXRoOUZMYjZRNGJuai1R?oc=5",
+    "source": "Taipei Times",
+    "time": "2026-10-26T11:06:04+08:00"
+   },
+   {
+    "title": "Big night - Taipei Times",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1vMndNMXU3RThkbmk5aDJWR2k4WWp5LUtRNXBTNmd6TUk3X21tNXNpZ29GQ1lxeWJnTzBvdUZtSkkxZV95S0VUS0lHZ19TSzRfaWl1bHMtTGhGWDFIQ2NMdWxUQnJJTHVjREtCelkyWlpFcWM2T1JCcUt3?oc=5",
+    "source": "Taipei Times",
+    "time": "2026-10-26T11:06:04+08:00"
+   },
+   {
+    "title": "VietJet Air launches Tainan-Hanoi route - Taipei Times",
+    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBLUHNNaFpraHRHN3NPeU9Zc0xJYlA0dUMzei1zUEM4cVctTFA2bVluTmM3bFBVUnFvZVlhaFprT3ZKaWwxOU1zQkFmX2x3d2Vwa01HZkRVb001Rk1zczhPcUVRSFBpanlmWEU4Ql9UZUN1SGlMODJFS2pn?oc=5",
+    "source": "Taipei Times",
+    "time": "2026-10-26T11:06:04+08:00"
    },
    {
     "title": "Typhoon Champi Turns into Extratropical Depression near Japan, Typhoon In-Fa Moving West - The Japan News",
@@ -584,66 +632,30 @@
     "time": "2026-10-26T10:46:00+08:00"
    },
    {
-    "title": "Typhoon Champi Weakens, But Rain Continues Across Parts of Country Today - SBS 뉴스",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBiNExZMU4zTjlkNTlka0R6WklpZXhaQW5COWh1UkN1RWF4Zm5CUmxrbUdVVFVqNlpZbnFFU2UyYWJBVm9NdzdiMW80Zm9RYUVOMlY5MkVlV08tYWx4b2hvdUhkZDNlUk1URDlsU0N30gFmQVVfeXFMUDF4ZHh2OUhBVEhpR1I0ZzJfNFAwY25nUHZyYkItWnk2b3ctamNQcFd4a2FhQ2lZTm1pNnVCdUtudEZ3YTYwMTFVUFdWakdiVVFDUk1BUXBVeG9RbGphVGhvVldzTkl3?oc=5",
-    "source": "SBS 뉴스",
-    "time": "2026-10-26T09:15:36+08:00"
-   },
-   {
-    "title": "Typhoon Champi becomes an extratropical cyclone at dawn ... waves of up to 5 m offshore Jeju - 파이낸셜뉴스",
-    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1KbUZiS0RhR0thWm1XdnVJYWhTclpheGhXaF82bzJidlFDSFBrbzRhcTBPNTJUSTdoLXFDSWdEQnF6SFhYT0tOUzRMaWpuMTBiaWpQaGdBWlA?oc=5",
-    "source": "파이낸셜뉴스",
-    "time": "2026-10-26T05:51:00+08:00"
-   },
-   {
-    "title": "Typhoon Champi Leaves Trail of Damage in Okinawa and Taiwan, Heavy Rain Forecast Across Japan - SBS 뉴스",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9adXhFUE5IOEF5MHZadmE4akdIeWpEb2lMalZtUnNuLTN4Nk9QSnM5SDgxaV90ZHM0emgteVZsalhCRWVVTE9SOTY4eXowYWpxZ29MM1EtR0s5UnVjZHVxZFpWUDNZeHd1SW9hNDJB0gFmQVVfeXFMT3ktRElXSktPclc0NlgzbFpUemNQY1pZZm5tM2pONEMxT2MtN2plWWtMeWdQbnpsZ3huYmp2enV1MkdQMXlUdWxKMTZDVmp2clJYWGNkY2REclc2bFhTVVZqMGQ0aDVn?oc=5",
-    "source": "SBS 뉴스",
-    "time": "2026-10-26T05:12:30+08:00"
-   },
-   {
-    "title": "Latest Typhoon on Record Weakens to Extratropical Cyclone... Strong Winds Expected Through Today - SBS 뉴스",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5ob0luX2I4RFI4cy1mSXQweFlyT2ZoZlgzMURxZGxUanZoc2pIbkpsR0ZwaFY4aGZkUC1Vb0hjTlFjRzBxU29tR09fZVZoVkpZbzV2dU5CNGNuRkxNem5NQjVlbmphSnp1MGpuMy130gFmQVVfeXFMUFpZelptc1NQZTlnaVo2RDQyUVUwNUZiRHRaMzd5bkk3VURsRUNrZzRXM1htOGVjZU9zalVqUnBUUWpPMjNva2h4b2hRR29oMGp4WWFsdEJOd3NWRDZBajNZdFlPRUtB?oc=5",
-    "source": "SBS 뉴스",
-    "time": "2026-10-26T05:09:10+08:00"
-   },
-   {
-    "title": "Typhoon Champi Brings Rain to Jeju and South Coast - Seoul Economic Daily",
-    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbmZzdlpUbW55aDlsZ0k0SEJnb0NwQl9URk9JSVlndWIwM1ZiaGp2Wk1QaGNPWlpvWnVNdEgta0JnWjM1dlQxQnc3NFo1RTB5QWNNM1U4NjhldEhyNE5wbW5BbUZjVnBUd1N4b2VoajJLNTcyMmJSSXVkTFdmbEtIN0VndE8tR3V6bTRrV0hobTZFdlFjbUFj?oc=5",
-    "source": "Seoul Economic Daily",
-    "time": "2026-10-26T04:00:05+08:00"
-   },
-   {
-    "title": "Champi agricultural losses top NT$221m - Taipei Times",
-    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE40WjRJSnRyVzQzajFrTENXTDdXcTBUT3hJd0RKaWVPQ3FXNlpOUTJwOXBNZ1B5aElFOGpXem9ZTHhWZVNrT0I5MWlLdEtsLUR2WktRZk9PLXRSeFBzRkRWM0l0M211b1FVajc5Z2ktOWF1NEt0TUVZUjR3?oc=5",
-    "source": "Taipei Times",
-    "time": "2026-10-26T00:00:00+08:00"
-   },
-   {
-    "title": "First October Typhoon in 12 Years Hits Jeju, South - 조선일보",
-    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNU2F0VHdNNVk0V1FiamxjcXBDMXBWV2pvQmN1YmpoZktBZHRWOUNPMm1oYzFzcEJYdTluZy10dHNpTmVtZ3MxbktzTlNZa2dJZnA4ZkVDRWZfTkxodDJVYjcwTDA0QWg3LU9uRFZ5eFR5dGdEZ2FrV2VwNzZCc09sR3hlb0RnOC1i?oc=5",
-    "source": "조선일보",
-    "time": "2026-10-25T23:47:49+08:00"
-   },
-   {
-    "title": "Typhoon Champi hits Taiwan, leaves casualties - AzerNews",
-    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1UNkF5OVQ3NXpKVi1KY051MWc3enJ6VHdrTnRjZTcxZ1NxMWhkRkEwMF81d3BaREd6a0xHMC16VTE0R1hOMkhmUnB3U1I2X0k4NzZoeQ?oc=5",
-    "source": "AzerNews",
-    "time": "2026-10-25T23:10:00+08:00"
-   },
-   {
-    "title": "At least 1 dead and 500 injured as Typhoon Champi batters Taiwan - CNA",
-    "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdTZjcnNHSmNYS2wySk9OY0JjNi1LQm1Jb3Jaal9oN3JpNVI3Z0EwRzFfcXR5Zml3ZVBfRFYwUmlpUW5wNjFQa1FHd2VGS1NhTXVwZDVOZF9BZ3RTUGJXZEQwakJkejR6ZVdLZTd4WlJLNmdoWThVQUdOUUJtR0YtWnZSSVNEbTlvX1ZVTGt2bHdaYmtSSUdvcHhFMExndU9FZG5WajJpWFU?oc=5",
-    "source": "CNA",
-    "time": "2026-10-25T22:38:51+08:00"
+    "title": "Late-season typhoon CHAMPI hits Jeju, cold snap to follow - korean-vibe.com",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1UOFZCaV9lNDd4SG41S1ZGcGpKQU9aV0pIdXpqY0t2VDhSQkxrRXpYeTVyMHB0eERZMjdUZUc0RF9xQlljdFBkcnBCeHAtd0dKa2hkTENn?oc=5",
+    "source": "korean-vibe.com",
+    "time": "2026-10-26T09:54:19+08:00"
    }
   ],
   "jp": [
    {
-    "title": "台風30号は温帯低気圧になるも⋯低気圧や前線の影響で26日夕方から断続的に激しい雨が降る見通し=静岡 - アットエス",
-    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBxVlBkeUozMUhMVURjcHB2c2sxUWVDcWRhTlRRSUpUQjUzbnFTT2dRc00zQ2JPOC1HSWFyVWs2dHp5cXRHWV9VS0RsMzZKZGFVSFZvMXFZeGJLcERsQWNiSw?oc=5",
-    "source": "アットエス",
-    "time": "2026-10-26T12:10:06+08:00"
+    "title": "【台風情報】台風31号「インファ」は非常に強い勢力を保ったまま小笠原近海へ 本州の太平洋沿岸は来週以降うねり伴った高波に注意 - Infoseek",
+    "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9xTU9nUGxEb0FNZlRfR1dyM0dUa3B0bHN1T3lyZnhoV0tuOW9DcW9zalFaY0IyOEw4VTdXSUVHeUZ3amlvYm1ZYnR1aU5iMW9OWlNTUFY0RVFFRzJI?oc=5",
+    "source": "Infoseek",
+    "time": "2026-10-27T12:31:00+08:00"
+   },
+   {
+    "title": "台風30号（チャンパー）接近に伴う注意喚起（10/26更新） - 日本橋夢屋",
+    "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBRVVoxUXd3NTBORVcxbVZvWU5EVWNuS09RUlBVMExWNlpHd0VNSnRIakVtLW5ZQ0hyQldxY1VsSDJqVFYwcV85TUM1TlpPcFA5RHo1QjRMX0tLVmM?oc=5",
+    "source": "日本橋夢屋",
+    "time": "2026-10-27T03:01:26+08:00"
+   },
+   {
+    "title": "台風30号は温帯低気圧に 26日夜にかけて低気圧が九州南部を通過する見込み 気象予報士解説 - Yahoo!ニュース",
+    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE50dXppV25UbnFHT2NuR2YycDV3b1ZTZ1ZFVFZmd2ZBWTlFdEtkNTl2VjJKM1ZNMEg1bzFYLXNkNnBJNFFCZTk3enVWTWI2VlU2Yk5sSVI4VDV4RUdBUjRncXFOeVJBejhaMDRaWEl5MHdRdGkyNFRwY1lTMVMtTmc?oc=5",
+    "source": "Yahoo!ニュース",
+    "time": "2026-10-26T12:36:01+08:00"
    },
    {
     "title": "台風30号の進路予測振り返り AIモデルの予測が従来型モデルより好成績 - ウェザーニュース",
@@ -652,10 +664,22 @@
     "time": "2026-10-26T11:32:00+08:00"
    },
    {
-    "title": "台風30号の進路予測 AIモデルの予測が従来型モデルより好成績 - ウェザーニュース",
-    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBfNDRaeURuUkhNNTczdjVCSlc5bE81Q3MtR0UtaGRoNG5KLVhtYVZSZjhUTW56dFBUQzJjbHhxNkZ6YVRHdWVlc1dfSm01ZWQwVnFnX3A5STBJZw?oc=5",
-    "source": "ウェザーニュース",
-    "time": "2026-10-26T11:29:00+08:00"
+    "title": "【台風情報】台風30号は温帯低気圧に 通過後は季節一変、木枯らし1号の可能性も 南の海上には新たな台風31号 - FNNプライムオンライン",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9BeXRLelZCMnJqX1NQSWNDV0ZUX3VKc1lnVExwaGVyRmxyY0wtQ2Eydkt3TVRjNW80OGtFdXVzOWRYWmNtempxSmdFTUs5Zw?oc=5",
+    "source": "FNNプライムオンライン",
+    "time": "2026-10-26T11:26:00+08:00"
+   },
+   {
+    "title": "【台風情報】 強い台風31号（インファ） 31日には950 hPaの非常に強い勢力で小笠原近海に接近見込み 台風30号は温帯低気圧に 【進路予想・雨と風のシミュレーション】 | 山梨のニュース | ＵＴＹテレビ山梨 (4ページ) - TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE0tYVdSTUpNWk5jWjI0MGJOSzYzUkVzdGhhcDNMRllVOUhVb1pXdTkxajRYWXRVWFNhbDNTZEZpNmYtd2ZoaUVpZWI1anZJMzNlekM2a1dDSFdnMlM4LU9KWS1wbw?oc=5",
+    "source": "TBS NEWS DIG",
+    "time": "2026-10-26T10:45:00+08:00"
+   },
+   {
+    "title": "台風30号は温帯低気圧になるも⋯低気圧や前線の影響で26日夕方から断続的に激しい雨が降る見通し＝静岡 - TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5YRFNmNE5xVUQtM0IxZjBHZW1rLVVfUGF5eGRfb3Vjc08wQ0JBVkRoQUpJYTVvb3F0dTVHOHpoMHduMW5Cc2lpME91eXFWN29Ib2hHcUJURkdaZw?oc=5",
+    "source": "TBS NEWS DIG",
+    "time": "2026-10-26T10:24:00+08:00"
    },
    {
     "title": "観測史上最も遅い台風、次は一時的な寒波＝韓国（中央日報日本語版） - Yahoo!ニュース",
@@ -664,16 +688,16 @@
     "time": "2026-10-26T09:48:56+08:00"
    },
    {
+    "title": "【非常に激しい雨か】台風30号は温帯低気圧に変わるも…西日本〜東日本で大雨に注意 予想24時間降水量は関東甲信150ミリ・近畿120ミリ・東海100ミリ・四国200ミリ 新たに台風31号も発生、今後の雨風シミュレーションも【気象庁26日発表】（BSS山陰放送） - Yahoo!ニュース",
+    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBpaGVlUmlhbTBNUGcwU1g4UVVsZ1lpTW01c2M3a284dlpWejhjTTZ1UU1qNXhxY3g1MnljTzZ6ZDB3YS1PRG1nTEFGMnhRc3VfRWtjbFAwcnk2YzN3bzVtZThqQkUySWxEa3QwckpKRXdQS3RROHc0eVZodmRXMDg?oc=5",
+    "source": "Yahoo!ニュース",
+    "time": "2026-10-26T08:15:32+08:00"
+   },
+   {
     "title": "【台風情報】台風30号(チャンパー)は温帯低気圧となり九州〜四国南へ \"警報級の大雨\"に注意 台風31号(インファ)は発達続く【30日までの雨と風のシミュレーション】 - アットエス",
     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9MaHdYZ01CZlNfMXBLcWtkZTkxbGdLaDdxNVVEVndWNW82d2NhaV9BWHFSUVNwLTVjWmpKM3d3X2dCWTE3WTVaQjJJWEFiSWc1ckxnSV9LYl9mSy1vTHlpMA?oc=5",
     "source": "アットエス",
     "time": "2026-10-26T05:10:00+08:00"
-   },
-   {
-    "title": "【台風情報】大型で非常に強い台風30号（チャンパー）再び猛烈な勢力へ 先島諸島では風が強まる前に早めの台風対策を（20日午前9時現在） - TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5XWkxPeHN2NnVKUHhhWS10QUUzeHFFMndUbjhUZmZFYm14d1R5dDdxakFwaVVvVF9vR284MzZUQTFYQWRqeC1KelRWUW9RTW5Sb0pMMGp5Q1ByZWEtcXM0?oc=5",
-    "source": "TBS NEWS DIG",
-    "time": "2026-10-26T05:03:00+08:00"
    },
    {
     "title": "【台風情報】台風30号（チャンパー）は温帯低気圧となり九州〜四国南へ \"警報級の大雨\"に注意 台風31号（インファ）は発達続く【30日までの雨と風のシミュレーション】（静岡放送（SBS）） - Yahoo!ニュース",
@@ -688,14 +712,8 @@
     "time": "2026-10-26T05:02:14+08:00"
    },
    {
-    "title": "【台風情報】台風30号（チャンパー）は温帯低気圧となり九州〜四国南へ \"警報級の大雨\"に注意 台風31号（インファ）は発達続く【30日までの雨と風のシミュレーション】 | 静岡のニュース | SBSNEWS | 静岡放送 (3ページ) - TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9IUDBqODQxSVllekk0bGEzVDJEa3plMG5Nd2VGQ0ZKYzFxQkZVMWxRcnFmSDdCM1dLTngyVEpEMzk2bDZ4anp2N1BSdDg4N09WalVRd0VYX21qa1U5RUIxMFBfbw?oc=5",
-    "source": "TBS NEWS DIG",
-    "time": "2026-10-26T05:01:00+08:00"
-   },
-   {
-    "title": "【台風情報】台風30号（チャンパー）は温帯低気圧となり九州〜四国南へ \"警報級の大雨\"に注意 台風31号（インファ）は発達続く【30日までの雨と風のシミュレーション】 | 静岡のニュース | SBSNEWS | 静岡放送 - TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5hLWtmYm0zVXVJS1I4VjJlbWRLMl9FMlJGLVFVTlJzLWpSVXJfajdLbFNWSDItejNycUowT1JhRDZmS0p0a2d3YmdoNGh4MW1Cc0F5ZEs3QVNqdw?oc=5",
+    "title": "【台風情報】台風30号（チャンパー）は温帯低気圧となり九州〜四国南へ \"警報級の大雨\"に注意 台風31号（インファ）は発達続く【30日までの雨と風のシミュレーション】 - TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5nSGxaaGl3M1ZDb3Bmdm84ZlZmMm9GMnFROWpWWWV1Vk81UnBLNlpkVUtKTnV4ZG80TldxSXpnalJUTnNGa3FXcVdZWmRuTno5V2R4a19LS2hHSDBUR3NvVw?oc=5",
     "source": "TBS NEWS DIG",
     "time": "2026-10-26T05:01:00+08:00"
    },
@@ -706,14 +724,14 @@
     "time": "2026-10-26T04:55:00+08:00"
    },
    {
-    "title": "【台風情報】台風30号(チャンパー)は温帯低気圧に 九州から関東甲信では27日にかけて大雨のおそれ 台風30号から変わった低気圧や前線の影響 台風31号(インファ)の進路予想は（NBS長野放送） - Yahoo!ニュース",
-    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQOF9Tc3F4RDJET3BnSDN6LW1JckREWFQwaHBpWWN2SDVoUjhPQUI2V1llWTc0eUZyUk5PY0VSRV9ZOEwzNUNVWVh4WkNxdTdzb0JYSXJjR2ZSWGRBNWhkMksxOWhDQlo1TVk0WnlTWUJHRWg4SDJYYmcwUnkzeVRVa2RWNkhfakVY?oc=5",
+    "title": "【台風情報】台風30号(チャンパー)は温帯低気圧に 九州から関東甲信では27日にかけて大雨のおそれ 台風30号から変わった低気圧や前線の影響 台風31号(インファ)の進路予想は (NBS長野放送) - Yahoo!ニュース",
+    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQeUljZFgxOVctUkJ1dGt5NVZEUzVZS19fWmNOUEs2Z3NwNGUzQ3R2UHZhc0J4MlRqeXFfVWY5WnRaRTJ3QU12d3FNeXRlQnNCTVE3WVp4eklPcWZHbEVwamJnYVNjajJ6RVdpcE5jUkExSXVjVWEtNld0eU1pOHlZMEg1eDFndlJxb2IzNVF3?oc=5",
     "source": "Yahoo!ニュース",
     "time": "2026-10-25T23:57:01+08:00"
    },
    {
-    "title": "【台風情報】台風30号(チャンパー)は温帯低気圧に 九州から関東甲信では27日にかけて大雨のおそれ 台風30号から変わった低気圧や前線の影響 台風31号(インファ)の進路予想は (NBS長野放送) - Yahoo!ニュース",
-    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQeUljZFgxOVctUkJ1dGt5NVZEUzVZS19fWmNOUEs2Z3NwNGUzQ3R2UHZhc0J4MlRqeXFfVWY5WnRaRTJ3QU12d3FNeXRlQnNCTVE3WVp4eklPcWZHbEVwamJnYVNjajJ6RVdpcE5jUkExSXVjVWEtNld0eU1pOHlZMEg1eDFndlJxb2IzNVF3?oc=5",
+    "title": "【台風情報】台風30号(チャンパー)は温帯低気圧に 九州から関東甲信では27日にかけて大雨のおそれ 台風30号から変わった低気圧や前線の影響 台風31号(インファ)の進路予想は（NBS長野放送） - Yahoo!ニュース",
+    "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQOF9Tc3F4RDJET3BnSDN6LW1JckREWFQwaHBpWWN2SDVoUjhPQUI2V1llWTc0eUZyUk5PY0VSRV9ZOEwzNUNVWVh4WkNxdTdzb0JYSXJjR2ZSWGRBNWhkMksxOWhDQlo1TVk0WnlTWUJHRWg4SDJYYmcwUnkzeVRVa2RWNkhfakVY?oc=5",
     "source": "Yahoo!ニュース",
     "time": "2026-10-25T23:57:01+08:00"
    },
@@ -724,16 +742,16 @@
     "time": "2026-10-25T23:56:00+08:00"
    },
    {
+    "title": "【台風情報】台風30号は東シナ海で温帯低気圧に 26日から27日かけ、九州から関東甲信は大雨のおそれ 台風から変わった低気圧や前線の影響 台風31号の進路予想は - FNNプライムオンライン",
+    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE13UjZ0T1Q2WlVIVm1aTFowSW45Z3cxTi1RUWlWVWdURUN6aUlEY0NraTU1QVVEcGM3bnRzcUdmMDlaUjJ4R2xwUXhBdW9HUQ?oc=5",
+    "source": "FNNプライムオンライン",
+    "time": "2026-10-25T23:46:00+08:00"
+   },
+   {
     "title": "【台風情報】台風30号は温帯低気圧に 台風31号（インファ）は28日頃には強い勢力に発達か（tbc東北放送） - Yahoo!ニュース",
     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1Xc2Y0Y01FT0JreVdiS3BlSXBLVHdrNFEzRVN3UWtSX0NBdWpGZWgzeWxrZkJSTDlYcGFwanRGc2ZnUVdEd2M2dUprRWMxWWtDMUNBRVNMbS14M0oxV0ZuRzYxS0hsejdRR01yUTFhcWlmSHdaN2lXMThnaDVNbVU?oc=5",
     "source": "Yahoo!ニュース",
     "time": "2026-10-25T23:10:24+08:00"
-   },
-   {
-    "title": "【台風情報】最大瞬間風速30m/s・中心気圧996hPa...大型「台風30号(チャンパー)」あす朝までに九州の西へ進む予想【気象庁25日18時50分発表】 - TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5sR3BRY09BbTlpMXlkT2tleGY1cDhyZHRFWnNjZl9va0VBQjNDS2FSMzY5TUE3eDVyTjBzYkVZWTczT3RZSjRpLWFyWkp2MXZvRzhZdW1fMkJHV25MY3Mw?oc=5",
-    "source": "TBS NEWS DIG",
-    "time": "2026-10-25T22:10:03+08:00"
    },
    {
     "title": "【台風情報】台風30号は温帯低気圧に 台風31号（インファ）は28日頃には強い勢力に発達か - TBS NEWS DIG",
@@ -766,32 +784,14 @@
     "time": "2026-10-25T20:29:00+08:00"
    },
    {
-    "title": "【台風情報】最大瞬間風速30m/s・中心気圧996hPa...大型「台風30号（チャンパー）」あす朝までに九州の西へ進む予想【気象庁25日18時50分発表】 (RSK山陽放送) - Yahoo!ニュース",
-    "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPM0R1bWhncFBLd3hpT2p5cy1LaTFTeVFfU1VQak0ySlpvZkhOY3hVVFd3bWpNRFB4UkpoUjYyWExfUEw1Q1JNWENxR3plWlh5UDM5bm9LUzQtTWJ2YjlpZ2pJb3Y5eWp0V0ZIOXR0TnlsaGQ4UGJPUkRtQkU4ems1c1VrVkN6SGZNNkNIZUl3?oc=5",
-    "source": "Yahoo!ニュース",
-    "time": "2026-10-25T19:27:44+08:00"
-   },
-   {
-    "title": "【台風情報】最大瞬間風速30m/s・中心気圧996hPa...大型「台風30号（チャンパー）」あす朝までに九州の西へ進む予想【気象庁25日18時50分発表】（RSK山陽放送） - Yahoo!ニュース",
-    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1xQlhPUlE1LVoxcXBPSjFHYkhfRnlaOUk2N2hWOWVoNU9ialFFNXhKQkpOeUJtX09veGVFVUFPN0ZwVld5UzN6N0Y2VTFRY3dqZDdXdDBfcDFDcmRXTmRRQ1J6WEhCTXduVFdUYVlGUXRXLXRSc1pfZlBkMVlHZzA?oc=5",
-    "source": "Yahoo!ニュース",
-    "time": "2026-10-25T19:00:32+08:00"
-   },
-   {
-    "title": "【台風情報】「台風30号（チャンパー）」が九州西方海上へ…あす未明までに温帯低気圧に 11月4日までの雨と風シミュレーション 全国週間予報 - Yahoo!ニュース",
-    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBqSVd5RmQ2cDFpM2dfUHUyUUZxaE9FR0otQTlSQlRaME40V21NZTBVencxWm5QVThfMXlwRUNLZ2ZoSE5ZamVPWmdGRzVoZGpKZ3p5VzZjYUJ2RkRIRDR0QlVpdzFBQi1udGFESkZ3cUxWTkZ5YmxiVnZQU3RYYVU?oc=5",
-    "source": "Yahoo!ニュース",
-    "time": "2026-10-25T18:52:14+08:00"
-   },
-   {
-    "title": "【台風情報】「台風30号(チャンパー)」が九州西方海上へ…あす未明までに温帯低気圧に 11月4日までの雨と風シミュレーション 全国週間予報 - TBS NEWS DIG",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1hdFRzYXotQUhscmFzT2thYXFhQjVsd3I3d292UGZSS0tHVVNEWENUX25yTTZpaU9LUTNKVUN1anA1aXVyMkdINktnWWpqTUNkNGRYb05KQQ?oc=5",
-    "source": "TBS NEWS DIG",
-    "time": "2026-10-25T18:51:00+08:00"
+    "title": "【台風情報】「台風30号(チャンパー)」が九州西方海上へ…あす未明までに温帯低気圧に 11月4日までの雨と風シミュレーション 全国週間予報 - au Webポータル",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBZb1l3N29iSEM5R0dUemphamRrZ1R5bmM5cmJUMlk5TnMzZkwtSWpQMWpzckhFUERFR216OUdfSXdMRWNLQ1dpSjlBVlNxLU82eXR3cFh6dEQ1eHh1dWs1T1luNjhFS0RNQ2hNYTVR?oc=5",
+    "source": "au Webポータル",
+    "time": "2026-10-25T19:03:13+08:00"
    }
   ]
  },
- "updated": "2026-10-27T08:53:26+08:00",
+ "updated": "2026-10-27T12:55:26+08:00",
  "status": {
   "cwa": "ok",
   "jma": "empty",
