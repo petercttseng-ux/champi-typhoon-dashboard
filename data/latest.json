@@ -32,12 +32,6 @@
  "news": {
   "tw": [
    {
-    "title": "薔琵颱風農損救助再擴大！嘉義縣毛豆納入現金救助 蔡易餘積極爭取農民權益 - 台灣新聞雲",
-    "link": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE5GYjA0REhCT2czWkJETE9OQ25iQ1VOUFFwYWhpRkEzVjBndFZrYmhiRDQyLVp5SEVXOWM3UHFxaHZOdFdRS1lr?oc=5",
-    "source": "台灣新聞雲",
-    "time": "2026-11-12T21:54:20+08:00"
-   },
-   {
     "title": "薔琵颱風重創桃園沿海高粱！觀音新屋災損救助申請開跑 - 中時新聞網",
     "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE43Zm1RUEVCMUpnSjBtR09rU1FKbDZWcVB2bVBtejRRRk9jY2RQUi1aTE5vcm9LN2tiN1FNa0dfOGVkelR2VGp1NmxxTVNxYmtEekY1eEliS2lFdjVhQlNfUWsxYjV2Y0gwNzFPV3BB?oc=5",
     "source": "中時新聞網",
@@ -62,22 +56,28 @@
     "time": "2026-11-12T04:59:30+08:00"
    },
    {
+    "title": "果粉快看！iPhone Duo首賣強碰薔琵颱風　蘋果祭彈性取貨 - 三立新聞網SETN.com",
+    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5HVHYteTZxam1PZzRKYmpRbUxqRjJRYlJ4NzdOM0l6MUtpc1FiVDhNQkdXNUwyaW1JcXU0alhwMmRkT1l5NENCd9IBTEFVX3lxTE5JOTUtN0pRVzBzOXh3OWw3T3d6ZTBBZElaYjZFRXN1YVRjZmc1aktndnhJdU12RWFMNGMweTN2ZGJ1RFUySHFJNThRdEs?oc=5",
+    "source": "三立新聞網SETN.com",
+    "time": "2026-11-11T22:37:07+08:00"
+   },
+   {
     "title": "強颱薔琵最快周三晚發海警 氣象署曝降雨熱區 - 翻爆",
     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5zVW1sTGo1VXVLbUNUclRIUXFGTXJERnREX2g3NUxQX0JNQzdyVWlSaFZoZDgxQzNESFZ4WWtNY0xHT1dzRHZ1TnM1Q0kxZUN2bHM1Y040Ry1jQ3pEaUtBWmozMklCLVA3djJ3?oc=5",
     "source": "翻爆",
     "time": "2026-11-11T22:26:15+08:00"
    },
    {
-    "title": "果粉快看！iPhone Duo首賣強碰薔琵颱風　蘋果祭彈性取貨 - 三立新聞網SETN.com",
-    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5HVHYteTZxam1PZzRKYmpRbUxqRjJRYlJ4NzdOM0l6MUtpc1FiVDhNQkdXNUwyaW1JcXU0alhwMmRkT1l5NENCd9IBTEFVX3lxTE5JOTUtN0pRVzBzOXh3OWw3T3d6ZTBBZElaYjZFRXN1YVRjZmc1aktndnhJdU12RWFMNGMweTN2ZGJ1RFUySHFJNThRdEs?oc=5",
-    "source": "三立新聞網SETN.com",
-    "time": "2026-11-11T21:46:33+08:00"
-   },
-   {
     "title": "高雄農損救助雙軌啟動！美濃、杉林設施受損及全市農田流失埋沒最高每公頃補助18萬元| 徐炳文 | 地方新聞 - 風傳媒",
     "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9QYUc0UENWc2gtVk5penR6WHhRYllLbUJlcTljNUJYUUdDT2szTGZjRnNiRDdlY0tNVmN6b2VKQ3RxYV9wRDNQaGZId3lwdw?oc=5",
     "source": "風傳媒",
     "time": "2026-11-11T21:42:00+08:00"
+   },
+   {
+    "title": "高雄農損救助設施及農田流失開始受理申請- 地方 - 華視新聞網",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBBTmtNQklHNXBWc1R2Wi1hdjlfUVpwUjNWcEgyc1RYeHNIYTJvT0l4NGkwOFpUMjRkQ1FwS1RXU3dKWTg0SWNSWFlIT0R4c3FSVlFoRjZBcGhjZEc4bFVWYTVLekRBbTFrbTUySkxn?oc=5",
+    "source": "華視新聞網",
+    "time": "2026-11-11T14:05:27+08:00"
    },
    {
     "title": "薔琵風災農損花蓮香蕉、木瓜、山蘇獲現金救助| 生活 - 中央社 CNA",
@@ -144,12 +144,6 @@
     "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5YWDU0d2NBR2lCdldFZHd0d0txRWRpNERjbWZnOWZMZkZVYlcyMWFuS1RKYk9IM0Z0WUQyUmdPcXdzZG5JelE0Ym5CMTJ3SWNoOGc?oc=5",
     "source": "蕃新聞",
     "time": "2026-11-10T09:41:49+08:00"
-   },
-   {
-    "title": "薔琵海警解除！下週東北季風增強氣象署說明 - 三立新聞網SETN.com",
-    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE12QzZ3RGtyV1I0ZnhOOEI3bkZsbXhDbWRyUkZtSXF6T2NzUjZ4aU5wbWtJT1NoaTRMUkpUQVJmOEs0aVExMTBiaEg5YWQtYkVsamkxOQ?oc=5",
-    "source": "三立新聞網SETN.com",
-    "time": "2026-11-10T04:24:44+08:00"
    }
   ],
   "fish": [
@@ -158,12 +152,6 @@
     "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE13U2g2VmN2NlZTWVQ5TTNja3dhY25GVFB0NUVsOU5SRkphd0Z1T3JHMldiOE5HdGVPd0NSN3NxQzdVRnBqSzdvOUkxaHd6OVVnRnpnV0Q4WnEtSWVhbzBNLW9idWRVTk9CNjlQQnl4SE52QlpMS1AtXzNCMmI?oc=5",
     "source": "台視全球資訊網",
     "time": "2026-11-12T05:03:24+08:00"
-   },
-   {
-    "title": "果粉快看！iPhone Duo首賣強碰薔琵颱風　蘋果祭彈性取貨 - 三立新聞網SETN.com",
-    "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5HVHYteTZxam1PZzRKYmpRbUxqRjJRYlJ4NzdOM0l6MUtpc1FiVDhNQkdXNUwyaW1JcXU0alhwMmRkT1l5NENCd9IBTEFVX3lxTE5JOTUtN0pRVzBzOXh3OWw3T3d6ZTBBZElaYjZFRXN1YVRjZmc1aktndnhJdU12RWFMNGMweTN2ZGJ1RFUySHFJNThRdEs?oc=5",
-    "source": "三立新聞網SETN.com",
-    "time": "2026-11-11T21:46:33+08:00"
    },
    {
     "title": "高市動保處提供錦囊妙計 協助養殖漁業越冬 - Life 生活網",
@@ -188,6 +176,12 @@
     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA5MjlmcWJtc1NlUUVwMVBvY0hTdmFmemNrN1JNcU9DM0l3emhfbFBqcEhKd25HMVZGVUZyOGtNRF83WVpqNzkxaW1LZVZBdDZGbjhhUHlOclRKb29YTmZxUA?oc=5",
     "source": "NCDR Watch",
     "time": "2026-11-10T16:00:00+08:00"
+   },
+   {
+    "title": "颱風薔琵災後協助復原 蔣萬安表揚60家企業、團體 - 中央社 CNA",
+    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1hdDdya3FnRVd6QXJXYWM1RG9ndWNmSVZUSFViQ1F1MFZQNHRHbVlIOHkzVXVpcWl6NVRUT19US0YwNHcwNzZjLUhZUUN6WTNwa3BIVjlHMEliaUV3dnNB?oc=5",
+    "source": "中央社 CNA",
+    "time": "2026-11-10T11:11:00+08:00"
    }
   ],
   "agri": [
@@ -234,9 +228,9 @@
     "time": "2026-11-11T14:05:27+08:00"
    },
    {
-    "title": "高市農業局農損救助雙軌開辦！ 設施及農田流失救助開始受理申請 - Life 生活網",
-    "link": "https://news.google.com/rss/articles/CBMimANBVV95cUxQeUl0Q3REOGNvRTBLb3BOclc5Yi1kUl9lQzM5UF9fRF9FV2FLZ29fZVpWTmJVb3RVeGxfQVZ6bHdURTFKbXg1N2FtVThhNmFUNnJRTVFrZW1pSkNpY3hZbXY4SDRKdVFuaEUtanh3bS16SUNjQ3ZqZHp1c25iWkJ5cUc0YW5aN3NmTnFFaDkzTUx5aUIwR29SQnhuc01hZ3E0WU5GdlRxeVhpdmRJZ3AxblBJLWJQd1pvUXBJZTNkUlAxc1d3dEpNVnlBNG10NVprcnVqMi1keU9LU05vWHpqVWhxQjFGSXgzR2VIVGxpR0V5dlRUT0E0dk5UN0lwcHMza3V5S0pRUGFxYlp0dXpMV0ZlOFkwMFVkVE1Tazl6OFFLMVM3VHo2ZWF1ZEpfcDJpOU5SeTA4VEs2UGs4Y2JTblRScUtzajF2WGRfVkxLbWFRcmJWNkZnVEtMbWZjU3ZxdDZqTU9GSDQwYXpsMFpBdGlBeFBBUFJuXzR0STVEc29YQXlKYXZtMUVDS0VZWl9xMXA1QWRwVDM?oc=5",
-    "source": "Life 生活網",
+    "title": "高市農業局農損救助雙軌開辦！ 設施及農田流失救助開始受理申請- 生活新聞 - PChome Online 新聞",
+    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOR08tdWhxZDVqX2puam9aY0JCQmVzc25YUG9GemdoQk1VZ1Z3UHpIcGxQREhqV0RGSVBPZnl4Y1YwZVh1MFJINzZKcWZpMXhtajIyVGE3UDIyUDBPTzRhMkZpWU41SUt2VzZ2bnhpczBIajJGaEs1VXRJaVZsYTFuNGJ6cGxBNnIyRk5wbg?oc=5",
+    "source": "PChome Online 新聞",
     "time": "2026-11-11T13:59:29+08:00"
    },
    {
@@ -256,18 +250,6 @@
     "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5YTHV5bUhGUzNncmRNbGNJaFZMRm40X1piQWl6Q2VOSmVGbEljNkwwSXppSzVhbE01YkQ4SWtCQWhwdTZJVkFWWmEzMHJiV0HSAVRBVV95cUxPNkt5SFFNSTZjSjczSjQxd0FCN3FyX0RYUUVfNGxoVVlIeUp4XzFfdThQNU5sR1JpMHZwRnFvQ3lOZVRJUzJrUHljdHRWZEU1MmpNVjE?oc=5",
     "source": "CTWANT",
     "time": "2026-11-10T10:54:27+08:00"
-   },
-   {
-    "title": "薔琵海警解除！下週東北季風增強氣象署說明 - 三立新聞網SETN.com",
-    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE12QzZ3RGtyV1I0ZnhOOEI3bkZsbXhDbWRyUkZtSXF6T2NzUjZ4aU5wbWtJT1NoaTRMUkpUQVJmOEs0aVExMTBiaEg5YWQtYkVsamkxOQ?oc=5",
-    "source": "三立新聞網SETN.com",
-    "time": "2026-11-10T04:24:44+08:00"
-   },
-   {
-    "title": "薔琵農損481萬 落花生最嚴重(臺灣時報2) - 農業知識入口網",
-    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5ka2JwWEp4TDQ5TENIWElJaWZuX1huT1Y2eWxPVW5jMFlHc2NpQjJWX1JGUlpxeU5Sbl85RmJkblV5WFV1c3hheW5NcUZvb1pIMURXYmFpZ0ZKWWZXWG5zNjdRVQ?oc=5",
-    "source": "農業知識入口網",
-    "time": "2026-11-10T03:51:36+08:00"
    }
   ],
   "en": [
@@ -276,6 +258,12 @@
     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPc2FJR2tmYWRlN3VTRGgteWRQNWNhZkhMOTJBN1VYanBIZW51R253NXRLUE1vRjVNZUZ6RDVtTmI0RWhjeXhHQ2kxQlJuV1BZdGRWQWpJS2tRZTl5Qkhhcmx3R3pxMlM2MU11UkI0U1BzOVY2eVdEZjJIMG9vaU4tZHV3Y1dOTldKdVlwcmZpcUZyQ0JZUGJiMG5SWVJTYXNkcWlRNA?oc=5",
     "source": "Triathlon Today",
     "time": "2026-11-13T02:26:41+08:00"
+   },
+   {
+    "title": "Champi weakens outside PAR but likely to re-intensify into super typhoon - Rappler",
+    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPYmRaU2xMTG15ZnBOQzJvX2N1UHI3cVM5Sk5SNmRmNEFvMGw5Y25VLTYzcERublZLbWc2N19FanZ5R3c5MTZMMG5vUzAxczNPUVhhSl8yY0hOWGdBOE0yRXJPb3lOVW1ET2xvUkNYZ0ZJVWIzQzR4bDhYSzF0Y0FDd3hBVHAzajFyOU05SnRPRXo1dU42UTRhamhWNTQyN1dkdVoxbU0zVFVlSk1ncmtRYm5udzFQOEtlNTJR?oc=5",
+    "source": "Rappler",
+    "time": "2026-11-12T20:18:00+08:00"
    },
    {
     "title": "Super Typhoon Champi to enter PAR on October 20 - Rappler",
@@ -294,12 +282,6 @@
     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcmwyeTZlc2JaY0xTRnlpMjRMbmVhWEhETlNFQTFRUEJfYzVMQWRFaVhRaDFlQXNBeXhSLXpnMXNicjZmSnJ3bzc5R3AwTjFhMURzRlNicHZaT3Fpa1dnZDJwVjBJY1lhVWZtdS1MZUFzcld6cURXTmVjSXFJbm5oUS1oV0FJX29jMHRscQ?oc=5",
     "source": "Vox",
     "time": "2026-11-12T19:00:00+08:00"
-   },
-   {
-    "title": "HCMC’s 2026 disaster prevention fund collection reaches 11.3 percent of target - SGGP English Edition",
-    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQZ2hnWmRNYmIzTWJBWDZ6UWFEVjJIQzYxVmZLX2VzNHRyeFZILWkxRmdZcGRMdzJqVkJTLXlGT1lXUFRYMnVOc3NwQlA3OTJtSDd3dVctRlJKa1JNT3g1aHg2U0lqVWJYV2NHSENUVDFFbTA1M3FXWXQwQi1nVXA4MGs4RmYtQk40Y2tuakJfSDhhRzUyT05QeVNQUERfalo2cnJxVm01MVFLMEx4TGt4LWZ5OEdLUQ?oc=5",
-    "source": "SGGP English Edition",
-    "time": "2026-11-12T18:17:41+08:00"
    },
    {
     "title": "Taiwan shuts down, flights cancelled as typhoon nears - The Canberra Times",
@@ -332,16 +314,16 @@
     "time": "2026-11-12T05:00:00+08:00"
    },
    {
+    "title": "Donnelly shines as Sundowns storm into CAF Women's Champions League final - Flashscore.com",
+    "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcFdYeXlBVWVRS1BORGZRcHVuODUxUGJxRFU2Z1BLcjRQUDFfek9BQkZTOXR3MXZid3lxV1N3emR2clZ2S0RpRVd3cndCVjZUYmZONHlHOGV4SXlxZGxiMGF1LWNEZ25XVE4wWjlYT0FyTUc2eU5NQlVTUVhGN0RLRE53RUtuLUdkX1c0dDNHSjZKQm1SR1AzaTlEQ3ItMTMwcG9UZG9PS0NRMExPTEh4clRKZHFaQQ?oc=5",
+    "source": "Flashscore.com",
+    "time": "2026-11-12T02:42:09+08:00"
+   },
+   {
     "title": "Does the Surf in Vietnam Really Get This Good? - SURFER Magazine",
     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOQURYbDItM01wSWtkWEF5aEpJdDVzZ3gxeUNsekpQMGhZQkRteVpqekFuNG9ycUQ2REM0WlloTWVlNnZ6bGhfc1hUem5RaklVSm92VUxhMmRrTXdYOHo5LU9OVEFkN0tackgtc0ZPcjR3bXF4YjRZUTNQNDc3VTFPNThB?oc=5",
     "source": "SURFER Magazine",
     "time": "2026-11-12T02:16:48+08:00"
-   },
-   {
-    "title": "Donnelly shines as Sundowns storm into CAF Women's Champions League final - Flashscore.co.za",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOWtFTkg4a0U2MXFXVEpFOWZkTlNBZVdUdEIwM3dka011bG9relhjSW5LTnpQMUh4X1NPZFJsMEpjbDE0b3hESTA4QkZuNGtHZ0xzd2l4aFpoTWJ2V18xeXR3bENVQlJsNzlqS2VsMVk1bXRZalZMOGZQYTNSdzk0U3FLRUJDUkZ1LW9qbE5VZTV0STFaX1hQWHNwdktNQ3ZLYVpzSUJ5S0l0MmxZTUNmeDVLekdQQzNP?oc=5",
-    "source": "Flashscore.co.za",
-    "time": "2026-11-12T01:56:55+08:00"
    },
    {
     "title": "Taipei air cargo operations battle to clear backlogs - Air Cargo News",
@@ -356,28 +338,16 @@
     "time": "2026-11-11T22:25:52+08:00"
    },
    {
-    "title": "Portugal cancels 200-plus flights, shuts schools as Storm Charles hits - Internazionale",
-    "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOTC1SNURNX084M1NtMVZGSnk4djRBOE9SN3FDWVRfaGQ3ZGlZZFBXeVVlWFBTRUt4M2x4LS1naUV3ZmhmYTV0Vm03UDBscmJsY0pONGtBNDhJSkFmVkZuMnk2TGpwQng3WEVid3BBNkp5RlZzUDJnUG1qRGs2RVhEMm9vSExMa2JwLW5BWVNXZHEzNGhvZ1hzV0dEOC1aeFJYTFpKUjRLNnBUR01LR2E5MnF4ckFwRnoxR1hTU25Obkpuc3E4Qm9MOGhFU0xGUQ?oc=5",
-    "source": "Internazionale",
-    "time": "2026-11-11T22:06:10+08:00"
-   },
-   {
-    "title": "Champi weakens outside PAR but likely to re-intensify into super typhoon - Rappler",
-    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPYmRaU2xMTG15ZnBOQzJvX2N1UHI3cVM5Sk5SNmRmNEFvMGw5Y25VLTYzcERublZLbWc2N19FanZ5R3c5MTZMMG5vUzAxczNPUVhhSl8yY0hOWGdBOE0yRXJPb3lOVW1ET2xvUkNYZ0ZJVWIzQzR4bDhYSzF0Y0FDd3hBVHAzajFyOU05SnRPRXo1dU42UTRhamhWNTQyN1dkdVoxbU0zVFVlSk1ncmtRYm5udzFQOEtlNTJR?oc=5",
-    "source": "Rappler",
-    "time": "2026-11-11T22:00:00+08:00"
-   },
-   {
     "title": "Trump admin quietly embeds federal staff to work inside Taiwan government ministries - The Independent",
     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZ2ZjTC1UNlhzZS1XX0I1ejNGSUtnOFBaa2JoanN6RF83cmItaE1KX2FQYU9vOF9UR0pFcXgxWFBvYTFDY3hBRDZjMURSbUNOdEEwNlZSdC1TOF81a2o1OTFMdHBiSXk2OFFLdUZFWVU0UjBhWjF6RkRFc0NXb1BEbFdBei1hekRQc3JlRWRhWU9ic0JMNkE5UDdNT0FyR0lOdUVqZ1lyemhIOXI1dHJydnd4RE8?oc=5",
     "source": "The Independent",
     "time": "2026-11-11T17:41:00+08:00"
    },
    {
-    "title": "UEFA matches in Portugal postponed due to Storm Charles - UEFA.com",
-    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSVZJZERVYjNZNkhJTndGM0F6U2sxa0tYQk1UbTJCa1RqRjlBa3A3UlRNRXdBRHlTYWpHWFhFVzNjU3VxX0dpWmpsemppX0g3RmJuWHdGNUstZ0tZZzdpUDJUemU4R01XUC02eDFnTEN6d2hqMjhrWV83Z08zSnNKWEVOeUtWYnNNYzZkb0h5bWxxQXRmRm13LTVld01fakJFZU43UzJKd0NxYmRqQ1lLZld0TlNOMFRObXg3VnZWOHZGZEFzRl9sWHZR?oc=5",
-    "source": "UEFA.com",
-    "time": "2026-11-11T16:08:17+08:00"
+    "title": "‘A culture of resilience': Filipino scientist champions disaster preparedness amid climate change - The Stanford Daily",
+    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1PcEpnVzlFSFhuUU9GM2lhbjh2bElpVENNamFMQ3g4QXIyMEdpeEFyUFg2UTd5YkdmXy12NjEzUXMwQ0NIbXZtZWtFSmJEX2RwQjlxcUZEa29MZUNNNk5ERGFLNkh5SkpkX19CNGNpeGV5djVCcUstSTlZYW9PbVU?oc=5",
+    "source": "The Stanford Daily",
+    "time": "2026-11-11T16:56:25+08:00"
    },
    {
     "title": "DSWD: Aid for Pasay vendors affected by ASEAN Summit ongoing - GMA Network",
@@ -396,6 +366,18 @@
     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQUUdQV09vc2Z4eWNpNnRDRGx6SGp0RjRQYm95TTZGdnp4bXdWNDRvQ2VZaEVzQXF2RGpDYTRMakpXdFZvYTFBbE9ZVHJRTFduWFlQTnlHOXZvSG01d2VrdUlmUGdIdkoyZjRLMWpYS3FleFVSX1YzNWZxZ2JWSlZPTjVjdDBhWWNQOWtLU3VXd9IBowFBVV95cUxPR2FIbVl2Um1VSjJiX0VPMWdDQVZTMFJqYzZVeW42UFZBQk1lVEloZjNFNElrOURodUIyc19DMWo2clJaYlZscGNsTmVITW5tS1BZZ2dWTzYtVmVCOEtKUlpWSmxXd0QzSG1zU1lGZ0dNWUFVZmN2LWNyV3Z3Q2pVOU5TLUsyZ3hIU1NUdDFZaE9XSkFhVll4dlRnZFlNZk9aMHpr?oc=5",
     "source": "Diario AS",
     "time": "2026-11-11T05:19:34+08:00"
+   },
+   {
+    "title": "UEFA matches in Portugal postponed due to Storm Charles - UEFA.com",
+    "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNSVZJZERVYjNZNkhJTndGM0F6U2sxa0tYQk1UbTJCa1RqRjlBa3A3UlRNRXdBRHlTYWpHWFhFVzNjU3VxX0dpWmpsemppX0g3RmJuWHdGNUstZ0tZZzdpUDJUemU4R01XUC02eDFnTEN6d2hqMjhrWV83Z08zSnNKWEVOeUtWYnNNYzZkb0h5bWxxQXRmRm13LTVld01fakJFZU43UzJKd0NxYmRqQ1lLZld0TlNOMFRObXg3VnZWOHZGZEFzRl9sWHZR?oc=5",
+    "source": "UEFA.com",
+    "time": "2026-11-11T01:11:48+08:00"
+   },
+   {
+    "title": "'A life or death sentence': Greta Thunberg returns to COP - Reuters",
+    "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE16QTVkSm9pQ3FvSV9sMXN4OUdyM0ZndTBqRjZVYzZVLVhYYXd2YTRFUDJzSzE2d2YxS3kyMlJhVmdZV3NxQ21BWVJNaUZxa1dsc2NzVTg2NmdmeDZkeHlMZkxHQzNzanR5OUxWN19URDZxM0ZseW9N?oc=5",
+    "source": "Reuters",
+    "time": "2026-11-11T01:03:45+08:00"
    },
    {
     "title": "Defending champions Pakistan U19 storm into ACC Asia Cup semi-finals with commanding win over Nepal - Pakistan Cricket Board (PCB)",
@@ -442,10 +424,10 @@
     "time": "2026-11-11T12:00:00+08:00"
    },
    {
-    "title": "スペイン、ポルトガルでストームの被害拡大 さらなる大雨や暴風警戒 - Infoseek",
-    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9LRW9kZWlMeWMyRVNaYVh5QUw2NHNiSTVnaHZjNk4ydDA3eWt3M2hfNHVfV3ZrWUl5bDRmbzVoQ2pPYkZtNU1KZ1dDQ1pJWWRTQS1jUVRqeWV6MW43dndiMnFiVENZaFVMa3M5SWZn?oc=5",
-    "source": "Infoseek",
-    "time": "2026-11-11T09:30:00+08:00"
+    "title": "布団などを無許可で収集運搬などした疑い 社長の男ら４人逮捕 宮城・栗原市 - TBS NEWS DIG",
+    "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE83dVhNVmVOLWE5NVVsbXVSbW9TRGw0eUU1YzVKN0lWOFcyU05SejI2aU5UUVlqSk9HNHUtSWEteHpORzY4U1pLWEYxUF9RWnEwQ1BHNkpvWnRiQUI0SGR6RjdjalJQVE0?oc=5",
+    "source": "TBS NEWS DIG",
+    "time": "2026-11-10T21:50:00+08:00"
    },
    {
     "title": "ポルトガルやスペインに発達したストーム 大雨や暴風に警戒 - Infoseek",
@@ -455,7 +437,7 @@
    }
   ]
  },
- "updated": "2026-11-13T03:09:59+08:00",
+ "updated": "2026-11-13T07:35:21+08:00",
  "status": {
   "cwa": "ok",
   "jma": "empty",
