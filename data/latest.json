@@ -80,12 +80,6 @@
     "time": "2026-11-16T18:45:19+08:00"
    },
    {
-    "title": "農信保基金提供薔琵颱風天災貸款信用保證 - 蕃新聞",
-    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5Ib3dpVG9sT2ZiRlF0RnBvaEhUWkNubFotOGgwb2thZldwdDJSbXNncnprTE50cF90ZzA2TWZDOGJzUnViZEF3ak54SGhpWE5haUE?oc=5",
-    "source": "蕃新聞",
-    "time": "2026-11-16T17:46:44+08:00"
-   },
-   {
     "title": "清潔隊長被出征內疚難過 蔣萬安：你沒有做錯任何事 - 鉅亨號",
     "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1pVVdCUjRrTFFkMlU4WHBhSEROY0FEeldoWHlBVmZaX2RwTHY5VEtoLWFkY21SQWIyQ05PTmhBSllZbGJQck91bw?oc=5",
     "source": "鉅亨號",
@@ -104,9 +98,9 @@
     "time": "2026-11-16T11:31:20+08:00"
    },
    {
-    "title": "東華大學攜手產官學11月27日於花蓮車站敬邀全民FUN科學 - 中央社 CNA",
-    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBKVUVjUHZNeTRTbmt6X1ZvWGNOT0V5OTRWTFpvdTIwX3kwSHBNRnVFS2dyTzQzbGY5R18xd0duZWUycjFZdW51dnBkN3NYeDBKWXJ4bjhn?oc=5",
-    "source": "中央社 CNA",
+    "title": "東華大學攜手產官學11月27日於花蓮車站敬邀全民FUN科學 - 蕃新聞",
+    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5FS1hvT3M5enBGUVdYaGkxcUxxRUhaamo5OWJyTW5aaDh4cFpvMWtmMnB0LUFybHhlWnluQjVETHZUYS0zdjVhVENPM0RFR0pha0E?oc=5",
+    "source": "蕃新聞",
     "time": "2026-11-16T11:29:37+08:00"
    },
    {
@@ -120,6 +114,12 @@
     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPYWhEZzEtNVdKdzJORmQ1QkpSR0ZxZjUyR19pdEFETUIzVy15em8xelJNb1dLY2NGWEU1eGNQdUJQM090Q0ZnSDdDUVhORGNCOW4xMkx6bkFCMm5zNEUxdm1QUVRMRTRzZEtpMTNtSkF2UUNxOGN1OEZaWFlwN2diWVJydUZLT1E3RzdXYg?oc=5",
     "source": "PChome Online 新聞",
     "time": "2026-11-16T10:23:19+08:00"
+   },
+   {
+    "title": "砍樹、兒虐、蟾蜍餐！羅智強大酸：沈伯洋劈蔣萬安三道雷全打到陳其邁 - 梅花新聞網",
+    "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1qdzFIQnNnWTZvNUxXUzdaSWFUc1NGb3k4RlphZWVBeXpKNXNrSFU0a2JhMEVwWVBMSTNrMF94YzZYSVFEYnF6YXp3ZHhnTktOdE56SzczTDE?oc=5",
+    "source": "梅花新聞網",
+    "time": "2026-11-16T09:09:00+08:00"
    },
    {
     "title": "薔琵颱風將迎「二度巔峰」 未來路徑3劇本 - 台視全球資訊網",
@@ -192,16 +192,22 @@
   ],
   "agri": [
    {
-    "title": "農信保基金提供薔琵颱風天災貸款信用保證 - 蕃新聞",
-    "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5Ib3dpVG9sT2ZiRlF0RnBvaEhUWkNubFotOGgwb2thZldwdDJSbXNncnprTE50cF90ZzA2TWZDOGJzUnViZEF3ak54SGhpWE5haUE?oc=5",
-    "source": "蕃新聞",
-    "time": "2026-11-16T17:46:44+08:00"
+    "title": "台灣基隆監獄因刑期計錯數 有囚犯提早出獄 - TVB",
+    "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQbUhEVUQ4SU9sOXdpYmVnbnlsd2J1S2FxRVYwUVpBSFd6Qk9JekZGZVU4bFJCdDE4NmJlV2tXOWZ3eWxKeWdhVGIzV1pWWDJtVXZXaGRpZ3FVQkRSQ19LZllhc0pENmlsYUprejBMQktuWUNKNThFcGtzVlVUUUxJdHdxclNVQTVHXy05Slo4d2dmM0hEdVBaU25QcFVDMVJIQWJPeGhfeDFzaXloSEpxUV9WNHIyMEhEVWVEYWNfTVRWMElKNVdUOVFfeGtiWnNLYTkyWjU5NEo2V3VkQkE3eVNWOU9Ud3dGTThSOEtRcjQwdmx5SkhyQ0lUanhsaUs1MURsZDJsdkx4ZEVWS1NiQ0VtQUhYOC1rT0htZWdPOE9YcGVJQnFyenJtSQ?oc=5",
+    "source": "TVB",
+    "time": "2026-11-17T19:23:00+08:00"
    },
    {
     "title": "瑪娃重返強颱「有機會發海警」！ - 三立新聞網SETN.com",
     "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5SbUlBNDM3ZlFNRGNqQXJLLXhodmQzT1F0MVhWcThFM2VJeEVKY18wd3A0TE1VaGRsSElCTS14djBUWFM4aWJPY1Y3akpiM3NwcVJFTQ?oc=5",
     "source": "三立新聞網SETN.com",
     "time": "2026-11-16T11:04:13+08:00"
+   },
+   {
+    "title": "12號颱「鴻雁」明生成！海葵影響北部？ - 三立新聞網SETN.com",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE13WDBCWGlyS0dwVFp1dlM0TzYwSkFiWWVhbE9GaVZCOHEyaWtfQTBUb25Gbjg1dEFOcjBOQzliNkFra2dGaWRfT21aMm9xdy1hdmh0YQ?oc=5",
+    "source": "三立新聞網SETN.com",
+    "time": "2026-11-16T11:00:40+08:00"
    },
    {
     "title": "週五迎下波雨彈 氣象署最新說明 - 三立新聞網SETN.com",
@@ -228,12 +234,6 @@
     "time": "2026-11-15T17:33:27+08:00"
    },
    {
-    "title": "梅雨旺盛期來了！氣象署最新說明 - 三立新聞網SETN.com",
-    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE56d3BaY2ZuSjU2UkptU05DZGdDUjdjUTdLR2E1LTU4YXN0Q1FXZmNncVliVHVTbmQtNHg0MlR1U0plN2gwTERiOU16VEFwZ1RsaGNfNQ?oc=5",
-    "source": "三立新聞網SETN.com",
-    "time": "2026-11-15T05:30:55+08:00"
-   },
-   {
     "title": "中颱巴威恐「二次增強」 氣象署最新說明！ - 三立新聞網SETN.com",
     "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1zVmZ1c3FzRUo3NDlmRHhPZ0loSV9HaGhDUEQ2UVpzWEdKU2h2RUhwUFI1ZE80UE1MTDNodmRHNUxVajNLVFdjR1U4bHd3WFpPUnkxLQ?oc=5",
     "source": "三立新聞網SETN.com",
@@ -248,28 +248,34 @@
     "time": "2026-11-17T22:02:00+08:00"
    },
    {
-    "title": "Live: Donald Trump arrives at Asean summit - South China Morning Post",
-    "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE8yRlJZUlJ5bXZrTU84OXVsanBJWWpfeVV4eV85UE00bkhpMEU4R21qVnRYLTRGZ0U3VkV5ZjY0em56UEdfdGwzRHFnOVVKaGt6aTVCWFVUYzJtVDg4bU1IMlQxQkM1Y2s5dVNiYkVDOXk3NDItMjFybFJNVVc?oc=5",
-    "source": "South China Morning Post",
-    "time": "2026-11-17T17:27:20+08:00"
+    "title": "One dead, 500 injured as Typhoon Champi sweeps Taiwan - Eastern Riverina Chronicle",
+    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOSldteXUzWWxqVFZURDE0cVZuUjNjY1JmWGNrc1ZNSVlrU0sxWG4wa2FOWjh0Y1g3RW9rRDM3MC1qNG5SZ095WTV5Y0VkU1VRRHhkVUQxUzRRME9vMDdQcFpKb3ZUZXhlV3dnZ1JYZzg2VHNVNEpEQTA1bDI0aG9RVUJSTzgtdHh3NnZweE1HVGZWMjFKNjhraEtOeGs4NWpkMElmeVB2dTRiMkZidXg1eg?oc=5",
+    "source": "Eastern Riverina Chronicle",
+    "time": "2026-11-17T20:39:58+08:00"
+   },
+   {
+    "title": "Super Typhoon Champi enters PAR, named Rosal - Rappler",
+    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOW9CUmtpVi1Gb0RMeC03clVFaXBfX1ItVFE2d1VTTFlHeFBVak9WZUZGZ2xlc05QNERWT1QzbDBGaFNkZXhhelRubjFnWktvS0VGS2oxbmpVN3E1czBrcUtqbTg0eTYzZHN5cThSendHbDhkcDRKMkRSMnFzZ0VzUzdNRzlqQm5QVVRSVVNhODhjb01fSzBaQU14YUluTnctazZ1Znh3TEdhYmdWdGQxVVgtaw?oc=5",
+    "source": "Rappler",
+    "time": "2026-11-17T18:50:19+08:00"
+   },
+   {
+    "title": "Super Typhoon Champi to enter PAR on October 20 - Rappler",
+    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOakluMG1DUHR3LWJlRjV4Mm4yVzB6dEgtVF9qRF9oaTBmVkpTVEZTb0lBWnBwdWZRRWtXUGo5WGg1VnkyUjYwdHd4Y25kRHpkMEVZZ1BwamVUc2dtV2t5bXpHSnRDbmRKLW5jWS1zdFdxanBLXzE3aWFSQWM5b3JTbFB1WlRlWE1jNjFZVVVVOF9oTXptWHg3Y2xsX08yUy1fSkxnZ01lVmtTSkFXMFVCM0ZhM2NreEdPYUVYUllXc3dlNFU?oc=5",
+    "source": "Rappler",
+    "time": "2026-11-17T18:50:19+08:00"
+   },
+   {
+    "title": "Champi weakens outside PAR but likely to re-intensify into super typhoon - Rappler",
+    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPYmRaU2xMTG15ZnBOQzJvX2N1UHI3cVM5Sk5SNmRmNEFvMGw5Y25VLTYzcERublZLbWc2N19FanZ5R3c5MTZMMG5vUzAxczNPUVhhSl8yY0hOWGdBOE0yRXJPb3lOVW1ET2xvUkNYZ0ZJVWIzQzR4bDhYSzF0Y0FDd3hBVHAzajFyOU05SnRPRXo1dU42UTRhamhWNTQyN1dkdVoxbU0zVFVlSk1ncmtRYm5udzFQOEtlNTJR?oc=5",
+    "source": "Rappler",
+    "time": "2026-11-17T18:50:19+08:00"
    },
    {
     "title": "Live: Hong Kong leader speaks at Apec CEO summit - South China Morning Post",
     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNN1dYbzFkdGtlaUJEaktRZ0ZBcXphWFA4enZVU2txWkpsOG5hSlZhTnZTUmR0V3JMN1UyREo0aEMxMkNqZXoyT1gyTDdkM2plMGxfSFNiUFJrdExXSE1uTXdYY0o0dUx2UkhTNFRvbWxCaW1SekY4Yi1CbUFKMTdQQ2FuT0F2VndGVTZabXhFUmpYdm9PSWVkaGhKM2JObk5aMmxxYkxsRUFpeU01aG9XZGxkaENhZ2VuTXc?oc=5",
     "source": "South China Morning Post",
     "time": "2026-11-17T16:01:04+08:00"
-   },
-   {
-    "title": "Super Typhoon Champi enters PAR, named Rosal - Rappler",
-    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOW9CUmtpVi1Gb0RMeC03clVFaXBfX1ItVFE2d1VTTFlHeFBVak9WZUZGZ2xlc05QNERWT1QzbDBGaFNkZXhhelRubjFnWktvS0VGS2oxbmpVN3E1czBrcUtqbTg0eTYzZHN5cThSendHbDhkcDRKMkRSMnFzZ0VzUzdNRzlqQm5QVVRSVVNhODhjb01fSzBaQU14YUluTnctazZ1Znh3TEdhYmdWdGQxVVgtaw?oc=5",
-    "source": "Rappler",
-    "time": "2026-11-17T09:00:00+08:00"
-   },
-   {
-    "title": "Super Typhoon Champi to enter PAR on October 20 - Rappler",
-    "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOakluMG1DUHR3LWJlRjV4Mm4yVzB6dEgtVF9qRF9oaTBmVkpTVEZTb0lBWnBwdWZRRWtXUGo5WGg1VnkyUjYwdHd4Y25kRHpkMEVZZ1BwamVUc2dtV2t5bXpHSnRDbmRKLW5jWS1zdFdxanBLXzE3aWFSQWM5b3JTbFB1WlRlWE1jNjFZVVVVOF9oTXptWHg3Y2xsX08yUy1fSkxnZ01lVmtTSkFXMFVCM0ZhM2NreEdPYUVYUllXc3dlNFU?oc=5",
-    "source": "Rappler",
-    "time": "2026-11-17T09:00:00+08:00"
    },
    {
     "title": "World champion climber is suspended on side of mountain for nine days when terrifying storm derails her hike - Daily Mail",
@@ -288,12 +294,6 @@
     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZGl5WHFOWFhqVlFJcDZubjdiY1dDRkJSSG40NS1pN1N2NXlRR3NmMFJBSkQwMTFwQ0t6YjNRTmR0NEVJQ01YOGhWZTZUOGVMcWVFTTVmdk5mRlJhNXJUYnc0TUVkbkJEVXZRaWpuNDdoSEhheXpVV1V2clBUeW8zaw?oc=5",
     "source": "Front Office Sports",
     "time": "2026-11-17T00:52:45+08:00"
-   },
-   {
-    "title": "Champi weakens outside PAR but likely to re-intensify into super typhoon - Rappler",
-    "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPYmRaU2xMTG15ZnBOQzJvX2N1UHI3cVM5Sk5SNmRmNEFvMGw5Y25VLTYzcERublZLbWc2N19FanZ5R3c5MTZMMG5vUzAxczNPUVhhSl8yY0hOWGdBOE0yRXJPb3lOVW1ET2xvUkNYZ0ZJVWIzQzR4bDhYSzF0Y0FDd3hBVHAzajFyOU05SnRPRXo1dU42UTRhamhWNTQyN1dkdVoxbU0zVFVlSk1ncmtRYm5udzFQOEtlNTJR?oc=5",
-    "source": "Rappler",
-    "time": "2026-11-16T23:45:27+08:00"
    },
    {
     "title": "Eastern Harps storm to Sligo U20 Championship glory after ruthless first quarter at Markievicz Park - Irish Independent",
@@ -384,12 +384,6 @@
     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNRko5RnlNY0w3MHFmbVZSNFBZcjBHTVVibFBHWUhnUmVqZHhyOVNNcjRQVVY4MW51ODZaRl90ZXU5cFF2QTR6bUtOWmhMSllKdV9TcnpzNDRBbzZ4VWY3Uy1SeEZpcGd3ZGllaUtCSHVZSUVPMHEtMGZuOF9DdDhqY1BVdHNwbTlyOFo5X1ZzZmJTMU81bGIzV2ZWb3pmUm5WTFlSNGhMbE53Sm1VUUxB?oc=5",
     "source": "France 24",
     "time": "2026-11-15T18:03:13+08:00"
-   },
-   {
-    "title": "Simba Queens storm CAF Women’s Champions League semis - cecafa",
-    "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQSWM3Z2tUYkhpaUdsbVU1c2U5NWZJUkFyNXBKekNkUWJxTVBiaFR0U2U1Ty15VE0xTXNSeElTTnc4Ul84Y2tUQ3NSUkhmV0FpUWRHMXRUOVctMFh3cXI5Z18tUXN6c1Z3dENkS2RlcGJHNmluLW55dnBBd1NXQUJTb0xjamQ?oc=5",
-    "source": "cecafa",
-    "time": "2026-11-15T16:43:06+08:00"
    }
   ],
   "jp": [
@@ -419,7 +413,7 @@
    }
   ]
  },
- "updated": "2026-11-17T23:54:17+08:00",
+ "updated": "2026-11-18T01:43:46+08:00",
  "status": {
   "cwa": "ok",
   "jma": "empty",
