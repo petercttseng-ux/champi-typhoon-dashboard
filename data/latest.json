@@ -216,16 +216,16 @@
   ],
   "agri": [
    {
-    "title": "巴西風暴為何一夜讓2萬人無家可歸？圖龐西雷騰約8000戶民宅受損，傷者從60人暴增至162人 | 中央社 | 新聞 - 風傳媒",
-    "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5BTzNSUy1ndl9vcmJHcHVvaDUzRURRZFBLZjFiZXZ2bHlGZGxjR2duNVFRbVBrdVBlMnR2a0d3VkFLaHpoOC1Qa1BHQmlGZw?oc=5",
-    "source": "風傳媒",
-    "time": "2026-11-22T15:08:00+08:00"
-   },
-   {
     "title": "12號颱「鴻雁」明生成！海葵影響北部？ - 三立新聞",
     "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE13WDBCWGlyS0dwVFp1dlM0TzYwSkFiWWVhbE9GaVZCOHEyaWtfQTBUb25Gbjg1dEFOcjBOQzliNkFra2dGaWRfT21aMm9xdy1hdmh0YQ?oc=5",
     "source": "三立新聞",
     "time": "2026-11-22T12:34:18+08:00"
+   },
+   {
+    "title": "山陀兒不動了！台中以南仍在陸警範圍 - 三立新聞網SETN.com",
+    "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBpUnl1bXFFRDhhczVoYmQ3VUdYY2htbEhtOUIzdWtULXNOSzdkeGtlSTdXNVJ3RVJUOGhiMmpyR3BxdXg3OEdhdVh6MTNlMTRUa2Foeg?oc=5",
+    "source": "三立新聞網SETN.com",
+    "time": "2026-11-22T01:39:36+08:00"
    },
    {
     "title": "氣象局估深夜解除蘇拉陸警 - 三立新聞網SETN.com",
@@ -278,6 +278,12 @@
   ],
   "en": [
    {
+    "title": "U.S. warns 8 states a Thanksgiving storm could snarl travel - Rolling Out",
+    "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBGclZ4aU01WUVMdmFzVllzTFFOb2p3VDBtbHowYjRmcHNYeERKUVRPN19meTF4bDVqUmFrOEpFVnZVZE1BZzJqdGdNS0V0bEl6b3haMkR0dzcyQVBxTlpROXpvNm0zeHNCS1NhS3c4aXo0Q3dzZXJ4NTliS3BUNmc?oc=5",
+    "source": "Rolling Out",
+    "time": "2026-11-23T00:48:51+08:00"
+   },
+   {
     "title": "Birmingham failed to weather Stoke storm - Davies - BBC",
     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1tVjRNZWNoTGd1aWFPQVliZkRITVB2czktUF9EbUtqNVFHOE0wNGxBZWowd1pJQ2tIeVg1cWV6SnJTT2x1YWJvYndONzFiREpCV0pHaHdCNUtCYXQxNE1USVZySktRYmNZWTg0?oc=5",
     "source": "BBC",
@@ -324,6 +330,12 @@
     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNcS1mY0FXTUV0dVZMOEV6eXNpMkM4RVdSRlZsZ1NyejFrZDVsVC03VnJVdWxjUFdIc2VzdjFBOUN3Z25EMG1QZVd4b1lIZTJYUjhpSVY4VWRsQjVHbW9ycXpGdkJVek1MYkpSV01zeW5RWjNFMHJWdXRFelA2QVFfdDY3Wm50Y09YdkE1OExvZVhiZWRmbXdTTW15anozb3BHZm52MzdCM2t1Zk14ZlZuWEpXanA5MklEUW1fU1ZjVThsa0c0UWZUQUxYNDQ?oc=5",
     "source": "American Conference",
     "time": "2026-11-22T07:21:14+08:00"
+   },
+   {
+    "title": "Taiwan shuts down, flights cancelled as typhoon nears - The Canberra Times",
+    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQRTcxTGZQWUpMR2JkNGl3bUlIM3lIR0NZRlptWTRnNldSa1p2UTVrRzZhMWJhMUp0d0QySXRiekVKMkVRRnZIXzVLZXBKc3VheU5jaFp6ZHVjbS1Qc01PVG56TXdxVWVxaUFuN21md09BOU5GbGlRbEQ4RFFLalZ6cmc5ZkYyaXU2RFVtcFMtTmVpdllIeXd3YnFac0VHYWdQQXc?oc=5",
+    "source": "The Canberra Times",
+    "time": "2026-11-22T01:24:08+08:00"
    },
    {
     "title": "Mawpdang hit Lamlynti for 10 to storm into SSA Champions Cup semis - Syllad",
@@ -418,7 +430,7 @@
   ],
   "jp": []
  },
- "updated": "2026-11-23T00:12:10+08:00",
+ "updated": "2026-11-23T01:03:49+08:00",
  "status": {
   "cwa": "ok",
   "jma": "empty",
